@@ -152,6 +152,9 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw}
 .hero-line{justify-self:end;font-family:var(--fd);font-weight:400;font-size:clamp(20px,1.6vw,26px);line-height:1.35;max-width:21ch;text-align:left}
 .meta-strip{border-top:1px solid var(--bone-30);padding-top:18px;margin-top:36px;font-size:19px}
 .meta-strip .sep{color:var(--bone-30);margin:0 .6em}
+/* keep each item intact — "100 SEATS" breaking across lines reads as two
+   separate facts rather than one */
+.meta-strip .mi{white-space:nowrap}
 .hero-cta-row{display:flex;align-items:baseline;gap:14px;margin-top:34px;flex-wrap:wrap}
 .deadline{color:var(--bone-60)}
 
@@ -323,19 +326,76 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
 /* ============ RESPONSIVE ============ */
 @media (max-width:900px), (orientation:portrait){
   main section{padding:14dvh 6vw}
-  #hero{padding:0 6vw 56px}
-  .wordmark{font-size:clamp(46px,15vw,84px);width:max-content;max-width:100%;min-width:0}
-  .hero-row{grid-template-columns:1fr}
-  .hero-line{justify-self:stretch;width:auto;max-width:100%;margin-top:20px}
-  .hero-cta-row{margin-bottom:90px}
+
+  /* ---- header: opaque, not blended ----
+     mix-blend-mode:difference reads as smeared, half-inverted text when the
+     header sits over photography or a moving video, which is most of this page
+     on a narrow screen. A solid ground with a blur behind it is legible over
+     anything scrolling under it. Also forced onto one line — the mono tracking
+     wraps both labels into each other at phone widths. */
+  header.top{
+    height:52px;
+    mix-blend-mode:normal;
+    background:rgba(11,10,12,.92);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(242,237,228,.12);
+    gap:12px;
+  }
+  header.top.scrolled{border-bottom-color:var(--bone-30)}
+  header.top .brand,header.top .apply-link{
+    font-size:clamp(9px,2.6vw,11px);
+    letter-spacing:.1em;
+    white-space:nowrap;
+  }
+
+  /* ---- hero: centered, and scaled to the viewport ----
+     also vertically centred rather than bottom-anchored: at phone aspect
+     ratios the bottom-anchored desktop composition leaves a large dead gap
+     under the header and crowds everything against the scroll cue. */
+  #hero{padding:64px 6vw 48px;text-align:center;justify-content:center}
+  .hero-inner{display:flex;flex-direction:column;align-items:center}
+  .hero-eyebrow{font-size:clamp(10px,2.9vw,13px);letter-spacing:.16em;margin-bottom:20px}
+  .hero-row{grid-template-columns:1fr;justify-items:center;width:100%}
+  .wordmark{
+    font-size:clamp(44px,15.5vw,84px);
+    width:max-content;max-width:100%;min-width:0;margin:0 auto;
+  }
+  .hero-line{
+    justify-self:center;width:auto;max-width:34ch;margin:18px auto 0;
+    font-size:clamp(15px,4.1vw,20px);line-height:1.45;text-align:center;
+  }
+  .meta-strip{
+    font-size:clamp(10px,2.8vw,13px);letter-spacing:.1em;
+    text-align:center;margin-top:28px;padding-top:16px;
+  }
+  .meta-strip .sep{margin:0 .4em}
+  .hero-cta-row{justify-content:center;margin-top:28px;margin-bottom:72px}
+  .cta{width:auto}
+  .cta-soon{font-size:14px;padding:16px 26px}
+  .scroll-cue{bottom:24px}
+
+  /* ---- body sections: pull the display sizes down to phone scale ---- */
+  .mono{font-size:12px}
+  .display{letter-spacing:-.015em}
+  #room h2,#day h2,#proof h2{font-size:clamp(30px,8.4vw,48px) !important}
+  #next h2{font-size:clamp(26px,7.4vw,40px) !important}
+  .body-copy{font-size:16px;line-height:1.6}
+  .evening-h,.day-card-body{font-size:clamp(24px,6.6vw,34px)}
+  .day-card-body{font-size:16px;line-height:1.6}
+  .evening-body{font-size:16px}
+  .stat-num{font-size:clamp(30px,8vw,40px)}
   .room-grid{grid-template-columns:1fr;gap:32px}
   .room-bg{display:none}
   .next-grid{grid-template-columns:1fr;gap:36px}
   .next-media{width:100%;aspect-ratio:16/10;order:-1}
+  .city-row{padding:12px 0}
   .stats{flex-wrap:wrap}
-  .stat{flex:1 1 45%;min-width:0}
+  .stat{flex:1 1 45%;min-width:0;padding-right:12px}
   .video-frame{width:100vw;margin-left:calc(50% - 50vw);box-shadow:none;border-top:1px solid var(--bone-30);border-bottom:1px solid var(--bone-30)}
-  .apply-h{font-size:clamp(40px,11vw,64px)}
+  .apply-h{font-size:clamp(32px,9.4vw,56px)}
+  .apply-under,.apply-foot{font-size:11px;letter-spacing:.1em}
+  .footer-row{font-size:11px;letter-spacing:.1em}
 }
 
 /* ============ REDUCED MOTION ============ */
@@ -377,7 +437,7 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
         <h1 class="wordmark display"><span class="wm-inner">supernova</span></h1>
         <p class="hero-line">For one day in Bangalore, the minds defining India's next decade will be in a single room — and <span class="serif-amber">every one of them will be a woman.</span></p>
       </div>
-      <div class="meta-strip mono">OCT 10 2026&nbsp;<span class="sep">·</span> BANGALORE&nbsp;<span class="sep">·</span> 100 SEATS&nbsp;<span class="sep">·</span> BY APPLICATION</div>
+      <div class="meta-strip mono"><span class="mi">OCT 10 2026</span> <span class="sep">·</span> <span class="mi">BANGALORE</span> <span class="sep">·</span> <span class="mi">100 SEATS</span> <span class="sep">·</span> <span class="mi">BY APPLICATION</span></div>
       <div class="hero-cta-row">
         <span class="cta cta-soon">applications open soon</span>
       </div>
