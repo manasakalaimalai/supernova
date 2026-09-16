@@ -30,8 +30,8 @@ vercel.json          long cache on /assets, no cache on the HTML
 - The hero glow tracks the cursor from `mousemove` directly, *not* from the
   `requestAnimationFrame` loop — rAF gets throttled when a tab is backgrounded and
   the glow would silently stop following.
-- Applications aren't open yet: both CTAs are `.cta-soon`, non-clickable status
-  chips. When applications open, swap them back to `<a class="cta" href="...">`.
+- Applications are live via Founderboard (external link, opens in a new tab);
+  the `.cta-soon` style is kept for reuse once applications close.
 
 ## Social links
 
