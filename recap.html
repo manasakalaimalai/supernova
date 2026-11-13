@@ -3,485 +3,539 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0B0A0C">
-<title>Supernova Edition 1 Recap — October 10, 2026</title>
-<meta name="description" content="100 founders. 19 investment firms. One day in Bangalore. A recap of Supernova Edition 1, India's most ambitious gathering of women builders.">
+<meta name="theme-color" content="#C43D18">
+<title>Supernova Edition 1 — October 10, 2026</title>
+<meta name="description" content="100 founders. 20+ investment firms. 200 at the after party. One day in Bangalore. See what happened when India's most ambitious women builders gathered for Supernova Edition 1.">
 <meta property="og:title" content="Supernova Edition 1 — October 10, 2026">
-<meta property="og:description" content="100 founders. 19 investment firms. One day in Bangalore. See what happened when India's most ambitious women builders gathered for Supernova.">
+<meta property="og:description" content="100 founders. 20+ investors. 200 at the after party. One unforgettable day in Bangalore.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.supernovaa.io/recap">
 <meta property="og:image" content="https://www.supernovaa.io/assets/og-image.jpg">
-<meta property="og:image:width" content="1600">
-<meta property="og:image:height" content="900">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Supernova Edition 1 Recap">
-<meta name="twitter:description" content="100 founders. 19 investment firms. One unforgettable day.">
-<meta name="twitter:image" content="https://www.supernovaa.io/assets/og-image.jpg">
 <link rel="canonical" href="https://www.supernovaa.io/recap">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;850&family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!-- TODO: Replace Unbounded with self-hosted Horizon webfont (the actual Canva font used in the event) when legally sourceable -->
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ============ RESET ============ */
+/* ============ RESET & BASE ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-html,body{background:#0B0A0C;color:#F2EDE4;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-img,video{max-width:100%;display:block}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  background:#C43D18;
+  color:#FFF5E6;
+  font-family:'Inter',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
-/* ============ TOKENS ============ */
+/* ============ COLOR PALETTE (Orange/Sunset Theme, NO Black) ============ */
 :root{
-  --black:#0B0A0C;
-  --coal:#131013;
-  --ember:#E8622A;
-  --redor:#C43D18;
+  --rust-deep:#8B3A1F;
+  --rust:#A24422;
+  --ember:#C43D18;
+  --ember-bright:#E8622A;
   --amber:#F4A244;
-  --bone:#F2EDE4;
-  --bone-60:rgba(242,237,228,.6);
-  --bone-30:rgba(242,237,228,.3);
-  --ease-reveal:cubic-bezier(.16,1,.3,1);
+  --coral:#FF7F50;
+  --peach:#FFD4A3;
+  --cream:#FFF5E6;
+  --cream-dark:#F2EDE4;
+  --brown:#6B4423;
+  --brown-light:#8B6F47;
+  --ease:cubic-bezier(.16,1,.3,1);
   --ease-soft:cubic-bezier(.25,.8,.28,1);
-  --fd:'Archivo',sans-serif;
-  --fs:'Instrument Serif',Georgia,serif;
-  --fm:'Space Mono',monospace;
 }
 
-body{font-family:var(--fd);overflow-x:hidden}
+/* ============ TYPOGRAPHY ============ */
+.display{font-family:'Unbounded',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.08em;line-height:.95}
+.script{font-family:'Pinyon Script',cursive;font-weight:400;font-style:normal;color:var(--amber)}
+.serif{font-family:'Playfair Display',serif}
 
-/* ============ TYPE ============ */
-.mono{font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:14px}
-.display{font-family:var(--fd);font-weight:850;text-transform:uppercase;letter-spacing:.02em;line-height:1.02}
-.script{font-family:var(--fs);font-style:italic;font-weight:400;color:var(--amber)}
-.body-copy{font-family:var(--fd);font-weight:400;font-size:17px;line-height:1.65;color:var(--bone);max-width:62ch}
-
-/* ============ GRAIN ============ */
+/* ============ GRAIN TEXTURE ============ */
 .grain{
-  position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.07;
+  position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.06;
   mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:300px 300px;
-  animation:grain-jitter .9s steps(1) infinite;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:280px 280px;
+  animation:grain-shift 1.2s steps(2) infinite;
 }
-@keyframes grain-jitter{
-  0%,32%{background-position:0 0}
-  33%,65%{background-position:-140px 90px}
-  66%,100%{background-position:90px -140px}
+@keyframes grain-shift{
+  0%,33%{background-position:0 0}
+  34%,66%{background-position:-160px 120px}
+  67%,100%{background-position:120px -160px}
 }
 
-/* ============ HEADER ============ */
-header.top{
-  position:fixed;top:0;left:0;right:0;z-index:40;height:64px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 4vw;
-  background:rgba(11,10,12,.92);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--bone-30);
+/* ============ HEADER NAV ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:70px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 5vw;
+  background:rgba(139,58,31,.85);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(244,162,68,.2);
 }
-header.top .brand{font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:14px;font-weight:700}
-header.top a{transition:color .3s ease}
-header.top a:hover{color:var(--ember)}
+.nav-brand{
+  font-weight:600;font-size:14px;
+  text-transform:uppercase;letter-spacing:.16em;color:var(--cream);
+}
+.nav-link{
+  font-size:13px;text-transform:uppercase;letter-spacing:.14em;
+  padding:8px 16px;border-radius:4px;
+  transition:background .3s var(--ease-soft),color .3s;
+  color:var(--cream-dark);
+}
+.nav-link:hover{background:rgba(244,162,68,.15);color:var(--amber)}
 
-/* ============ HERO IMAGE WALL ============ */
-#hero-wall{
-  min-height:100vh;
+/* ============ HERO - 100% VIEWPORT ============ */
+#hero{
   position:relative;
+  width:100%;height:100svh;
   overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;align-items:center;justify-content:center;
 }
-.wall-grid{
-  position:absolute;
-  inset:0;
+.hero-grid{
+  position:absolute;inset:0;
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  grid-auto-rows:20vh;
-  gap:2px;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:20svh;
+  gap:0;
 }
-.wall-item{
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
+.hero-tile{
+  position:relative;overflow:hidden;cursor:pointer;
 }
-.wall-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:opacity .5s var(--ease-soft),transform .5s var(--ease-soft),filter .5s var(--ease-soft);
-  opacity:.35;
-  filter:grayscale(.8) contrast(1.05) brightness(.7);
+.hero-tile img{
+  width:100%;height:100%;object-fit:cover;
+  transition:opacity .6s var(--ease),transform .6s var(--ease),filter .6s var(--ease);
+  opacity:.28;
+  filter:grayscale(.65) contrast(1.08) brightness(.68);
 }
-.wall-item:hover img,.wall-item.active img{
+.hero-tile:hover img,.hero-tile.active img{
   opacity:1;
   filter:grayscale(0) contrast(1) brightness(1);
-  transform:scale(1.05);
+  transform:scale(1.08);
 }
 .hero-overlay{
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at center,rgba(11,10,12,.5) 0%,rgba(11,10,12,.85) 60%);
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 60%,rgba(139,58,31,.4) 0%,rgba(139,58,31,.75) 60%,rgba(107,68,35,.88) 100%);
   pointer-events:none;
+  z-index:1;
 }
 .hero-content{
-  position:relative;
-  z-index:1;
-  text-align:center;
-  padding:0 4vw;
-  animation:hero-fade-in 1.2s var(--ease-reveal) .4s both;
+  position:relative;z-index:2;
+  text-align:center;padding:0 6vw;
+  animation:hero-rise 1.4s var(--ease) .5s both;
 }
-@keyframes hero-fade-in{
-  0%{opacity:0;transform:translateY(20px)}
+@keyframes hero-rise{
+  0%{opacity:0;transform:translateY(30px)}
   100%{opacity:1;transform:translateY(0)}
 }
 .hero-eyebrow{
-  font-family:var(--fs);
-  font-style:italic;
-  font-size:clamp(16px,2.4vw,22px);
-  color:var(--bone-60);
-  margin-bottom:12px;
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(15px,2.4vw,22px);
+  color:var(--peach);margin-bottom:14px;opacity:.9;
 }
-.hero-title{
-  font-size:clamp(64px,14vw,180px);
-  color:var(--bone);
-  margin-bottom:16px;
+.hero-wordmark{
+  font-size:clamp(70px,16vw,210px);
+  color:var(--cream);margin-bottom:18px;
+  text-shadow:0 4px 24px rgba(139,58,31,.6);
 }
 .hero-edition{
-  font-family:var(--fs);
-  font-style:italic;
-  font-size:clamp(24px,4vw,48px);
-  color:var(--amber);
+  font-size:clamp(32px,6vw,68px);
   margin-bottom:20px;
 }
 .hero-meta{
-  font-size:clamp(13px,2vw,18px);
-  letter-spacing:.18em;
-  color:var(--bone-60);
+  font-weight:500;
+  font-size:clamp(12px,1.8vw,16px);
+  text-transform:uppercase;letter-spacing:.2em;
+  color:var(--peach);opacity:.85;
 }
 
-/* ============ OUTCOMES ============ */
-#outcomes{
-  background:linear-gradient(180deg,var(--black) 0%,var(--coal) 100%);
-  padding:14vh 4vw;
-  border-top:1px solid var(--ember);
-  box-shadow:0 -20px 60px rgba(232,98,42,.15);
+/* ============ SECTION BASE ============ */
+section{
+  position:relative;
+  padding:clamp(80px,14vh,180px) 5vw;
 }
-.outcomes-inner{
-  max-width:1400px;
-  margin:0 auto;
+section:nth-of-type(odd){background:var(--ember)}
+section:nth-of-type(even){background:var(--rust)}
+.section-inner{max-width:1600px;margin:0 auto}
+.section-heading{
+  font-size:clamp(36px,6vw,88px);
+  color:var(--cream);margin-bottom:clamp(24px,4vh,48px);
+}
+
+/* ============ FOUNDER MESSAGE ============ */
+#founder-message{
+  background:linear-gradient(135deg,var(--rust-deep) 0%,var(--ember) 100%);
+  padding:clamp(100px,16vh,200px) 5vw;
+}
+.founder-grid{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,8vw,100px);
+  align-items:center;max-width:1600px;margin:0 auto;
+}
+.founder-text h2{
+  font-size:clamp(28px,4.5vw,56px);
+  color:var(--cream);margin-bottom:clamp(20px,3vh,36px);
+}
+.founder-message-body{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(17px,2.2vw,22px);
+  line-height:1.75;color:var(--cream);
+  margin-bottom:clamp(24px,4vh,40px);
+}
+.founder-message-body p{margin-bottom:1.5em}
+.founder-message-body p:last-child{margin-bottom:0}
+.founder-attribution{
+  font-weight:600;
+  font-size:clamp(14px,1.8vw,17px);
+  color:var(--amber);margin-top:clamp(28px,4vh,48px);
+}
+.founder-photo-wrap{
+  position:relative;border-radius:8px;overflow:hidden;
+  box-shadow:0 20px 80px rgba(107,68,35,.4);
+}
+.founder-photo-wrap img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;
+}
+
+/* ============ OUTCOMES BAND ============ */
+#outcomes{
+  background:var(--brown);
+  padding:clamp(70px,12vh,140px) 5vw;
+  border-top:2px solid var(--amber);
+  border-bottom:2px solid var(--amber);
 }
 .outcomes-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:0;
-  margin-top:6vh;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:0;max-width:1600px;margin:0 auto;
 }
-.outcome-stat{
-  text-align:center;
-  padding:4vh 2vw;
-  border-right:1px solid var(--bone-30);
+.outcome-box{
+  text-align:center;padding:clamp(32px,5vh,60px) clamp(20px,3vw,40px);
+  border-right:1px solid rgba(244,162,68,.25);
 }
-.outcome-stat:last-child{border-right:0}
-.stat-number{
-  display:block;
-  font-family:var(--fd);
-  font-weight:850;
-  font-size:clamp(48px,8vw,92px);
-  color:var(--amber);
-  line-height:1;
-  letter-spacing:-.02em;
+.outcome-box:last-child{border-right:0}
+.outcome-number{
+  display:block;font-family:'Unbounded',sans-serif;font-weight:900;
+  font-size:clamp(52px,10vw,110px);color:var(--amber);
+  line-height:.95;letter-spacing:-.02em;
 }
-.stat-label{
-  display:block;
-  margin-top:16px;
-  font-size:clamp(13px,1.8vw,17px);
-  color:var(--bone-60);
-  letter-spacing:.12em;
+.outcome-label{
+  display:block;margin-top:clamp(16px,2vh,24px);
+  font-weight:500;
+  font-size:clamp(13px,1.6vw,16px);
+  text-transform:uppercase;letter-spacing:.16em;color:var(--cream-dark);
 }
 
-/* ============ DAY CHAPTERS ============ */
-.chapter{
-  position:relative;
-  padding:16vh 4vw;
-  border-top:1px solid var(--bone-30);
+/* ============ DAY AGENDA (Visual Nav) ============ */
+#day-agenda{
+  background:var(--rust);
+  padding:clamp(80px,14vh,160px) 5vw;
 }
-.chapter-inner{
-  max-width:1400px;
-  margin:0 auto;
+.agenda-heading{
+  text-align:center;margin-bottom:clamp(60px,10vh,120px);
 }
-.chapter-header{
-  margin-bottom:8vh;
+.agenda-arc{
+  position:relative;max-width:1200px;margin:0 auto;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:clamp(24px,4vw,48px);
 }
-.chapter-heading{
-  font-size:clamp(28px,5vw,56px);
-  margin-bottom:18px;
-  color:var(--bone);
+.agenda-item{
+  flex:1 1 200px;text-align:center;
+  padding:clamp(24px,3vw,36px);
+  background:rgba(244,162,68,.08);
+  border:1px solid rgba(244,162,68,.25);
+  border-radius:8px;cursor:pointer;
+  transition:all .4s var(--ease-soft);
 }
-.chapter-copy{
-  font-size:clamp(16px,2.2vw,19px);
-  line-height:1.6;
-  color:var(--bone-60);
-  max-width:58ch;
+.agenda-item:hover{
+  background:rgba(244,162,68,.16);
+  border-color:var(--amber);
+  transform:translateY(-6px);
+  box-shadow:0 12px 40px rgba(244,162,68,.2);
 }
-.photo-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:clamp(12px,2vw,24px);
+.agenda-number{
+  display:block;font-family:'Unbounded',sans-serif;font-weight:900;
+  font-size:clamp(20px,3vw,32px);color:var(--amber);
+  margin-bottom:12px;
 }
-.photo-item{
-  position:relative;
-  overflow:hidden;
-  border-radius:2px;
-  aspect-ratio:3/2;
+.agenda-label{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(15px,2vw,19px);
+  color:var(--cream);line-height:1.4;
 }
-.photo-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+
+/* ============ PHOTOS - Masonry & Editorial Layouts ============ */
+.photo-masonry{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:clamp(12px,2vw,20px);margin-top:clamp(40px,6vh,80px);
+}
+.photo-masonry-item{
+  position:relative;overflow:hidden;border-radius:6px;
+  aspect-ratio:4/3;
+}
+.photo-masonry-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s var(--ease-soft);
+}
+.photo-masonry-item:hover img{transform:scale(1.06)}
+
+.editorial-three-up{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(16px,2.5vw,32px);
+  margin-bottom:clamp(40px,6vh,80px);
+}
+.editorial-feature{
+  position:relative;overflow:hidden;border-radius:8px;
+  box-shadow:0 12px 48px rgba(107,68,35,.3);
+}
+.editorial-feature img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;
   transition:transform .6s var(--ease-soft);
 }
-.photo-item:hover img{
-  transform:scale(1.05);
+.editorial-feature:hover img{transform:scale(1.04)}
+
+.wide-feature{
+  margin:clamp(60px,10vh,120px) 0;
+  border-radius:8px;overflow:hidden;
+  box-shadow:0 16px 64px rgba(107,68,35,.35);
+}
+.wide-feature img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;
 }
 
-/* ============ INVESTORS ============ */
-#investors{
-  background:var(--coal);
-  padding:16vh 4vw;
-  border-top:1px solid var(--bone-30);
+/* ============ FOUNDERS GRID & CARDS ============ */
+.domain-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:clamp(16px,2vw,24px);
+  margin:clamp(40px,6vh,80px) 0;
 }
-.investors-inner{
-  max-width:1400px;
-  margin:0 auto;
+.domain-card{
+  background:rgba(255,245,230,.05);
+  border:1px solid rgba(244,162,68,.3);
+  padding:clamp(20px,3vw,32px);border-radius:6px;
+  transition:all .3s var(--ease-soft);
 }
+.domain-card:hover{
+  background:rgba(255,245,230,.1);
+  border-color:var(--amber);
+}
+.domain-name{
+  font-weight:600;
+  font-size:clamp(15px,2vw,18px);color:var(--cream);
+  margin-bottom:10px;line-height:1.35;
+}
+.domain-count{
+  font-family:'Unbounded',sans-serif;font-weight:900;
+  font-size:clamp(32px,5vw,52px);color:var(--amber);
+  letter-spacing:-.02em;
+}
+
+.founder-cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:clamp(24px,3vw,40px);
+  margin-top:clamp(40px,6vh,80px);
+}
+.founder-card{
+  background:rgba(255,245,230,.04);
+  border:1px solid rgba(244,162,68,.25);
+  padding:clamp(24px,3vw,36px);border-radius:6px;
+  transition:all .3s var(--ease-soft);
+}
+.founder-card:hover{
+  background:rgba(255,245,230,.08);
+  border-color:var(--amber);
+  transform:translateY(-4px);
+}
+.founder-card-name{
+  font-weight:700;
+  font-size:clamp(17px,2.2vw,21px);color:var(--cream);
+  margin-bottom:6px;
+}
+.founder-card-company{
+  font-weight:600;
+  font-size:clamp(15px,2vw,18px);color:var(--coral);
+  margin-bottom:14px;
+}
+.founder-card-build{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(14px,1.8vw,17px);
+  line-height:1.6;color:var(--cream-dark);
+}
+
+/* ============ KEYNOTE THEMES ============ */
+.theme-cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:clamp(20px,3vw,32px);
+  margin:clamp(40px,6vh,80px) 0;
+}
+.theme-card{
+  background:rgba(244,162,68,.1);
+  border-left:4px solid var(--amber);
+  padding:clamp(20px,3vw,32px);border-radius:4px;
+}
+.theme-card h5{
+  font-weight:700;
+  font-size:clamp(16px,2vw,20px);color:var(--amber);
+  margin-bottom:12px;
+}
+.theme-card p{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(14px,1.8vw,17px);
+  line-height:1.65;color:var(--cream-dark);
+}
+
+/* ============ INVESTORS GRID ============ */
 .investors-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:clamp(32px,4vw,48px);
-  margin-top:8vh;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:clamp(24px,4vw,48px);
+  margin:clamp(60px,10vh,100px) 0;
 }
 .investor-name{
-  font-family:var(--fd);
-  font-weight:700;
-  font-size:clamp(15px,2vw,18px);
-  color:var(--bone-60);
   text-align:center;
-  transition:color .3s ease;
+  font-weight:700;
+  font-size:clamp(15px,2vw,19px);color:var(--cream-dark);
+  padding:clamp(16px,2vw,24px);
+  background:rgba(255,245,230,.04);
+  border:1px solid rgba(244,162,68,.2);
+  border-radius:6px;
+  transition:all .3s var(--ease-soft);
 }
 .investor-name:hover{
   color:var(--amber);
+  border-color:var(--amber);
+  background:rgba(255,245,230,.08);
 }
 
-/* ============ FOUNDERS ============ */
-#founders{
-  padding:16vh 4vw;
-  border-top:1px solid var(--bone-30);
+/* ============ TESTIMONIALS ============ */
+.testimonial-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:clamp(32px,5vw,60px);
+  max-width:1600px;margin:0 auto;
 }
-.founders-inner{
-  max-width:1400px;
-  margin:0 auto;
+.testimonial-card{
+  background:rgba(255,245,230,.06);
+  border:1px solid rgba(244,162,68,.25);
+  border-radius:8px;overflow:hidden;
 }
-.domain-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:clamp(16px,2vw,24px);
-  margin-top:6vh;
-  margin-bottom:12vh;
+.testimonial-photo{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
 }
-.domain-card{
-  background:rgba(232,98,42,.05);
-  border:1px solid rgba(232,98,42,.2);
-  padding:clamp(20px,3vw,32px);
-  border-radius:2px;
-  transition:border-color .3s ease,background .3s ease;
-}
-.domain-card:hover{
-  background:rgba(232,98,42,.08);
-  border-color:rgba(232,98,42,.4);
-}
-.domain-name{
-  font-family:var(--fd);
-  font-weight:700;
-  font-size:clamp(16px,2.2vw,19px);
-  color:var(--bone);
-  margin-bottom:12px;
-}
-.domain-count{
-  font-family:var(--fd);
-  font-weight:850;
-  font-size:clamp(32px,5vw,48px);
-  color:var(--amber);
-  letter-spacing:-.02em;
-}
-.founders-heading{
-  font-size:clamp(24px,4vw,40px);
-  margin-bottom:6vh;
-  color:var(--bone);
-}
-.founder-cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:clamp(24px,3vw,40px);
-}
-.founder-card{
-  background:rgba(242,237,228,.03);
-  border:1px solid var(--bone-30);
+.testimonial-quote{
   padding:clamp(24px,3vw,36px);
-  border-radius:2px;
-  transition:border-color .3s ease,background .3s ease;
-}
-.founder-card:hover{
-  background:rgba(242,237,228,.05);
-  border-color:var(--bone-60);
-}
-.founder-name{
-  font-family:var(--fd);
-  font-weight:700;
-  font-size:clamp(17px,2.4vw,21px);
-  color:var(--bone);
-  margin-bottom:6px;
-}
-.founder-company{
-  font-family:var(--fd);
-  font-weight:700;
-  font-size:clamp(15px,2vw,18px);
-  color:var(--ember);
-  margin-bottom:12px;
-}
-.founder-build{
-  font-size:clamp(14px,1.8vw,16px);
-  line-height:1.55;
-  color:var(--bone-60);
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(16px,2vw,20px);
+  line-height:1.7;color:var(--cream);
 }
 
-/* ============ VISION ============ */
+/* ============ VISION CTA ============ */
 #vision{
-  background:linear-gradient(180deg,var(--black) 0%,var(--coal) 100%);
-  padding:18vh 4vw;
-  border-top:1px solid var(--bone-30);
+  background:linear-gradient(135deg,var(--rust-deep) 0%,var(--ember) 50%,var(--ember-bright) 100%);
+  padding:clamp(120px,18vh,240px) 5vw;
   text-align:center;
 }
-.vision-inner{
-  max-width:68ch;
-  margin:0 auto;
-}
+.vision-inner{max-width:900px;margin:0 auto}
 .vision-heading{
-  font-size:clamp(32px,6vw,72px);
-  margin-bottom:4vh;
-  color:var(--bone);
+  font-size:clamp(36px,7vw,88px);
+  color:var(--cream);margin-bottom:clamp(32px,5vh,60px);
 }
 .vision-copy{
-  font-size:clamp(17px,2.4vw,21px);
-  line-height:1.65;
-  color:var(--bone-60);
-  margin-bottom:6vh;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(18px,2.4vw,24px);
+  line-height:1.75;color:var(--cream);
+  margin-bottom:clamp(48px,8vh,80px);
 }
 .vision-cta{
   display:inline-block;
-  font-family:var(--fd);
   font-weight:700;
-  font-size:clamp(16px,2vw,19px);
-  color:var(--bone);
-  padding:20px 40px;
-  border-radius:2px;
-  background:linear-gradient(120deg,var(--ember),var(--redor));
-  background-size:160% 100%;
-  background-position:0% 0;
-  transition:background-position .5s var(--ease-soft),box-shadow .5s var(--ease-soft);
+  font-size:clamp(16px,2vw,20px);
+  text-transform:uppercase;letter-spacing:.08em;
+  color:var(--rust-deep);
+  background:var(--amber);
+  padding:clamp(18px,2.5vh,24px) clamp(36px,5vw,60px);
+  border-radius:6px;
+  transition:all .4s var(--ease-soft);
+  box-shadow:0 8px 32px rgba(244,162,68,.3);
 }
 .vision-cta:hover{
-  background-position:100% 0;
-  box-shadow:0 0 42px rgba(232,98,42,.35);
+  background:var(--coral);
+  transform:translateY(-3px);
+  box-shadow:0 12px 48px rgba(244,162,68,.5);
 }
 
-/* ============ TEAM ============ */
-#team{
-  padding:18vh 4vw 24vh;
-}
-.team-inner{
-  max-width:1600px;
-  margin:0 auto;
-}
+/* ============ TEAM & FOOTER ============ */
 .team-label{
+  font-size:clamp(24px,4vw,48px);
+  color:var(--amber);margin-bottom:clamp(40px,6vh,80px);
   text-align:center;
-  font-size:clamp(20px,3vw,32px);
-  color:var(--bone-60);
-  margin-bottom:6vh;
 }
 .team-photo{
-  width:100%;
-  border-radius:2px;
-  box-shadow:0 0 80px rgba(232,98,42,.12);
+  width:100%;border-radius:8px;
+  box-shadow:0 24px 80px rgba(107,68,35,.4);
 }
 
-/* ============ FOOTER ============ */
 footer{
-  background:var(--black);
-  border-top:1px solid var(--bone-30);
-  padding:36px 4vw;
+  background:var(--rust-deep);
+  border-top:1px solid rgba(244,162,68,.3);
+  padding:clamp(40px,6vh,60px) 5vw;
 }
 .footer-row{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
-  gap:12px;
-  align-items:center;
-  font-family:var(--fm);
-  text-transform:uppercase;
-  letter-spacing:.14em;
+  display:flex;flex-wrap:wrap;justify-content:space-between;
+  gap:16px;align-items:center;
   font-size:13px;
-  color:var(--bone-60);
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--cream-dark);
 }
-.footer-row .brand-strong{color:var(--bone);font-weight:700}
-.footer-row a{transition:color .3s ease}
-.footer-row a:hover{color:var(--ember)}
-.footer-left{display:flex;gap:.6em;flex-wrap:wrap}
+.footer-brand{color:var(--cream);font-weight:700}
+.footer-row a{transition:color .3s}
+.footer-row a:hover{color:var(--amber)}
+.footer-left{display:flex;gap:1em;flex-wrap:wrap}
 
 /* ============ SCROLL REVEAL ============ */
 .reveal{
-  opacity:0;
-  transform:translateY(26px);
-  transition:opacity 1.05s var(--ease-reveal),transform 1.05s var(--ease-reveal);
+  opacity:0;transform:translateY(32px);
+  transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);
   transition-delay:var(--d,0ms);
 }
-.reveal.in{
-  opacity:1;
-  transform:translateY(0);
-}
+.reveal.in{opacity:1;transform:translateY(0)}
 
 /* ============ RESPONSIVE ============ */
-@media (max-width:900px), (orientation:portrait){
-  .wall-grid{
+@media (max-width:900px){
+  header{height:60px;padding:0 4vw}
+  .nav-brand{font-size:11px;letter-spacing:.12em}
+  .nav-link{font-size:11px;padding:6px 12px}
+  
+  .hero-grid{
     grid-template-columns:repeat(3,1fr);
-    grid-auto-rows:15vh;
+    grid-auto-rows:16.66svh;
   }
-  .outcomes-grid{
-    grid-template-columns:1fr;
-  }
-  .outcome-stat{
-    border-right:0;
-    border-bottom:1px solid var(--bone-30);
-  }
-  .outcome-stat:last-child{border-bottom:0}
-  .photo-grid{
-    grid-template-columns:1fr;
-  }
-  .domain-grid{
-    grid-template-columns:1fr;
-  }
-  .founder-cards{
-    grid-template-columns:1fr;
-  }
+  
+  .founder-grid{grid-template-columns:1fr;gap:40px}
+  .founder-photo-wrap{max-width:400px;margin:0 auto}
+  
+  .outcomes-grid{grid-template-columns:1fr}
+  .outcome-box{border-right:0;border-bottom:1px solid rgba(244,162,68,.25)}
+  .outcome-box:last-child{border-bottom:0}
+  
+  .photo-masonry{grid-template-columns:1fr}
+  .editorial-three-up{grid-template-columns:1fr}
+  .domain-grid{grid-template-columns:1fr}
+  .founder-cards{grid-template-columns:1fr}
+  .theme-cards{grid-template-columns:1fr}
+  .investors-grid{grid-template-columns:repeat(2,1fr)}
+  .testimonial-grid{grid-template-columns:1fr}
 }
 
 /* ============ REDUCED MOTION ============ */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .grain{animation:none;background-position:0 0}
   *{transition:none !important;animation:none !important}
+  .reveal{opacity:1;transform:none}
+  .grain{animation:none}
 }
 </style>
 </head>
@@ -489,358 +543,491 @@ footer{
 
 <div class="grain" aria-hidden="true"></div>
 
-<header class="top">
-  <span class="brand">NOVA RESIDENCY</span>
-  <a class="mono" href="/">HOME</a>
+<header>
+  <div class="nav-brand">NOVA RESIDENCY</div>
+  <a class="nav-link" href="/">HOME</a>
 </header>
 
 <main>
 
-  <!-- ============ HERO IMAGE WALL ============ -->
-  <section id="hero-wall">
-    <div class="wall-grid">
-      <div class="wall-item"><img src="/assets/recap/hero/1.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/2.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/3.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/4.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/5.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/6.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/7.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/8.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/9.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/10.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/11.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/12.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/13.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/14.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/15.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/16.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/17.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/18.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/19.jpg" alt="" loading="lazy"></div>
-      <div class="wall-item"><img src="/assets/recap/hero/20.jpg" alt="" loading="lazy"></div>
-    </div>
+  <!-- ============ HERO - 100% VIEWPORT ============ -->
+  <section id="hero">
+    <div class="hero-grid"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-eyebrow">nova residency presents</div>
-      <h1 class="hero-title display">SUPERNOVA</h1>
-      <div class="hero-edition">edition 1</div>
-      <div class="hero-meta mono">BANGALORE · OCTOBER 10, 2026</div>
+      <h1 class="hero-wordmark display">SUPERNOVA</h1>
+      <div class="hero-edition script">edition 1</div>
+      <div class="hero-meta">BANGALORE · OCTOBER 10, 2026</div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER MESSAGE ============ -->
+  <section id="founder-message">
+    <div class="founder-grid">
+      <div class="founder-text">
+        <h2 class="display">A Room That Never Existed</h2>
+        <div class="founder-message-body">
+          <p>Take the hundred most ambitious female builders in India and put them in one room. Sounds simple, right? But that room has never existed. Not once.</p>
+          <p>Until October 10th, 2026.</p>
+          <p>We created Supernova because women founders face a version of entrepreneurship that the ecosystem barely acknowledges. Getting in front of the right investors can take months, if it happens at all. Finding the co-founder who gets it, the operator who's solved your exact problem, the peer who's three steps ahead? That's often left to chance.</p>
+          <p>Supernova is the front door to Nova Residency, India's first residency for women founders. We're backing AI-native women in their 20s, giving them a month to build together, ship together, and reach Demo Day with something real. But before the residency, there's Supernova: one day, 100 founders, 20+ investors, and the conversations that usually take six months or never happen.</p>
+          <p>This is just the beginning. See you at Edition 2.</p>
+        </div>
+        <div class="founder-attribution">Manasa Kalaimalai, Founder & CEO, Nova Residency</div>
+      </div>
+      <div class="founder-photo-wrap">
+        <img src="/assets/recap/founder-message.jpg" alt="Manasa Kalaimalai" loading="lazy">
+      </div>
     </div>
   </section>
 
   <!-- ============ OUTCOMES ============ -->
   <section id="outcomes">
-    <div class="outcomes-inner">
-      <h2 class="display reveal" style="font-size:clamp(32px,6vw,64px);text-align:center;--d:0ms">THE NUMBERS</h2>
-      <div class="outcomes-grid">
-        <div class="outcome-stat reveal" style="--d:120ms">
-          <span class="stat-number" data-count="700" data-suffix="+">0</span>
-          <span class="stat-label mono">APPLICATIONS</span>
+    <div class="outcomes-grid">
+      <div class="outcome-box reveal" style="--d:0ms">
+        <span class="outcome-number" data-count="700" data-suffix="+">0</span>
+        <span class="outcome-label">APPLICATIONS</span>
+      </div>
+      <div class="outcome-box reveal" style="--d:100ms">
+        <span class="outcome-number" data-count="100">0</span>
+        <span class="outcome-label">FOUNDERS IN THE ROOM</span>
+      </div>
+      <div class="outcome-box reveal" style="--d:200ms">
+        <span class="outcome-number" data-count="20" data-suffix="+">0</span>
+        <span class="outcome-label">INVESTORS</span>
+      </div>
+      <div class="outcome-box reveal" style="--d:300ms">
+        <span class="outcome-number" data-count="200">0</span>
+        <span class="outcome-label">AT THE AFTER PARTY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DAY AGENDA ============ -->
+  <section id="day-agenda">
+    <div class="section-inner">
+      <div class="agenda-heading">
+        <h2 class="section-heading display reveal">THE DAY AT A GLANCE</h2>
+      </div>
+      <div class="agenda-arc">
+        <div class="agenda-item reveal" style="--d:0ms" onclick="document.getElementById('arrivals-mingling').scrollIntoView({behavior:'smooth'})">
+          <span class="agenda-number">01</span>
+          <span class="agenda-label">Arrivals & Mingling</span>
         </div>
-        <div class="outcome-stat reveal" style="--d:180ms">
-          <span class="stat-number" data-count="100">0</span>
-          <span class="stat-label mono">FOUNDERS IN THE ROOM</span>
+        <div class="agenda-item reveal" style="--d:80ms" onclick="document.getElementById('opening').scrollIntoView({behavior:'smooth'})">
+          <span class="agenda-number">02</span>
+          <span class="agenda-label">Opening by Manasa</span>
         </div>
-        <div class="outcome-stat reveal" style="--d:240ms">
-          <span class="stat-number" data-count="19">0</span>
-          <span class="stat-label mono">INVESTMENT FIRMS</span>
+        <div class="agenda-item reveal" style="--d:160ms" onclick="document.getElementById('keynote-panel').scrollIntoView({behavior:'smooth'})">
+          <span class="agenda-number">03</span>
+          <span class="agenda-label">Keynote & Panel</span>
         </div>
-        <div class="outcome-stat reveal" style="--d:300ms">
-          <span class="stat-number" data-count="100">0</span>
-          <span class="stat-label mono">AT THE AFTER PARTY</span>
+        <div class="agenda-item reveal" style="--d:240ms" onclick="document.getElementById('investor-segment').scrollIntoView({behavior:'smooth'})">
+          <span class="agenda-number">04</span>
+          <span class="agenda-label">Investor Conversations</span>
+        </div>
+        <div class="agenda-item reveal" style="--d:320ms" onclick="document.getElementById('afterparty').scrollIntoView({behavior:'smooth'})">
+          <span class="agenda-number">05</span>
+          <span class="agenda-label">After Party</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ ARRIVALS ============ -->
-  <section class="chapter">
-    <div class="chapter-inner">
-      <div class="chapter-header reveal">
-        <h2 class="chapter-heading display">WELCOME TO SUPERNOVA</h2>
-        <p class="chapter-copy">Hey, future unicorn. We're glad you made it. Registration opened at 9 AM, and the energy was already electric.</p>
+  <!-- ============ ARRIVALS & MINGLING ============ -->
+  <section id="arrivals-mingling">
+    <div class="section-inner">
+      <h2 class="section-heading display reveal">ARRIVALS & MINGLING</h2>
+      
+      <div class="reveal" style="--d:120ms">
+        <p class="serif" style="font-size:clamp(17px,2.2vw,22px);line-height:1.75;color:var(--cream);max-width:68ch;margin-bottom:3em">
+          The doors opened at 9 AM. By 9:15, the energy in the room was already electric. Founders from across India, building everything from space tech to carbon capture, finding each other for the first time.
+        </p>
       </div>
-      <div class="photo-grid">
-        <div class="photo-item reveal" style="--d:0ms"><img src="/assets/recap/arrivals/1.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:80ms"><img src="/assets/recap/arrivals/2.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:160ms"><img src="/assets/recap/arrivals/3.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:240ms"><img src="/assets/recap/arrivals/4.jpg" alt="" loading="lazy"></div>
+
+      <div class="photo-masonry reveal" style="--d:240ms">
+        <div class="photo-masonry-item"><img src="/assets/recap/arrivals/1.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/arrivals/2.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/arrivals/3.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/arrivals/4.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/arrivals/5.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/arrivals/6.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/mingling/1.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/mingling/2.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/mingling/3.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/mingling/4.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/mingling/5.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/mingling/6.jpg" alt="" loading="lazy"></div>
+      </div>
+
+      <!-- WHO WAS IN THE ROOM -->
+      <div style="margin-top:clamp(100px,16vh,180px)">
+        <h3 class="section-heading display reveal" style="--d:0ms">WHO WAS IN THE ROOM</h3>
+        
+        <div class="reveal" style="--d:120ms">
+          <h4 style="font-size:clamp(24px,3.5vw,40px);color:var(--amber);margin-bottom:clamp(24px,4vh,48px)">By Domain</h4>
+        </div>
+
+        <div class="domain-grid">
+          <div class="domain-card reveal" style="--d:0ms">
+            <div class="domain-name">AI, Agents & Dev Tools</div>
+            <div class="domain-count">21</div>
+          </div>
+          <div class="domain-card reveal" style="--d:60ms">
+            <div class="domain-name">Marketing, Media, Branding & Creators</div>
+            <div class="domain-count">20</div>
+          </div>
+          <div class="domain-card reveal" style="--d:120ms">
+            <div class="domain-name">Consumer Apps, Social, Travel & Events</div>
+            <div class="domain-count">18</div>
+          </div>
+          <div class="domain-card reveal" style="--d:180ms">
+            <div class="domain-name">Women's Health, Wellness & Fitness</div>
+            <div class="domain-count">13</div>
+          </div>
+          <div class="domain-card reveal" style="--d:240ms">
+            <div class="domain-name">D2C Fashion, Lifestyle & Retail</div>
+            <div class="domain-count">12</div>
+          </div>
+          <div class="domain-card reveal" style="--d:300ms">
+            <div class="domain-name">Climate, Deep Tech & Hardware</div>
+            <div class="domain-count">12</div>
+          </div>
+          <div class="domain-card reveal" style="--d:360ms">
+            <div class="domain-name">Fintech, Finance & Investors</div>
+            <div class="domain-count">9</div>
+          </div>
+          <div class="domain-card reveal" style="--d:420ms">
+            <div class="domain-name">Healthtech & Biotech</div>
+            <div class="domain-count">9</div>
+          </div>
+          <div class="domain-card reveal" style="--d:480ms">
+            <div class="domain-name">Food & Beverage</div>
+            <div class="domain-count">9</div>
+          </div>
+          <div class="domain-card reveal" style="--d:540ms">
+            <div class="domain-name">B2B SaaS & Enterprise</div>
+            <div class="domain-count">7</div>
+          </div>
+        </div>
+
+        <div style="margin-top:clamp(80px,14vh,140px)">
+          <h4 class="reveal" style="font-size:clamp(24px,3.5vw,40px);color:var(--amber);margin-bottom:clamp(32px,5vh,60px);--d:0ms">Building the Future</h4>
+          
+          <div class="founder-cards">
+            <div class="founder-card reveal" style="--d:0ms">
+              <div class="founder-card-name">Vidhi Jain</div>
+              <div class="founder-card-company">Indian Institute of Science</div>
+              <div class="founder-card-build">Veyra – planetary-surface detection (space tech + AI), IISc.</div>
+            </div>
+            <div class="founder-card reveal" style="--d:60ms">
+              <div class="founder-card-name">Kavyashree Manjunath</div>
+              <div class="founder-card-company">Apratima Biosolutions</div>
+              <div class="founder-card-build">Apratima – engineered enzymes to depolymerise PET plastic.</div>
+            </div>
+            <div class="founder-card reveal" style="--d:120ms">
+              <div class="founder-card-name">Suruchi Rao</div>
+              <div class="founder-card-company">Ossus Biorenewables</div>
+              <div class="founder-card-build">Ossus Biorenewables – hydrogen from industrial wastewater.</div>
+            </div>
+            <div class="founder-card reveal" style="--d:180ms">
+              <div class="founder-card-name">Sahiti Amirapu</div>
+              <div class="founder-card-company">EcoSphere</div>
+              <div class="founder-card-build">EcoSphere – AI + algae photobioreactors for carbon capture.</div>
+            </div>
+            <div class="founder-card reveal" style="--d:240ms">
+              <div class="founder-card-name">Aditi S K</div>
+              <div class="founder-card-company">CelesticLabs</div>
+              <div class="founder-card-build">CelesticLabs – defence autonomous systems (OJAS).</div>
+            </div>
+            <div class="founder-card reveal" style="--d:300ms">
+              <div class="founder-card-name">Akanksha Priyadarshini</div>
+              <div class="founder-card-company">Aurassure Private Limited</div>
+              <div class="founder-card-build">Aurassure – climate-security sensing & hazard prediction.</div>
+            </div>
+            <div class="founder-card reveal" style="--d:360ms">
+              <div class="founder-card-name">Sravani Chandramukhi</div>
+              <div class="founder-card-company">General Robotics</div>
+              <div class="founder-card-build">General Robotics – automated sortation robotics for supply chain.</div>
+            </div>
+            <div class="founder-card reveal" style="--d:420ms">
+              <div class="founder-card-name">Diya Pancholi</div>
+              <div class="founder-card-company">Entrepreneurs First</div>
+              <div class="founder-card-build">Early-stage pancreatic cancer diagnostics via biomarkers (EF).</div>
+            </div>
+            <div class="founder-card reveal" style="--d:480ms">
+              <div class="founder-card-name">Dr. Ashwini Rajasekaran</div>
+              <div class="founder-card-company">BioSignatures Tech</div>
+              <div class="founder-card-build">BioSignatures Tech – biomarker platform for maternal health.</div>
+            </div>
+            <div class="founder-card reveal" style="--d:540ms">
+              <div class="founder-card-name">Jashika Sri Krishnaswamy</div>
+              <div class="founder-card-company">Nightswatch</div>
+              <div class="founder-card-build">Nightswatch – AI control plane/governance for LLM calls.</div>
+            </div>
+            <div class="founder-card reveal" style="--d:600ms">
+              <div class="founder-card-name">Kriti Bhadada</div>
+              <div class="founder-card-company">QBee AI</div>
+              <div class="founder-card-build">QBee AI – AI learning app for students (8,000+ users).</div>
+            </div>
+            <div class="founder-card reveal" style="--d:660ms">
+              <div class="founder-card-name">Simona Mohan</div>
+              <div class="founder-card-company">Raho</div>
+              <div class="founder-card-build">Raho – hospitality/stays (~100 rooms, Forbes 30U30).</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ MINGLING ============ -->
-  <section class="chapter">
-    <div class="chapter-inner">
-      <div class="chapter-header reveal">
-        <h2 class="chapter-heading display">FINDING YOUR PEOPLE</h2>
-        <p class="chapter-copy">The conversations started before the official program. Co-founders met for the first time. Ideas collided. Networks grew.</p>
+  <!-- ============ OPENING BY MANASA ============ -->
+  <section id="opening">
+    <div class="section-inner">
+      <h2 class="section-heading display reveal">OPENING BY MANASA</h2>
+      
+      <div class="reveal" style="--d:120ms">
+        <p class="serif" style="font-size:clamp(17px,2.2vw,22px);line-height:1.75;color:var(--cream);max-width:68ch;margin-bottom:3em">
+          The room that never existed was finally here. Manasa Kalaimalai, founder of Nova Residency, kicked off the day.
+        </p>
       </div>
-      <div class="photo-grid">
-        <div class="photo-item reveal" style="--d:0ms"><img src="/assets/recap/mingling/1.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:80ms"><img src="/assets/recap/mingling/2.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:160ms"><img src="/assets/recap/mingling/3.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:240ms"><img src="/assets/recap/mingling/4.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:320ms"><img src="/assets/recap/mingling/5.jpg" alt="" loading="lazy"></div>
+
+      <!-- Featured editorial three-up -->
+      <div class="editorial-three-up reveal" style="--d:240ms">
+        <div class="editorial-feature"><img src="/assets/recap/opening/featured-1.jpg" alt="" loading="lazy"></div>
+        <div class="editorial-feature"><img src="/assets/recap/opening/featured-2.jpg" alt="" loading="lazy"></div>
+        <div class="editorial-feature"><img src="/assets/recap/opening/featured-3.jpg" alt="" loading="lazy"></div>
+      </div>
+
+      <!-- Wide featured 'the room' shot -->
+      <div class="wide-feature reveal" style="--d:360ms">
+        <img src="/assets/recap/opening/featured-4.jpg" alt="The room of 100 women founders" loading="lazy">
+      </div>
+
+      <!-- Additional opening gallery -->
+      <div class="photo-masonry reveal" style="--d:480ms">
+        <div class="photo-masonry-item"><img src="/assets/recap/opening/5.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/opening/6.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/opening/7.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/opening/8.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/opening/9.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/opening/10.jpg" alt="" loading="lazy"></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ OPENING ============ -->
-  <section class="chapter">
-    <div class="chapter-inner">
-      <div class="chapter-header reveal">
-        <h2 class="chapter-heading display">THE OPENING</h2>
-        <p class="chapter-copy">Manasa Kalaimalai, founder of Nova Residency, kicked off the day. The room that never existed was finally here.</p>
+  <!-- ============ KEYNOTE & PANEL ============ -->
+  <section id="keynote-panel">
+    <div class="section-inner">
+      <h2 class="section-heading display reveal">KEYNOTE & PANEL</h2>
+      
+      <div class="reveal" style="--d:120ms">
+        <h3 style="font-size:clamp(24px,4vw,48px);color:var(--amber);margin-bottom:clamp(24px,4vh,40px)">Revathi Raghunath's Keynote</h3>
+        <p class="serif" style="font-size:clamp(17px,2.2vw,22px);line-height:1.75;color:var(--cream);margin-bottom:2em">
+          Revathi Raghunath (CEO & Managing Partner, Outerfield; Co-Founder, Garage Labs Technologies) delivered the keynote. The room was rapt.
+        </p>
       </div>
-      <div class="photo-grid">
-        <div class="photo-item reveal" style="--d:0ms"><img src="/assets/recap/opening/1.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:80ms"><img src="/assets/recap/opening/2.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:160ms"><img src="/assets/recap/opening/3.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:240ms"><img src="/assets/recap/opening/4.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:320ms"><img src="/assets/recap/opening/5.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:400ms"><img src="/assets/recap/opening/6.jpg" alt="" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ PANEL ============ -->
-  <section class="chapter">
-    <div class="chapter-inner">
-      <div class="chapter-header reveal">
-        <h2 class="chapter-heading display">THE PANEL</h2>
-        <p class="chapter-copy">Angela Honegger (CEO & Consul General, Swissnex in India), Shalini Pal (Principal, NuVentures), PS Pranika (Founder, ShyShark), and Srishty Jain (Founder & CEO, CoLLearn) shared what it really takes to build in India.</p>
+      <div class="photo-masonry reveal" style="--d:240ms">
+        <div class="photo-masonry-item"><img src="/assets/recap/keynote/1.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/keynote/2.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/keynote/3.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/keynote/4.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/keynote/5.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/keynote/6.jpg" alt="" loading="lazy"></div>
       </div>
-      <div class="photo-grid">
-        <div class="photo-item reveal" style="--d:0ms"><img src="/assets/recap/panel/1.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:80ms"><img src="/assets/recap/panel/2.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:160ms"><img src="/assets/recap/panel/3.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:240ms"><img src="/assets/recap/panel/4.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:320ms"><img src="/assets/recap/panel/5.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:400ms"><img src="/assets/recap/panel/6.jpg" alt="" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ KEYNOTE ============ -->
-  <section class="chapter">
-    <div class="chapter-inner">
-      <div class="chapter-header reveal">
-        <h2 class="chapter-heading display">THE KEYNOTE</h2>
-        <p class="chapter-copy">Revathi Raghunath (CEO & Managing Partner, Outerfield; Co-Founder, Garage Labs Technologies) delivered the keynote. The room was rapt.</p>
-      </div>
-      <div class="photo-grid">
-        <div class="photo-item reveal" style="--d:0ms"><img src="/assets/recap/keynote/1.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:80ms"><img src="/assets/recap/keynote/2.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:160ms"><img src="/assets/recap/keynote/3.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:240ms"><img src="/assets/recap/keynote/4.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:320ms"><img src="/assets/recap/keynote/5.jpg" alt="" loading="lazy"></div>
+      <div style="margin-top:clamp(100px,16vh,180px)">
+        <div class="reveal" style="--d:0ms">
+          <h3 style="font-size:clamp(24px,4vw,48px);color:var(--amber);margin-bottom:clamp(24px,4vh,40px)">The Panel</h3>
+          <p class="serif" style="font-size:clamp(17px,2.2vw,22px);line-height:1.75;color:var(--cream);margin-bottom:2em">
+            Angela Honegger (CEO & Consul General, Swissnex in India), Shalini Pal (Principal, NuVentures), PS Pranika (Founder, ShyShark), and Srishty Jain (Founder & CEO, CoLLearn) shared what it really takes to build in India as a woman.
+          </p>
+        </div>
+
+        <div class="theme-cards reveal" style="--d:120ms">
+          <div class="theme-card">
+            <h5>Personal Journeys</h5>
+            <p>Their stories of navigating entrepreneurship as women, from first steps to scaling companies, and the pivotal moments that defined their paths.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Facing the Real Problems</h5>
+            <p>The challenges they encountered, from funding gaps to unconscious bias, and how they pushed through when the odds were stacked against them.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Building in an AI-Native World</h5>
+            <p>What it means to build today, when AI is no longer a feature but the foundation, and how founders can stay ahead of the curve.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Landing Your First Customers</h5>
+            <p>Practical insights on finding product-market fit, getting those crucial early customers, and building momentum from zero.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Staying Resilient</h5>
+            <p>How to stay resilient in a male-dominated startup ecosystem, not let it hold you back, and build the confidence to take up space.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Empowering the Next Generation</h5>
+            <p>Their advice for the women builders in the room, and what they wish someone had told them when they were starting out.</p>
+          </div>
+        </div>
+
+        <div class="photo-masonry reveal" style="--d:240ms">
+          <div class="photo-masonry-item"><img src="/assets/recap/panel/1.jpg" alt="" loading="lazy"></div>
+          <div class="photo-masonry-item"><img src="/assets/recap/panel/2.jpg" alt="" loading="lazy"></div>
+          <div class="photo-masonry-item"><img src="/assets/recap/panel/3.jpg" alt="" loading="lazy"></div>
+          <div class="photo-masonry-item"><img src="/assets/recap/panel/4.jpg" alt="" loading="lazy"></div>
+          <div class="photo-masonry-item"><img src="/assets/recap/panel/5.jpg" alt="" loading="lazy"></div>
+          <div class="photo-masonry-item"><img src="/assets/recap/panel/6.jpg" alt="" loading="lazy"></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ INVESTOR SEGMENT ============ -->
-  <section class="chapter">
-    <div class="chapter-inner">
-      <div class="chapter-header reveal">
-        <h2 class="chapter-heading display">THE INVESTOR CONVERSATIONS</h2>
-        <p class="chapter-copy">Founders sat down with investors they otherwise could not reach for months, or ever. Some of these conversations will become term sheets. Others became long-term relationships.</p>
-      </div>
-      <div class="photo-grid">
-        <div class="photo-item reveal" style="--d:0ms"><img src="/assets/recap/investor-segment/1.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:80ms"><img src="/assets/recap/investor-segment/2.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:160ms"><img src="/assets/recap/investor-segment/3.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:240ms"><img src="/assets/recap/investor-segment/4.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:320ms"><img src="/assets/recap/investor-segment/5.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:400ms"><img src="/assets/recap/investor-segment/6.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:480ms"><img src="/assets/recap/investor-segment/7.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:560ms"><img src="/assets/recap/investor-segment/8.jpg" alt="" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ AFTERPARTY ============ -->
-  <section class="chapter">
-    <div class="chapter-inner">
-      <div class="chapter-header reveal">
-        <h2 class="chapter-heading display">THE AFTER PARTY</h2>
-        <p class="chapter-copy">When the sun went down, the conversations got deeper and the connections got stronger. A great wrap to Supernova 2026. See you next year.</p>
-      </div>
-      <div class="photo-grid">
-        <div class="photo-item reveal" style="--d:0ms"><img src="/assets/recap/afterparty/1.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:60ms"><img src="/assets/recap/afterparty/2.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:120ms"><img src="/assets/recap/afterparty/3.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:180ms"><img src="/assets/recap/afterparty/4.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:240ms"><img src="/assets/recap/afterparty/5.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:300ms"><img src="/assets/recap/afterparty/6.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:360ms"><img src="/assets/recap/afterparty/7.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:420ms"><img src="/assets/recap/afterparty/8.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:480ms"><img src="/assets/recap/afterparty/9.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:540ms"><img src="/assets/recap/afterparty/10.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:600ms"><img src="/assets/recap/afterparty/11.jpg" alt="" loading="lazy"></div>
-        <div class="photo-item reveal" style="--d:660ms"><img src="/assets/recap/afterparty/12.jpg" alt="" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ INVESTORS ============ -->
-  <section id="investors">
-    <div class="investors-inner">
-      <h2 class="display reveal" style="font-size:clamp(32px,6vw,64px);text-align:center;margin-bottom:4vh;--d:0ms">INVESTORS IN THE ROOM</h2>
-      <div class="investors-grid">
-        <div class="investor-name reveal" style="--d:0ms">16VC</div>
-        <div class="investor-name reveal" style="--d:40ms">Accel</div>
-        <div class="investor-name reveal" style="--d:80ms">Bajaj Finserv</div>
-        <div class="investor-name reveal" style="--d:120ms">Bessemer Venture Partners</div>
-        <div class="investor-name reveal" style="--d:160ms">Bharat Innovation Fund</div>
-        <div class="investor-name reveal" style="--d:200ms">Blume Ventures</div>
-        <div class="investor-name reveal" style="--d:240ms">Campus Fund</div>
-        <div class="investor-name reveal" style="--d:280ms">Capital A</div>
-        <div class="investor-name reveal" style="--d:320ms">Chiratae Ventures</div>
-        <div class="investor-name reveal" style="--d:360ms">Elevation Capital</div>
-        <div class="investor-name reveal" style="--d:400ms">Entrepreneur First</div>
-        <div class="investor-name reveal" style="--d:440ms">Kae Capital</div>
-        <div class="investor-name reveal" style="--d:480ms">Peak XV</div>
-        <div class="investor-name reveal" style="--d:520ms">Prime Venture Partners</div>
-        <div class="investor-name reveal" style="--d:560ms">SenseAI Ventures</div>
-        <div class="investor-name reveal" style="--d:600ms">South Park Commons</div>
-        <div class="investor-name reveal" style="--d:640ms">Speciale Invest</div>
-        <div class="investor-name reveal" style="--d:680ms">Together Fund</div>
-        <div class="investor-name reveal" style="--d:720ms">Z47</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOUNDERS ============ -->
-  <section id="founders">
-    <div class="founders-inner">
-      <h2 class="display reveal" style="font-size:clamp(32px,6vw,64px);text-align:center;margin-bottom:6vh;--d:0ms">FOUNDERS IN THE ROOM</h2>
+  <section id="investor-segment">
+    <div class="section-inner">
+      <h2 class="section-heading display reveal">INVESTOR CONVERSATIONS</h2>
       
-      <h3 class="display reveal" style="font-size:clamp(24px,4vw,40px);margin-bottom:4vh;--d:120ms">BY DOMAIN</h3>
-      <div class="domain-grid">
-        <div class="domain-card reveal" style="--d:0ms">
-          <div class="domain-name">AI, Agents & Dev Tools</div>
-          <div class="domain-count">21</div>
-        </div>
-        <div class="domain-card reveal" style="--d:60ms">
-          <div class="domain-name">Marketing, Media, Branding & Creators</div>
-          <div class="domain-count">20</div>
-        </div>
-        <div class="domain-card reveal" style="--d:120ms">
-          <div class="domain-name">Consumer Apps, Social, Travel & Events</div>
-          <div class="domain-count">18</div>
-        </div>
-        <div class="domain-card reveal" style="--d:180ms">
-          <div class="domain-name">Women's Health, Wellness & Fitness</div>
-          <div class="domain-count">13</div>
-        </div>
-        <div class="domain-card reveal" style="--d:240ms">
-          <div class="domain-name">D2C Fashion, Lifestyle & Retail</div>
-          <div class="domain-count">12</div>
-        </div>
-        <div class="domain-card reveal" style="--d:300ms">
-          <div class="domain-name">Climate, Deep Tech & Hardware</div>
-          <div class="domain-count">12</div>
-        </div>
-        <div class="domain-card reveal" style="--d:360ms">
-          <div class="domain-name">Fintech, Finance & Investors</div>
-          <div class="domain-count">9</div>
-        </div>
-        <div class="domain-card reveal" style="--d:420ms">
-          <div class="domain-name">Healthtech & Biotech</div>
-          <div class="domain-count">9</div>
-        </div>
-        <div class="domain-card reveal" style="--d:480ms">
-          <div class="domain-name">Food & Beverage</div>
-          <div class="domain-count">9</div>
-        </div>
-        <div class="domain-card reveal" style="--d:540ms">
-          <div class="domain-name">B2B SaaS & Enterprise</div>
-          <div class="domain-count">7</div>
-        </div>
+      <div class="reveal" style="--d:120ms">
+        <p class="serif" style="font-size:clamp(17px,2.2vw,22px);line-height:1.75;color:var(--cream);max-width:68ch;margin-bottom:3em">
+          20+ investors came. Founders sat down with investors they otherwise could not reach for months, or ever. Some of these conversations will become term sheets. Others became long-term relationships. All of them mattered.
+        </p>
       </div>
 
-      <h3 class="founders-heading display reveal" style="--d:0ms">BUILDING THE FUTURE</h3>
-      <div class="founder-cards">
-        <div class="founder-card reveal" style="--d:0ms">
-          <div class="founder-name">Vidhi Jain</div>
-          <div class="founder-company">Indian Institute of Science</div>
-          <div class="founder-build">Veyra – planetary-surface detection (space tech + AI), IISc.</div>
-        </div>
-        <div class="founder-card reveal" style="--d:60ms">
-          <div class="founder-name">Kavyashree Manjunath</div>
-          <div class="founder-company">Apratima Biosolutions</div>
-          <div class="founder-build">Apratima – engineered enzymes to depolymerise PET plastic.</div>
-        </div>
-        <div class="founder-card reveal" style="--d:120ms">
-          <div class="founder-name">Suruchi Rao</div>
-          <div class="founder-company">Ossus Biorenewables</div>
-          <div class="founder-build">Ossus Biorenewables – hydrogen from industrial wastewater.</div>
-        </div>
-        <div class="founder-card reveal" style="--d:180ms">
-          <div class="founder-name">Sahiti Amirapu</div>
-          <div class="founder-company">EcoSphere</div>
-          <div class="founder-build">EcoSphere – AI + algae photobioreactors for carbon capture.</div>
-        </div>
-        <div class="founder-card reveal" style="--d:240ms">
-          <div class="founder-name">Aditi S K</div>
-          <div class="founder-company">CelesticLabs</div>
-          <div class="founder-build">CelesticLabs – defence autonomous systems (OJAS).</div>
-        </div>
-        <div class="founder-card reveal" style="--d:300ms">
-          <div class="founder-name">Akanksha Priyadarshini</div>
-          <div class="founder-company">Aurassure Private Limited</div>
-          <div class="founder-build">Aurassure – climate-security sensing & hazard prediction.</div>
-        </div>
-        <div class="founder-card reveal" style="--d:360ms">
-          <div class="founder-name">Sravani Chandramukhi</div>
-          <div class="founder-company">General Robotics</div>
-          <div class="founder-build">General Robotics – automated sortation robotics for supply chain.</div>
-        </div>
-        <div class="founder-card reveal" style="--d:420ms">
-          <div class="founder-name">Diya Pancholi</div>
-          <div class="founder-company">Entrepreneurs First</div>
-          <div class="founder-build">Early-stage pancreatic cancer diagnostics via biomarkers (EF).</div>
-        </div>
-        <div class="founder-card reveal" style="--d:480ms">
-          <div class="founder-name">Dr. Ashwini Rajasekaran</div>
-          <div class="founder-company">BioSignatures Tech</div>
-          <div class="founder-build">BioSignatures Tech – biomarker platform for maternal health.</div>
-        </div>
-        <div class="founder-card reveal" style="--d:540ms">
-          <div class="founder-name">Jashika Sri Krishnaswamy</div>
-          <div class="founder-company">Nightswatch</div>
-          <div class="founder-build">Nightswatch – AI control plane/governance for LLM calls.</div>
-        </div>
-        <div class="founder-card reveal" style="--d:600ms">
-          <div class="founder-name">Kriti Bhadada</div>
-          <div class="founder-company">QBee AI</div>
-          <div class="founder-build">QBee AI – AI learning app for students (8,000+ users).</div>
-        </div>
-        <div class="founder-card reveal" style="--d:660ms">
-          <div class="founder-name">Simona Mohan</div>
-          <div class="founder-company">Raho</div>
-          <div class="founder-build">Raho – hospitality/stays (~100 rooms, Forbes 30U30).</div>
-        </div>
+      <div class="investors-grid reveal" style="--d:240ms">
+        <div class="investor-name">16VC</div>
+        <div class="investor-name">Accel</div>
+        <div class="investor-name">Bajaj Finserv</div>
+        <div class="investor-name">Bessemer Venture Partners</div>
+        <div class="investor-name">Bharat Innovation Fund</div>
+        <div class="investor-name">Blume Ventures</div>
+        <div class="investor-name">Campus Fund</div>
+        <div class="investor-name">Capital A</div>
+        <div class="investor-name">Chiratae Ventures</div>
+        <div class="investor-name">Elevation Capital</div>
+        <div class="investor-name">Entrepreneur First</div>
+        <div class="investor-name">Kae Capital</div>
+        <div class="investor-name">Peak XV</div>
+        <div class="investor-name">Prime Venture Partners</div>
+        <div class="investor-name">SenseAI Ventures</div>
+        <div class="investor-name">South Park Commons</div>
+        <div class="investor-name">Speciale Invest</div>
+        <div class="investor-name">Together Fund</div>
+        <div class="investor-name">Z47</div>
+      </div>
+
+      <div class="photo-masonry reveal" style="--d:360ms">
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/1.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/2.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/3.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/4.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/5.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/6.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/7.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/8.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/9.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/10.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/11.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/investor-conversations/12.jpg" alt="" loading="lazy"></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ VISION ============ -->
-  <section id="vision">
-    <div class="vision-inner">
-      <h2 class="vision-heading display reveal" style="--d:0ms">SUPERNOVA IS THE FRONT DOOR</h2>
-      <p class="vision-copy reveal" style="--d:120ms">Supernova is the front door to Nova Residency, India's first residency for women founders: a one-month residency backing AI-native women founders in their 20s, building to Demo Day.</p>
-      <a class="vision-cta reveal" style="--d:240ms" href="https://founderboard.io/api/share/program/supernova" target="_blank" rel="noopener">Apply for the Next Cohort →</a>
+  <!-- ============ AFTER PARTY ============ -->
+  <section id="afterparty">
+    <div class="section-inner">
+      <h2 class="section-heading display reveal" style="text-align:center">THE AFTER PARTY</h2>
+      
+      <div style="max-width:1100px;margin:0 auto clamp(60px,10vh,100px);text-align:center">
+        <div class="reveal" style="--d:120ms">
+          <p class="serif" style="font-size:clamp(18px,2.4vw,24px);line-height:1.8;color:var(--cream);margin-bottom:1.8em">
+            200 people stayed for the after party: the 100 founders plus 100 more from the ecosystem. The investors who came stayed, and they genuinely got along with everybody. The conversations continued, deeper now, outside the structure of the day.
+          </p>
+          <p class="serif" style="font-size:clamp(18px,2.4vw,24px);line-height:1.8;color:var(--cream);margin-bottom:1.8em">
+            Friendships formed. Co-founders met. Operators who'd solved the same problem three years ago shared what worked. Follow-up meetings were scheduled. WhatsApp groups spun up. The momentum from the day carried into the night.
+          </p>
+          <p class="serif" style="font-size:clamp(18px,2.4vw,24px);line-height:1.8;color:var(--cream)">
+            Supernova Edition 1 was more than an event. It was proof that the room we needed has always been possible. We just had to build it. See you at Edition 2.
+          </p>
+        </div>
+      </div>
+
+      <div class="photo-masonry reveal" style="--d:240ms">
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/1.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/2.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/3.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/4.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/5.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/6.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/7.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/8.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/9.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/10.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/11.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/12.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/13.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/14.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/15.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/16.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/17.jpg" alt="" loading="lazy"></div>
+        <div class="photo-masonry-item"><img src="/assets/recap/afterparty/18.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS / VOICES ============ -->
+  <section id="testimonials">
+    <div class="section-inner">
+      <h2 class="section-heading display reveal" style="text-align:center">VOICES FROM THE DAY</h2>
+      
+      <!-- HTML Comment: These are sample quotes for Manasa to swap for real attendee quotes -->
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal" style="--d:0ms">
+          <img class="testimonial-photo" src="/assets/recap/testimonial-1.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">Supernova was an event like no other.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:100ms">
+          <img class="testimonial-photo" src="/assets/recap/testimonial-2.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">I made connections here I would never have found anywhere else.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:200ms">
+          <img class="testimonial-photo" src="/assets/recap/testimonial-3.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">Finally, a room where I didn't have to explain why being a woman founder is different.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:300ms">
+          <img class="testimonial-photo" src="/assets/recap/testimonial-4.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">The conversations I had today usually take months to happen, if they happen at all.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:400ms">
+          <img class="testimonial-photo" src="/assets/recap/testimonial-5.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">This was the first time I felt like I was exactly where I needed to be.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:500ms">
+          <img class="testimonial-photo" src="/assets/recap/testimonial-6.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">I met my co-founder today. We start building next week.</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============ TEAM ============ -->
   <section id="team">
-    <div class="team-inner">
-      <h2 class="team-label display reveal" style="--d:0ms">The Team Behind Supernova</h2>
-      <img class="team-photo reveal" style="--d:120ms" src="/assets/recap/team.jpg" alt="The Nova Residency team">
+    <div class="section-inner">
+      <h2 class="team-label display reveal">The Team Behind Supernova</h2>
+      <img class="team-photo reveal" style="--d:120ms" src="/assets/recap/team-backup.jpg" alt="The Nova Residency team" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ============ VISION CTA ============ -->
+  <section id="vision">
+    <div class="vision-inner">
+      <h2 class="vision-heading display reveal" style="--d:0ms">SUPERNOVA IS THE FRONT DOOR</h2>
+      <p class="vision-copy reveal" style="--d:120ms">
+        Supernova is the front door to Nova Residency, India's first residency for women founders: a one-month residency backing AI-native women founders in their 20s, building to Demo Day.
+      </p>
+      <a class="vision-cta reveal" style="--d:240ms" href="https://founderboard.io/api/share/program/supernova" target="_blank" rel="noopener">Apply for the Next Cohort →</a>
     </div>
   </section>
 
@@ -849,7 +1036,7 @@ footer{
 <footer>
   <div class="footer-row">
     <div class="footer-left">
-      <span class="brand-strong">NOVA RESIDENCY</span>
+      <span class="footer-brand">NOVA RESIDENCY</span>
       <span>·</span>
       <a href="https://instagram.com" target="_blank" rel="noopener">INSTAGRAM</a>
       <span>·</span>
@@ -866,112 +1053,152 @@ footer{
   "use strict";
   var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- scroll reveal ---- */
-  var revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    var revealIO = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          revealIO.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-    revealEls.forEach(function(el){ revealIO.observe(el); });
-  } else {
-    revealEls.forEach(function(el){ el.classList.add('in'); });
-  }
-
-  /* ---- stats count-up ---- */
-  var statEls = Array.prototype.slice.call(document.querySelectorAll('.stat-number'));
-  var countJobs = [];
-  var outcomesSection = document.getElementById('outcomes');
+  /* ============ HERO GRID POPULATION & INTERACTION ============ */
+  var heroGrid = document.querySelector('.hero-grid');
+  var heroPhotos = [
+    '/assets/recap/hero/1.jpg','/assets/recap/hero/2.jpg','/assets/recap/hero/3.jpg',
+    '/assets/recap/hero/4.jpg','/assets/recap/hero/5.jpg','/assets/recap/hero/6.jpg',
+    '/assets/recap/hero/7.jpg','/assets/recap/hero/8.jpg','/assets/recap/hero/9.jpg',
+    '/assets/recap/hero/10.jpg','/assets/recap/hero/11.jpg','/assets/recap/hero/12.jpg',
+    '/assets/recap/hero/13.jpg','/assets/recap/hero/14.jpg','/assets/recap/hero/15.jpg',
+    '/assets/recap/hero/16.jpg','/assets/recap/hero/17.jpg','/assets/recap/hero/18.jpg',
+    '/assets/recap/hero/19.jpg','/assets/recap/hero/20.jpg','/assets/recap/hero/21.jpg',
+    '/assets/recap/hero/22.jpg','/assets/recap/hero/23.jpg','/assets/recap/hero/24.jpg'
+  ];
   
-  function startCountUp(){
-    var now0 = performance.now();
-    statEls.forEach(function(el){
-      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-      var suffix = el.getAttribute('data-suffix') || '';
-      if (reduceMotion) { el.textContent = target + suffix; return; }
-      countJobs.push({ el: el, target: target, suffix: suffix, start: now0, dur: 1600 });
-    });
-  }
-  
-  if (outcomesSection && 'IntersectionObserver' in window && !reduceMotion) {
-    var statsIO = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) { startCountUp(); statsIO.unobserve(entry.target); }
-      });
-    }, { threshold: 0.4 });
-    statsIO.observe(outcomesSection);
-  } else {
-    startCountUp();
-  }
+  heroPhotos.forEach(function(src){
+    var tile = document.createElement('div');
+    tile.className = 'hero-tile';
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+    img.loading = 'eager';
+    tile.appendChild(img);
+    heroGrid.appendChild(tile);
+  });
 
-  /* ---- hero wall hover/cycle ---- */
-  var wallItems = document.querySelectorAll('.wall-item');
-  var currentActive = null;
+  /* Auto-cycle for mobile / non-hover devices */
+  var tiles = document.querySelectorAll('.hero-tile');
+  var currentIdx = 0;
   var cycleInterval = null;
   
-  function activateItem(item) {
-    if (currentActive && currentActive !== item) {
-      currentActive.classList.remove('active');
-    }
-    item.classList.add('active');
-    currentActive = item;
+  function activateTile(idx){
+    tiles.forEach(function(t){ t.classList.remove('active'); });
+    if(tiles[idx]) tiles[idx].classList.add('active');
   }
   
-  function startCycle() {
-    if (reduceMotion) return;
-    var idx = 0;
+  function startCycle(){
+    if(reduceMotion) return;
     cycleInterval = setInterval(function(){
-      if (wallItems.length > 0) {
-        activateItem(wallItems[idx]);
-        idx = (idx + 1) % wallItems.length;
-      }
-    }, 2000);
+      activateTile(currentIdx);
+      currentIdx = (currentIdx + 1) % tiles.length;
+    }, 2500);
   }
   
-  function stopCycle() {
-    if (cycleInterval) {
+  function stopCycle(){
+    if(cycleInterval){
       clearInterval(cycleInterval);
       cycleInterval = null;
     }
   }
-  
-  wallItems.forEach(function(item){
-    item.addEventListener('mouseenter', function(){
+
+  /* Touch support */
+  tiles.forEach(function(tile,idx){
+    tile.addEventListener('click',function(){
       stopCycle();
-      activateItem(item);
-    });
-    item.addEventListener('click', function(){
-      stopCycle();
-      activateItem(item);
+      activateTile(idx);
+      currentIdx = idx;
     });
   });
-  
-  var heroWall = document.getElementById('hero-wall');
-  if (heroWall && 'IntersectionObserver' in window) {
+
+  /* Hover support (desktop) */
+  if(matchMedia('(hover: hover)').matches){
+    tiles.forEach(function(tile,idx){
+      tile.addEventListener('mouseenter',function(){
+        stopCycle();
+        activateTile(idx);
+      });
+    });
+    
+    heroGrid.addEventListener('mouseleave',function(){
+      tiles.forEach(function(t){ t.classList.remove('active'); });
+      startCycle();
+    });
+  }
+
+  /* Start cycle on load */
+  if('IntersectionObserver' in window){
     var heroIO = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          startCycle();
-        } else {
-          stopCycle();
-        }
+        if(entry.isIntersecting) startCycle();
+        else stopCycle();
       });
-    }, { threshold: 0.2 });
-    heroIO.observe(heroWall);
-  } else {
+    },{threshold:0.2});
+    heroIO.observe(document.getElementById('hero'));
+  }else{
     startCycle();
   }
 
-  /* ---- shared rAF loop for count-up ---- */
+  /* ============ SCROLL REVEAL ============ */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var revealIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          revealIO.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.18,rootMargin:'0px 0px -8% 0px'});
+    revealEls.forEach(function(el){ revealIO.observe(el); });
+  }else{
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ============ OUTCOMES COUNTER ============ */
+  var outcomesSection = document.getElementById('outcomes');
+  var statNumbers = document.querySelectorAll('.outcome-number');
+  var countJobs = [];
+  var started = false;
+
+  function startCounters(){
+    if(started || reduceMotion){
+      statNumbers.forEach(function(el){
+        var target = parseInt(el.getAttribute('data-count'),10)||0;
+        var suffix = el.getAttribute('data-suffix')||'';
+        el.textContent = target + suffix;
+      });
+      return;
+    }
+    started = true;
+    var now0 = performance.now();
+    statNumbers.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'),10)||0;
+      var suffix = el.getAttribute('data-suffix')||'';
+      countJobs.push({el:el,target:target,suffix:suffix,start:now0,dur:1800});
+    });
+  }
+
+  if(outcomesSection && 'IntersectionObserver' in window){
+    var statsIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          startCounters();
+          statsIO.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.4});
+    statsIO.observe(outcomesSection);
+  }else{
+    startCounters();
+  }
+
+  /* ============ ANIMATION LOOP ============ */
   function tick(now){
-    if (countJobs.length) {
+    if(countJobs.length){
       countJobs = countJobs.filter(function(job){
-        var t = Math.min(1, (now - job.start) / job.dur);
-        var eased = 1 - Math.pow(1 - t, 3);
+        var t = Math.min(1,(now - job.start)/job.dur);
+        var eased = 1 - Math.pow(1 - t,3);
         var val = Math.round(job.target * eased);
         job.el.textContent = val + job.suffix;
         return t < 1;
