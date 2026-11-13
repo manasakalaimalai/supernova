@@ -16,14 +16,46 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;850&family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&family=Pinyon+Script&family=Anton&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;850&family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&family=Anton&display=swap" rel="stylesheet">
 <style>
-/* ============ HORIZON FONT ============ */
+/* ============ SELF-HOSTED FONTS ============ */
 @font-face{
   font-family:'Horizon';
   src:url('/assets/fonts/horizon.otf.woff2') format('woff2'),
       url('/assets/fonts/horizon.ttf') format('truetype');
   font-weight:normal;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Playfair Display';
+  src:url('/assets/fonts/playfair-display-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Playfair Display';
+  src:url('/assets/fonts/playfair-display-latin-400-italic.woff2') format('woff2');
+  font-weight:400;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Playfair Display';
+  src:url('/assets/fonts/playfair-display-latin-700-normal.woff2') format('woff2');
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Pinyon Script';
+  src:url('/assets/fonts/pinyon-script-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
   font-style:normal;
   font-display:swap;
 }
@@ -138,7 +170,8 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw;overflo
 .hero-content{position:relative;z-index:3;text-align:center;max-width:1200px;padding:0 4vw}
 .hero-recap-label{font-size:clamp(14px,2vw,20px);margin-bottom:clamp(16px,3vh,28px);
   color:var(--bone-60);letter-spacing:.16em}
-.hero-wordmark{color:var(--bone);margin-bottom:clamp(18px,3vh,32px);letter-spacing:.06em;white-space:nowrap}
+.hero-wordmark-wrap{text-align:center;margin-bottom:clamp(18px,3vh,32px)}
+.hero-wordmark{display:inline-block;color:var(--bone);letter-spacing:.06em;white-space:nowrap}
 .hero-edition{font-size:clamp(48px,10vw,110px);margin-bottom:clamp(24px,4vh,40px)}
 .hero-location{font-family:'Playfair Display',Georgia,serif;font-size:clamp(36px,6vw,84px);color:var(--bone);margin-bottom:clamp(12px,2vh,18px);
   font-weight:400;letter-spacing:-.01em}
@@ -439,7 +472,9 @@ document.documentElement.classList.add('js');
     <div class="corner-labels br mono"><div>SAT / 10.10.26</div><div>4 PM ONWARDS</div></div>
     <div class="hero-content">
       <div class="hero-recap-label mono">WHAT HAPPENED AT SUPERNOVA</div>
-      <h1 class="hero-wordmark horizon">SUPERNOVA</h1>
+      <div class="hero-wordmark-wrap">
+        <h1 class="hero-wordmark horizon">SUPERNOVA</h1>
+      </div>
       <div class="hero-edition script">edition 1</div>
       <div class="hero-location">Bengaluru</div>
       <div class="hero-date">October 10, 2026</div>
@@ -1321,22 +1356,21 @@ document.documentElement.classList.add('js');
     var wordmark = document.querySelector('.hero-wordmark.horizon');
     if(!wordmark) return;
     
-    var maxWidth = window.innerWidth * 0.92;
+    var maxWidth = window.innerWidth * 0.90;
     var minSize = 20;
     var maxSize = 250;
-    var fontSize = maxSize;
-    
-    wordmark.style.fontSize = fontSize + 'px';
-    var currentWidth = wordmark.scrollWidth;
     
     // Binary search for optimal size
     var low = minSize;
     var high = maxSize;
     
     while(high - low > 0.5){
-      fontSize = (low + high) / 2;
+      var fontSize = (low + high) / 2;
       wordmark.style.fontSize = fontSize + 'px';
-      currentWidth = wordmark.scrollWidth;
+      
+      // Measure the span's actual width
+      var rect = wordmark.getBoundingClientRect();
+      var currentWidth = rect.width;
       
       if(currentWidth <= maxWidth){
         low = fontSize;
@@ -1348,11 +1382,16 @@ document.documentElement.classList.add('js');
     wordmark.style.fontSize = low + 'px';
   }
   
-  // Run fit-text after fonts are ready
-  if(document.fonts && document.fonts.ready){
-    document.fonts.ready.then(fitWordmark);
+  // Run fit-text after Horizon font loads
+  if(document.fonts && document.fonts.load){
+    document.fonts.load('1em Horizon').then(function(){
+      fitWordmark();
+    }).catch(function(){
+      // Fallback if font load fails
+      setTimeout(fitWordmark, 200);
+    });
   }else{
-    setTimeout(fitWordmark, 100);
+    setTimeout(fitWordmark, 200);
   }
   
   // Re-run on resize
