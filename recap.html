@@ -1357,8 +1357,8 @@ document.documentElement.classList.add('js');
     var wordmark = document.querySelector('.hero-wordmark.horizon');
     if(!wordmark) return;
     
-    // Account for letter-spacing pushing the bounds wider
-    var maxWidth = window.innerWidth * 0.88;
+    // Account for letter-spacing and ensure fit within viewport
+    var maxWidth = window.innerWidth * 0.87;
     var minSize = 20;
     var maxSize = 250;
     
