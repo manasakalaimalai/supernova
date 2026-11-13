@@ -1,123 +1,91 @@
-# Supernova Edition 1 Recap Page - Implementation Summary
+# Supernova Edition 1 Recap Page - Implementation Complete ✅
 
-## ✅ Completed
+## Overview
+Created a sophisticated recap page for Supernova Edition 1 at `/recap.html`, matching the homepage's elegant sunset theme with a full-screen photo wall hero.
 
-### Page Created
-- **Route**: `/recap` (accessed via `recap.html`)
-- **PR**: [#1 - Add Supernova Edition 1 Recap Page](https://github.com/manasakalaimalai/supernova/pull/1)
+## Design Elements Implemented
+
+### Hero Section
+- **Full-viewport photo wall**: 24 event photos (100vw × 100vh)
+- **SUPERNOVA wordmark**: Self-hosted Horizon font by George Arnold (SIL OFL 1.1)
+  - Desktop: `min(calc((100vw - 48px) / 7.2), 200px)`
+  - Mobile: `min(calc((100vw - 32px) / 11), 200px)` with `.02em` letter-spacing
+  - Viewport-fitted across all widths (1440px, 1024px, 768px, 390px, 360px)
+- **Typography**:
+  - "Bengaluru": Playfair Display, `clamp(36px, 6vw, 84px)`
+  - "October 10, 2026": Playfair Display, `clamp(24px, 3.5vw, 48px)`
+  - "edition 1": Pinyon Script (large cursive)
+- **Photo wall interactions**:
+  - Resting opacity: 0.5 with subtle grayscale and filters
+  - Hovered tiles: 100% opacity, no overlay, above vignette (z-index: 2)
+  - Mobile: Auto-cycle highlighting tiles every 2.5s
+  - Softer radial gradient vignette for face visibility
+- **Stats grid**: 2×2 compact layout on mobile (fits hero in one screen)
+
+### Color Scheme
+- Black base (#0b0a0c) with orange/amber radial gradient blooms
+- Sunset colours matching homepage `index.html`
+- Bone text (#f2ede4) with transparency variants
+
+### Technical Implementation
+- Self-hosted webfonts via `@font-face` (Horizon .otf, .ttf, .woff2)
+- Layered CSS gradients with z-index stacking
+- Responsive viewport calculations preventing overflow
+- Touch and hover mechanics (auto-cycle on mobile, hover on desktop)
+- CSS Grid 2×2 mobile stats layout
+- Robust fallback reveals (`.no-js` visibility)
+
+## Files Modified
+- `/workspace/recap.html` - Main recap page with hero section
+- `/workspace/assets/fonts/` - Horizon font files (OTF, TTF, WOFF2, license)
+
+## Files Removed (Cleanup)
+- `assets/fonts/horizon-font.zip` - Removed unnecessary archive
+- `temp_ref/` - Removed temporary reference directory
+
+## Commits Summary
+1. **6b27621**: Fix hero issues (SUPERNOVA sizing, photo brightness, typography, mobile stats)
+   - Viewport-fitted wordmark formula
+   - Brightened photo tiles (0.5 opacity, softer filters)
+   - Playfair Display for location/date
+   - 2×2 mobile stats grid
+   - Cleanup: removed temp_ref/ and horizon-font.zip
+
+2. **c3e81ba**: Fix mobile SUPERNOVA sizing and add Playfair Display font
+   - Mobile wordmark formula adjustment
+   - Added Playfair Display to Google Fonts import
+
+3. **cb06c9d**: Further adjust mobile SUPERNOVA sizing to prevent overflow
+   - Final mobile divisor (11) and letter-spacing (.02em)
+   - Verified fit at 390px and 360px widths
+
+## Screenshots
+All screenshots saved to `/opt/cursor/artifacts/`:
+- `recap-hero-desktop-1440x900.png` - Desktop hero (1.2 MB)
+- `recap-hero-hover-desktop-1440x900.png` - Desktop with hover state (1.3 MB)
+- `recap-hero-mobile-390x844.png` - Mobile 390px (374 KB)
+- `recap-hero-mobile-360x740.png` - Mobile 360px (307 KB)
+
+## Verification Checklist ✅
+- ✅ SUPERNOVA wordmark fits completely at all widths (1440, 1024, 768, 390, 360)
+- ✅ Photo wall tiles brighter (resting opacity 0.5, faces visible)
+- ✅ Hovered/active tiles at 100% opacity above overlay
+- ✅ "Bengaluru" and "October 10, 2026" in Playfair Display serif
+- ✅ "edition 1" in Pinyon Script cursive
+- ✅ Mobile stats in 2×2 grid (hero fits one screen)
+- ✅ Auto-cycle active on mobile photo wall
+- ✅ Horizon font rendering correctly
+- ✅ Repository cleanup (temp_ref/ and .zip removed)
+- ✅ All screenshots captured and saved
+
+## Branch & PR
 - **Branch**: `cursor/supernova-edition-1-recap-39b0`
+- **Base**: `main`
+- **Status**: Ready for review (DO NOT MERGE - owner Manasa Kalaimalai reviews)
+- **PR**: Updated with latest commits
 
-### Design & Brand Alignment
-✅ Matches existing site design system:
-- Ember/orange (#E8622A) to red-orange (#C43D18) gradients
-- Amber accent (#F4A244) for highlights
-- Bone (#F2EDE4) on near-black (#0B0A0C) background
-- Grain texture overlay with animation
-- Archivo (sans), Instrument Serif (italic), Space Mono (mono)
-
-✅ Echoes Canva event brand:
-- Deep burnt-orange to amber gradients
-- Wide extended bold uppercase for SUPERNOVA
-- Lowercase serif italic for 'nova residency presents'
-- Script italic for 'edition 1'
-- Small tracked caps for meta lines (BANGALORE · OCTOBER 10, 2026)
-
-### Structure Implemented
-1. **Landing Hero** - Image wall with 20 photos, hover/auto-cycle interaction
-2. **Outcomes Band** - Animated counters: 700+ applications, 100 founders, 19 investors
-3. **Day Chapters** (scroll-driven photo galleries):
-   - a. Arrivals (4 photos) - "Welcome to Supernova"
-   - b. Mingling (5 photos) - "Finding Your People"
-   - c. Opening (6 photos) - "The Opening" by Manasa Kalaimalai
-   - d. Panel (6 photos) - Angela Honegger, Shalini Pal, PS Pranika, Srishty Jain
-   - e. Keynote (5 photos) - Revathi Raghunath (CEO & Managing Partner, Outerfield)
-   - f. Investor Segment (8 photos) - "The Investor Conversations"
-   - g. After Party (12 photos) - "The After Party"
-4. **Investors** - Grid of 19 firms: 16VC, Accel, Bajaj Finserv, Bessemer, Bharat Innovation Fund, Blume, Campus Fund, Capital A, Chiratae, Elevation, Entrepreneur First, Kae, Peak XV, Prime Venture Partners, SenseAI, South Park Commons, Speciale Invest, Together Fund, Z47
-5. **Founders by Domain** - Breakdown from founders_summary.md:
-   - AI, Agents & Dev Tools: 21
-   - Marketing, Media, Branding & Creators: 20
-   - Consumer Apps, Social, Travel & Events: 18
-   - Women's Health, Wellness & Fitness: 13
-   - D2C Fashion, Lifestyle & Retail: 12
-   - Climate, Deep Tech & Hardware: 12
-   - Fintech, Finance & Investors: 9
-   - Healthtech & Biotech: 9
-   - Food & Beverage: 9
-   - B2B SaaS & Enterprise: 7
-6. **Featured Founders** - 12 cards showcasing ambitious builders:
-   - Vidhi Jain (Veyra - space tech + AI)
-   - Kavyashree Manjunath (Apratima - PET plastic depolymerisation)
-   - Suruchi Rao (Ossus - hydrogen from wastewater)
-   - Sahiti Amirapu (EcoSphere - AI + algae carbon capture)
-   - Aditi S K (CelesticLabs - defence autonomous systems)
-   - Akanksha Priyadarshini (Aurassure - climate security)
-   - Sravani Chandramukhi (General Robotics - supply chain)
-   - Diya Pancholi (pancreatic cancer diagnostics)
-   - Dr. Ashwini Rajasekaran (BioSignatures - maternal health)
-   - Jashika Sri Krishnaswamy (Nightswatch - AI governance)
-   - Kriti Bhadada (QBee AI - 8,000+ users)
-   - Simona Mohan (Raho - Forbes 30U30)
-7. **Vision** - Nova Residency CTA (links to existing apply URL)
-8. **Team Photo** - Full team closing shot
-
-### Photo Curation
-**Total: 77 photos from 107 originals**
-
-| Chapter | Photos | Files Used |
-|---------|--------|------------|
-| Hero wall | 20 | Mix from all segments for diversity |
-| Arrivals | 4 | PRS03018, 03021, 03051, 03057 |
-| Mingling | 5 | PRS03071, 03097, 03111, 03134, 03160 |
-| Opening | 6 | PRS03371, 03386, 03415, 03422, 03429, 03435 (Manasa at backdrop) |
-| Panel | 6 | PRS03403, 03404, 03426, 03432, 03448, 03500 |
-| Keynote | 5 | PRS03518, 03534, 03555, 03559, 03566 (Revathi in white) |
-| Investor segment | 8 | PRS03676, 03679, 03694, 03701, 03720, 03739, 03769, 03807 |
-| After party | 12 | PRS03824, 03826, 03854, 03862, 03871, 03883, 04041, 04130, 04235, 04305, 04377, 04460 |
-| Team | 1 | team.jpg |
-
-All photos stored under `public/recap/` with sensible structure.
-
-### Technical Features
-✅ Responsive design (desktop + mobile tested)
-✅ Scroll reveals with IntersectionObserver
-✅ Animated counters for outcomes stats
-✅ Hero image wall with hover brightening + auto-cycle
-✅ Smooth transitions and interactions
-✅ `prefers-reduced-motion` support (disables animations, shows instant state)
-✅ Lazy loading for all images
-✅ Grain texture animation
-✅ SEO meta tags (title, description, Open Graph, Twitter Card)
-
-### Navigation Integration
-Added a subtle "RECAP →" link to the main site header (at 85% opacity, brightens on hover).
-Positioned next to the existing "APPLY →" CTA.
-
-## Copy Notes
-✅ No em-dashes used (per requirements)
-✅ Warm, confident, human tone (not AI-sounding)
-✅ All investor and speaker names spelled exactly as provided
-✅ Stats from founders_summary.md only (no invented numbers)
-
-## TODOs / Follow-ups
-- [ ] **Manasa Kalaimalai to review** before merging
-- [ ] Verify Vercel preview link once deployment completes (check PR comments or Vercel dashboard)
-- [ ] Consider updating apply CTA link in Vision section if Nova Residency has a specific cohort application URL
-- [ ] Optional: Add actual logos for investors (currently text-only as per instructions)
-
-## Preview
-Once Vercel builds the PR preview, the recap will be accessible at:
-- Preview URL: `https://supernova-git-cursor-supernova-edition-1-recap-39b0-[project-slug].vercel.app/recap`
-- Production URL (after merge): `https://www.supernovaa.io/recap`
-
-## Performance
-- All photos already optimized to ~1600px width
-- Lazy loading implemented
-- CSS animations paused when off-screen
-- Single-file HTML (no external dependencies beyond fonts)
-- Grain animation uses CSS only (no JS)
-
----
-
-**Status**: ✅ Complete and ready for review
-**PR**: https://github.com/manasakalaimalai/supernova/pull/1
+## Notes
+- Horizon font is SIL Open Font License 1.1 (license file included)
+- All photos (24 tiles) load from `assets/recap/hero/` directory
+- Homepage visual language maintained (black + sunset blooms, Archivo/Instrument Serif/Space Mono base)
+- Mobile-first responsive design with viewport-based calculations
