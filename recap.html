@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -18,6 +18,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;850&family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&family=Pinyon+Script&family=Anton&display=swap" rel="stylesheet">
 <style>
+/* ============ HORIZON FONT ============ */
+@font-face{
+  font-family:'Horizon';
+  src:url('/assets/fonts/horizon.woff2') format('woff2'),
+      url('/assets/fonts/horizon.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+  font-display:swap;
+}
+
 /* ============ RESET ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -39,6 +49,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   --ease-reveal:cubic-bezier(.16,1,.3,1);
   --ease-soft:cubic-bezier(.25,.8,.28,1);
   --fd:'Archivo',sans-serif;
+  --fh:'Horizon',Arial,sans-serif;
   --fs:'Instrument Serif',Georgia,serif;
   --fm:'Space Mono',monospace;
   --script:'Pinyon Script',cursive;
@@ -50,6 +61,7 @@ body{font-family:var(--fd);overflow-x:hidden}
 /* ============ TYPE PRIMITIVES ============ */
 .mono{font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:13px;color:var(--bone-60)}
 .display{font-family:var(--fd);font-weight:850;text-transform:lowercase;letter-spacing:-.02em;line-height:1.02}
+.horizon{font-family:var(--fh);text-transform:uppercase;letter-spacing:.08em;line-height:.95}
 .script{font-family:var(--script);font-style:italic;font-weight:400;color:var(--amber)}
 .condensed{font-family:var(--condensed);text-transform:uppercase;letter-spacing:.02em;line-height:.95}
 .body-copy{font-family:var(--fd);font-weight:400;font-size:17px;line-height:1.65;color:var(--bone);max-width:62ch}
@@ -64,7 +76,7 @@ body{font-family:var(--fd);overflow-x:hidden}
 
 /* ============ BLOOM ============ */
 .bloom{
-  position:absolute;inset:0;pointer-events:none;filter:blur(2px);
+  position:absolute;inset:0;pointer-events:none;filter:blur(2px);z-index:0;
   --bx:var(--bx0,50%);--by:var(--by0,50%);
   background-image:
     radial-gradient(closest-side at var(--bx) var(--by),
@@ -88,11 +100,16 @@ body{font-family:var(--fd);overflow-x:hidden}
     repeating-linear-gradient(180deg,rgba(244,162,68,.05) 0 2px, transparent 2px 9px);
 }
 
-/* ============ SCROLL REVEAL ============ */
-.reveal{opacity:0;transform:translateY(26px);filter:blur(14px);
+/* ============ SCROLL REVEAL - Robust fallback ============ */
+/* When JS is disabled or hasn't loaded yet, content is visible by default */
+.reveal{opacity:1;transform:none;filter:none}
+/* Only hide when JS has initialized */
+html.js .reveal{
+  opacity:0;transform:translateY(26px);filter:blur(14px);
   transition:opacity 1.05s var(--ease-reveal),transform 1.05s var(--ease-reveal),filter 1.05s var(--ease-reveal);
-  transition-delay:var(--d,0ms)}
-.reveal.in{opacity:1;transform:translateY(0);filter:blur(0)}
+  transition-delay:var(--d,0ms);
+}
+html.js .reveal.in{opacity:1;transform:translateY(0);filter:blur(0)}
 
 /* ============ HEADER ============ */
 header.top{position:fixed;top:0;left:0;right:0;z-index:40;height:64px;
@@ -105,25 +122,36 @@ header.top .nav-link{font-family:var(--fm);text-transform:uppercase;letter-spaci
 header.top .nav-link:hover{opacity:1 !important}
 
 /* ============ SECTION BASE ============ */
-main section{position:relative;background:var(--black);padding:18dvh 4vw}
+main section{position:relative;background:var(--black);padding:18dvh 4vw;overflow:hidden}
 
-/* ============ HERO ============ */
-#hero{min-height:100dvh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;
-  align-items:center;padding:0 4vw;position:relative}
-.hero-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:20vh;gap:0}
+/* ============ HERO - EVENT RECAP VERSION ============ */
+#hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;padding:0;position:relative}
+.hero-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:20vh;gap:0;z-index:0}
 .hero-tile{position:relative;overflow:hidden;cursor:pointer}
 .hero-tile img{width:100%;height:100%;object-fit:cover;
-  transition:opacity .6s var(--ease-soft),transform .6s var(--ease-soft),filter .6s var(--ease-soft);
-  opacity:.28;filter:grayscale(.65) contrast(1.08) brightness(.68)}
-.hero-tile:hover img,.hero-tile.active img{opacity:1;filter:grayscale(0) contrast(1) brightness(1);transform:scale(1.08)}
+  transition:opacity .6s var(--ease-soft),transform .6s var(--ease-soft);
+  opacity:.32;filter:grayscale(.5) contrast(1.05) brightness(.75)}
+.hero-tile:hover img,.hero-tile.active img{opacity:1;filter:grayscale(0) contrast(1) brightness(1);transform:scale(1.06)}
 .hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(circle at 50% 60%,rgba(11,10,12,.3) 0%,rgba(11,10,12,.75) 60%,rgba(11,10,12,.92) 100%)}
-#hero-bloom{position:absolute;inset:0;z-index:2;pointer-events:none;--bx0:50%;--by0:55%}
-.hero-content{position:relative;z-index:3;text-align:center;max-width:1100px}
-.hero-eyebrow{font-size:clamp(11px,1.6vw,15px);margin-bottom:clamp(12px,2vh,18px)}
-.hero-wordmark{font-size:clamp(70px,15vw,200px);color:var(--bone);margin-bottom:clamp(14px,2vh,22px)}
-.hero-edition{font-size:clamp(32px,6vw,68px);margin-bottom:clamp(18px,3vh,28px)}
-.hero-meta{font-size:clamp(11px,1.6vw,15px)}
+  background:radial-gradient(circle at 50% 55%,rgba(11,10,12,.25) 0%,rgba(11,10,12,.7) 50%,rgba(11,10,12,.88) 100%)}
+.hero-content{position:relative;z-index:3;text-align:center;max-width:1200px;padding:0 4vw}
+.hero-recap-label{font-size:clamp(14px,2vw,20px);margin-bottom:clamp(16px,3vh,28px);
+  color:var(--bone-60);letter-spacing:.16em}
+.hero-wordmark{font-size:clamp(80px,18vw,240px);color:var(--bone);margin-bottom:clamp(18px,3vh,32px)}
+.hero-edition{font-size:clamp(48px,10vw,110px);margin-bottom:clamp(24px,4vh,40px)}
+.hero-location{font-size:clamp(24px,4vw,52px);color:var(--bone);margin-bottom:clamp(12px,2vh,18px);
+  font-weight:700;letter-spacing:-.01em}
+.hero-date{font-size:clamp(20px,3.5vw,44px);color:var(--bone-60);margin-bottom:clamp(32px,5vh,60px);
+  font-weight:400}
+.hero-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(24px,4vw,48px);
+  padding:clamp(20px,3vh,32px);background:rgba(11,10,12,.6);backdrop-filter:blur(8px);
+  border:1px solid var(--bone-30);border-radius:4px}
+.hero-stat{display:flex;flex-direction:column;align-items:center;gap:8px}
+.hero-stat-number{font-family:var(--fd);font-weight:850;font-size:clamp(28px,5vw,56px);
+  color:var(--amber);letter-spacing:-.02em}
+.hero-stat-label{font-family:var(--fm);font-size:clamp(9px,1.2vw,12px);color:var(--bone-60);
+  text-transform:uppercase;letter-spacing:.14em}
 
 /* ============ CORNER LABELS ============ */
 .corner-labels{position:absolute;z-index:5;font-size:clamp(9px,1.2vw,11px);color:var(--ember);pointer-events:none}
@@ -134,7 +162,7 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw}
 .corner-labels div{margin:4px 0}
 
 /* ============ FOUNDER MESSAGE ============ */
-#founder-message{padding:clamp(100px,16vh,200px) 4vw;position:relative;overflow:hidden}
+#founder-message{padding:clamp(100px,16vh,200px) 4vw}
 #founder-message .bloom{--bx0:30%;--by0:50%}
 .founder-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(40px,8vw,100px);
   align-items:center;max-width:1600px;margin:0 auto;position:relative;z-index:1}
@@ -158,7 +186,7 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw}
   font-size:clamp(11px,1.4vw,14px);text-transform:uppercase;letter-spacing:.14em;color:var(--bone-60)}
 
 /* ============ THE FLOW (DAY AGENDA) ============ */
-#day-agenda{padding:clamp(120px,18vh,200px) 4vw;position:relative;overflow:hidden}
+#day-agenda{padding:clamp(120px,18vh,200px) 4vw}
 #day-agenda .bloom{--bx0:70%;--by0:30%}
 .agenda-container{max-width:1400px;margin:0 auto;position:relative;z-index:1}
 .agenda-title{font-size:clamp(56px,10vw,120px);margin-bottom:clamp(48px,8vh,80px);text-align:left}
@@ -179,12 +207,14 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw}
   text-shadow:0 2px 16px rgba(244,162,68,.3);letter-spacing:.04em}
 .flow-desc{font-size:clamp(10px,1.3vw,13px);color:var(--bone-60)}
 
-/* ============ ARRIVALS & MINGLING ============ */
-#arrivals-mingling{padding:18dvh 4vw;position:relative;overflow:hidden}
-#arrivals-mingling .bloom{--bx0:20%;--by0:40%}
+/* ============ SECTION INNER ============ */
 .section-inner{max-width:1600px;margin:0 auto;position:relative;z-index:1}
 .section-heading{font-size:clamp(36px,6vw,88px);color:var(--bone);margin-bottom:clamp(24px,4vh,48px)}
 .section-intro{margin-bottom:clamp(40px,6vh,80px)}
+
+/* ============ ARRIVALS & MINGLING ============ */
+#arrivals-mingling{padding:18dvh 4vw}
+#arrivals-mingling .bloom{--bx0:20%;--by0:40%}
 
 /* ============ CAROUSEL ============ */
 .carousel-wrap{position:relative;margin:clamp(40px,6vh,80px) 0;overflow:hidden}
@@ -235,8 +265,12 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw}
 .founder-card-company{font-weight:600;font-size:clamp(15px,2vw,18px);color:var(--ember);margin-bottom:14px}
 .founder-card-build{font-size:clamp(14px,1.8vw,17px);line-height:1.6;color:var(--bone-60)}
 
+/* ============ OPENING ============ */
+#opening{padding:18dvh 4vw}
+#opening .bloom{--bx0:75%;--by0:45%}
+
 /* ============ KEYNOTE & PANEL ============ */
-#keynote-panel{padding:18dvh 4vw;position:relative;overflow:hidden}
+#keynote-panel{padding:18dvh 4vw}
 #keynote-panel .bloom{--bx0:80%;--by0:50%}
 .keynote-title{font-size:clamp(24px,4vw,48px);color:var(--amber);margin-bottom:clamp(24px,4vh,40px)}
 .panel-section{margin-top:clamp(80px,14vh,140px)}
@@ -248,7 +282,7 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw}
 .theme-card p{font-size:clamp(14px,1.8vw,17px);line-height:1.65;color:var(--bone-60)}
 
 /* ============ INVESTOR SEGMENT ============ */
-#investor-segment{padding:18dvh 4vw;position:relative;overflow:hidden}
+#investor-segment{padding:18dvh 4vw}
 #investor-segment .bloom{--bx0:40%;--by0:60%}
 .investors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:clamp(24px,4vw,48px);margin:clamp(60px,10vh,100px) 0}
@@ -258,13 +292,13 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw}
 .investor-name:hover{color:var(--amber);border-color:var(--amber);background:rgba(244,162,68,.06)}
 
 /* ============ AFTER PARTY ============ */
-#afterparty{padding:18dvh 4vw;position:relative;overflow:hidden}
+#afterparty{padding:18dvh 4vw}
 #afterparty .bloom{--bx0:60%;--by0:70%}
 .afterparty-intro{max-width:1100px;margin:0 auto clamp(60px,10vh,100px);text-align:center}
 .afterparty-intro .body-copy{font-size:clamp(17px,2.2vw,22px);line-height:1.8;margin:0 auto 1.8em;max-width:64ch}
 
 /* ============ TESTIMONIALS ============ */
-#testimonials{padding:18dvh 4vw;position:relative;overflow:hidden}
+#testimonials{padding:18dvh 4vw}
 #testimonials .bloom{--bx0:30%;--by0:40%}
 .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
   gap:clamp(32px,5vw,60px);max-width:1600px;margin:0 auto;position:relative;z-index:1}
@@ -276,7 +310,7 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw}
   font-size:clamp(16px,2vw,20px);line-height:1.7;color:var(--bone)}
 
 /* ============ TEAM ============ */
-#team{padding:18dvh 4vw;position:relative;overflow:hidden}
+#team{padding:18dvh 4vw}
 #team .bloom{--bx0:50%;--by0:50%}
 .team-label{font-size:clamp(24px,4vw,48px);color:var(--amber);margin-bottom:clamp(40px,6vh,80px);
   text-align:center;position:relative;z-index:1}
@@ -338,10 +372,7 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
     letter-spacing:.1em;white-space:nowrap}
   
   .hero-grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:16.66vh}
-  .hero-eyebrow{font-size:clamp(10px,2.9vw,13px);letter-spacing:.16em;margin-bottom:20px}
-  .hero-wordmark{font-size:clamp(44px,15.5vw,84px)}
-  .hero-edition{font-size:clamp(24px,7vw,40px)}
-  .hero-meta{font-size:clamp(10px,2.8vw,13px);letter-spacing:.1em}
+  .hero-stats{flex-direction:column;gap:16px}
   
   .founder-grid{grid-template-columns:1fr;gap:40px}
   .founder-photo-wrap{max-width:400px;margin:0 auto}
@@ -374,9 +405,14 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
   html{scroll-behavior:auto}
   .grain{animation:none;background-position:0 0}
   .bloom{animation:none}
-  .reveal{transition:opacity .28s linear !important;transform:none !important;filter:none !important}
+  html.js .reveal{transition:opacity .28s linear !important;transform:none !important;filter:none !important}
 }
 </style>
+<script>
+// Mark that JS has loaded so reveals can work
+document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
+</script>
 </head>
 <body>
 
@@ -393,16 +429,34 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
   <section id="hero">
     <div class="hero-grid"></div>
     <div class="hero-overlay"></div>
-    <div class="bloom" id="hero-bloom"></div>
     <div class="corner-labels tl mono"><div>SUPERNOVA / 10.10.26</div></div>
     <div class="corner-labels tr mono"><div>NOVA RESIDENCY</div></div>
     <div class="corner-labels bl mono"><div>THE HUB</div><div>SAFINA PLAZA</div><div>INFANTRY RD</div></div>
     <div class="corner-labels br mono"><div>SAT / 10.10.26</div><div>4 PM ONWARDS</div></div>
     <div class="hero-content">
-      <div class="hero-eyebrow mono">nova residency presents</div>
-      <h1 class="hero-wordmark display">supernova</h1>
+      <div class="hero-recap-label mono">WHAT HAPPENED AT SUPERNOVA</div>
+      <h1 class="hero-wordmark horizon">SUPERNOVA</h1>
       <div class="hero-edition script">edition 1</div>
-      <div class="hero-meta mono">BANGALORE · OCTOBER 10, 2026</div>
+      <div class="hero-location">Bengaluru</div>
+      <div class="hero-date">October 10, 2026</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="700" data-suffix="+">700+</span>
+          <span class="hero-stat-label">APPLICATIONS</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="100">100</span>
+          <span class="hero-stat-label">FOUNDERS</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="20" data-suffix="+">20+</span>
+          <span class="hero-stat-label">INVESTORS</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="200">200</span>
+          <span class="hero-stat-label">AT AFTER PARTY</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -411,17 +465,17 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
     <div class="bloom"></div>
     <div class="founder-grid">
       <div class="founder-text">
-        <h2 class="display">a room that never existed</h2>
-        <div class="founder-message-body">
+        <h2 class="display reveal">a room that never existed</h2>
+        <div class="founder-message-body reveal" style="--d:120ms">
           <p>Take the hundred most ambitious female builders in India and put them in one room. Sounds simple, right? But that room has never existed. Not once.</p>
           <p>Until October 10th, 2026.</p>
           <p>We created Supernova because women founders face a version of entrepreneurship that the ecosystem barely acknowledges. Getting in front of the right investors can take months, if it happens at all. Finding the co-founder who gets it, the operator who's solved your exact problem, the peer who's three steps ahead? That's often left to chance.</p>
           <p>Supernova is the front door to Nova Residency, India's first residency for women founders. We're backing AI-native women in their 20s, giving them a month to build together, ship together, and reach Demo Day with something real. But before the residency, there's Supernova: one day, 100 founders, 20+ investors, and the conversations that usually take six months or never happen.</p>
           <p>This is just the beginning. See you at Edition 2.</p>
         </div>
-        <div class="founder-attribution">Manasa Kalaimalai, Founder & CEO, Nova Residency</div>
+        <div class="founder-attribution reveal" style="--d:240ms">Manasa Kalaimalai, Founder & CEO, Nova Residency</div>
       </div>
-      <div class="founder-photo-wrap">
+      <div class="founder-photo-wrap reveal" style="--d:360ms">
         <img src="/assets/recap/founder-message.jpg" alt="Manasa Kalaimalai" loading="lazy">
       </div>
     </div>
@@ -431,19 +485,19 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
   <section id="outcomes">
     <div class="outcomes-grid">
       <div class="outcome-box reveal" style="--d:0ms">
-        <span class="outcome-number" data-count="700" data-suffix="+">0</span>
+        <span class="outcome-number" data-count="700" data-suffix="+">700+</span>
         <span class="outcome-label">APPLICATIONS</span>
       </div>
       <div class="outcome-box reveal" style="--d:100ms">
-        <span class="outcome-number" data-count="100">0</span>
+        <span class="outcome-number" data-count="100">100</span>
         <span class="outcome-label">FOUNDERS IN THE ROOM</span>
       </div>
       <div class="outcome-box reveal" style="--d:200ms">
-        <span class="outcome-number" data-count="20" data-suffix="+">0</span>
+        <span class="outcome-number" data-count="20" data-suffix="+">20+</span>
         <span class="outcome-label">INVESTORS</span>
       </div>
       <div class="outcome-box reveal" style="--d:300ms">
-        <span class="outcome-number" data-count="200">0</span>
+        <span class="outcome-number" data-count="200">200</span>
         <span class="outcome-label">AT THE AFTER PARTY</span>
       </div>
     </div>
@@ -677,19 +731,19 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
       </div>
 
       <div class="editorial-three-up reveal" style="--d:240ms" data-lightbox-group="opening-featured">
-        <div class="editorial-feature" data-lightbox="/assets/recap/opening/featured-1.jpg">
-          <img src="/assets/recap/opening/featured-1.jpg" alt="" loading="lazy">
+        <div class="editorial-feature" data-lightbox="/assets/recap/opening/6.jpg">
+          <img src="/assets/recap/opening/6.jpg" alt="" loading="lazy">
         </div>
-        <div class="editorial-feature" data-lightbox="/assets/recap/opening/featured-2.jpg">
-          <img src="/assets/recap/opening/featured-2.jpg" alt="" loading="lazy">
+        <div class="editorial-feature" data-lightbox="/assets/recap/opening/7.jpg">
+          <img src="/assets/recap/opening/7.jpg" alt="" loading="lazy">
         </div>
-        <div class="editorial-feature" data-lightbox="/assets/recap/opening/featured-3.jpg">
-          <img src="/assets/recap/opening/featured-3.jpg" alt="" loading="lazy">
+        <div class="editorial-feature" data-lightbox="/assets/recap/opening/8.jpg">
+          <img src="/assets/recap/opening/8.jpg" alt="" loading="lazy">
         </div>
       </div>
 
-      <div class="wide-feature reveal" style="--d:360ms" data-lightbox="/assets/recap/opening/featured-4.jpg">
-        <img src="/assets/recap/opening/featured-4.jpg" alt="The room of 100 women founders" loading="lazy">
+      <div class="wide-feature reveal" style="--d:360ms" data-lightbox="/assets/recap/opening/9.jpg">
+        <img src="/assets/recap/opening/9.jpg" alt="The room of 100 women founders" loading="lazy">
       </div>
 
       <div class="carousel-wrap reveal" style="--d:480ms" data-carousel="opening">
@@ -892,10 +946,27 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
   "use strict";
   var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Mix photos from different sections for diverse hero wall
+  var heroMix = [
+    // From keynote/speakers
+    '/assets/recap/keynote-panel/1.jpg','/assets/recap/keynote-panel/3.jpg','/assets/recap/keynote-panel/7.jpg',
+    // From day arrivals
+    '/assets/recap/arrivals-mingling/1.jpg','/assets/recap/arrivals-mingling/4.jpg','/assets/recap/arrivals-mingling/8.jpg',
+    // From investors
+    '/assets/recap/investor-conversations/2.jpg','/assets/recap/investor-conversations/10.jpg','/assets/recap/investor-conversations/15.jpg',
+    // From afterparty
+    '/assets/recap/afterparty/5.jpg','/assets/recap/afterparty/12.jpg','/assets/recap/afterparty/20.jpg',
+    // More variety
+    '/assets/recap/keynote-panel/12.jpg','/assets/recap/arrivals-mingling/10.jpg','/assets/recap/investor-conversations/20.jpg',
+    '/assets/recap/afterparty/28.jpg','/assets/recap/keynote-panel/16.jpg','/assets/recap/investor-conversations/24.jpg',
+    '/assets/recap/afterparty/32.jpg','/assets/recap/arrivals-mingling/2.jpg','/assets/recap/keynote-panel/18.jpg',
+    '/assets/recap/investor-conversations/5.jpg','/assets/recap/afterparty/8.jpg','/assets/recap/keynote-panel/20.jpg'
+  ];
+
   // Photo data per section
   var photos = {
     arrivals: Array.from({length:12},(_, i)=>'/assets/recap/arrivals-mingling/'+(i+1)+'.jpg'),
-    opening: ['/assets/recap/opening/featured-5.jpg'].concat(['6','7','8','9','13','14','15','18'].map(function(n){return '/assets/recap/opening/'+n+'.jpg'})),
+    opening: ['13','14','15','18'].map(function(n){return '/assets/recap/opening/'+n+'.jpg'}),
     keynote: Array.from({length:21},(_, i)=>'/assets/recap/keynote-panel/'+(i+1)+'.jpg'),
     investor: Array.from({length:26},(_, i)=>'/assets/recap/investor-conversations/'+(i+1)+'.jpg'),
     afterparty: Array.from({length:36},(_, i)=>'/assets/recap/afterparty/'+(i+1)+'.jpg')
@@ -903,8 +974,7 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
 
   // HERO GRID
   var heroGrid = document.querySelector('.hero-grid');
-  var heroPhotos = Array.from({length:24},(_, i)=>'/assets/recap/hero/'+(i+1)+'.jpg');
-  heroPhotos.forEach(function(src){
+  heroMix.forEach(function(src){
     var tile = document.createElement('div');
     tile.className = 'hero-tile';
     var img = document.createElement('img');
@@ -1042,7 +1112,7 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
     track.addEventListener('mouseup', endDrag);
     track.addEventListener('mouseleave', endDrag);
     
-    track.addEventListener('touchstart', startDrag);
+    track.addEventListener('touchstart', startDrag, {passive:true});
     track.addEventListener('touchmove', drag);
     track.addEventListener('touchend', endDrag);
   }
@@ -1137,7 +1207,7 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
     }
   });
 
-  // SCROLL REVEAL
+  // SCROLL REVEAL - Robust with fallback
   var revealEls = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window && !reduceMotion){
     var revealIO = new IntersectionObserver(function(entries){
@@ -1147,11 +1217,21 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
           revealIO.unobserve(entry.target);
         }
       });
-    },{threshold:0.18,rootMargin:'0px 0px -8% 0px'});
+    },{threshold:0,rootMargin:'0px 0px -10% 0px'});
     revealEls.forEach(function(el){ revealIO.observe(el); });
   }else{
+    // Fallback: reveal all immediately
     revealEls.forEach(function(el){ el.classList.add('in'); });
   }
+
+  // Fallback timeout: if IO hasn't fired after page load, reveal everything
+  setTimeout(function(){
+    revealEls.forEach(function(el){
+      if(!el.classList.contains('in')){
+        el.classList.add('in');
+      }
+    });
+  }, 3000);
 
   // OUTCOMES COUNTER
   var outcomesSection = document.getElementById('outcomes');
