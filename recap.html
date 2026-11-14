@@ -571,12 +571,24 @@ section > *{
 .founder-photo{
   border-radius:8px;
   overflow:hidden;
+  position:relative;
+}
+
+.founder-photo::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(232,98,42,.35) 0%, rgba(244,162,68,.25) 50%, rgba(232,98,42,.3) 100%);
+  mix-blend-mode:multiply;
+  pointer-events:none;
+  z-index:1;
 }
 
 .founder-photo img{
   width:100%;
   height:auto;
   display:block;
+  filter:sepia(.5) saturate(1.4) brightness(.9) contrast(1.15) hue-rotate(-10deg);
 }
 
 .founder-text{
@@ -698,7 +710,12 @@ section > *{
 
 .flow-row:last-child{
   border-bottom:none;
-  background:rgba(232,98,42,.08);
+  background:linear-gradient(90deg, rgba(232,98,42,.15) 0%, rgba(244,162,68,.08) 100%);
+}
+
+.flow-row:last-child .flow-title{
+  color:var(--amber);
+  text-shadow:0 0 24px rgba(244,162,68,.4), 0 0 48px rgba(232,98,42,.2);
 }
 
 .flow-time-col{
@@ -708,18 +725,21 @@ section > *{
 }
 
 .flow-time{
-  font-family:var(--body);
-  font-weight:700;
-  font-size:clamp(16px,2.2vw,22px);
-  color:var(--bone);
+  font-family:var(--mono);
+  font-weight:400;
+  font-size:clamp(14px,1.8vw,18px);
+  color:var(--cream);
+  letter-spacing:.05em;
+  line-height:1.3;
 }
 
 .flow-sub{
   font-family:var(--mono);
-  font-size:clamp(9px,1.2vw,11px);
-  color:var(--bone-60);
+  font-size:clamp(9px,1.1vw,11px);
+  color:rgba(244,162,68,.7);
   text-transform:uppercase;
   letter-spacing:.14em;
+  font-weight:400;
 }
 
 .flow-title-col{
@@ -731,11 +751,12 @@ section > *{
 
 .flow-title{
   font-family:var(--condensed);
-  font-size:clamp(20px,3vw,36px);
+  font-size:clamp(24px,3.5vw,42px);
   color:var(--bone);
-  text-shadow:0 2px 16px rgba(244,162,68,.3);
-  letter-spacing:.04em;
+  text-shadow:0 0 20px rgba(242,237,228,.25), 0 0 40px rgba(244,162,68,.12);
+  letter-spacing:.06em;
   text-transform:uppercase;
+  font-weight:400;
 }
 
 .flow-desc{
@@ -863,20 +884,36 @@ section > *{
   scroll-snap-align:center;
 }
 
+.carousel-item::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(232,98,42,.35) 0%, rgba(244,162,68,.25) 50%, rgba(232,98,42,.3) 100%);
+  mix-blend-mode:multiply;
+  pointer-events:none;
+  z-index:1;
+  transition:opacity .4s ease;
+}
+
 .carousel-item:hover{
   transform:translateY(-4px);
+}
+
+.carousel-item:hover::before{
+  opacity:.4;
 }
 
 .carousel-item img{
   width:100%;
   aspect-ratio:4/3;
   object-fit:cover;
-  filter:saturate(.92) contrast(1.05);
-  transition:filter .4s var(--ease-soft);
+  filter:sepia(.5) saturate(1.4) brightness(.9) contrast(1.15) hue-rotate(-10deg);
+  transition:filter .4s var(--ease-soft), transform .4s ease;
 }
 
 .carousel-item:hover img{
-  filter:saturate(1) contrast(1);
+  filter:sepia(.2) saturate(1.5) brightness(1.1) hue-rotate(-10deg);
+  transform:scale(1.02);
 }
 
 /* ============ WIDE FEATURE ============ */
@@ -887,22 +924,39 @@ section > *{
   cursor:pointer;
   box-shadow:0 16px 64px rgba(11,10,12,.5);
   transition:transform .5s var(--ease-soft);
+  position:relative;
+}
+
+.wide-feature::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(232,98,42,.35) 0%, rgba(244,162,68,.25) 50%, rgba(232,98,42,.3) 100%);
+  mix-blend-mode:multiply;
+  pointer-events:none;
+  z-index:1;
+  transition:opacity .4s ease;
 }
 
 .wide-feature:hover{
   transform:translateY(-6px);
 }
 
+.wide-feature:hover::before{
+  opacity:.4;
+}
+
 .wide-feature img{
   width:100%;
   aspect-ratio:16/9;
   object-fit:cover;
-  filter:saturate(.92) contrast(1.05);
-  transition:filter .5s var(--ease-soft);
+  filter:sepia(.5) saturate(1.4) brightness(.9) contrast(1.15) hue-rotate(-10deg);
+  transition:filter .5s var(--ease-soft), transform .4s ease;
 }
 
 .wide-feature:hover img{
-  filter:saturate(1) contrast(1);
+  filter:sepia(.2) saturate(1.5) brightness(1.1) hue-rotate(-10deg);
+  transform:scale(1.02);
 }
 
 /* ============ EDITORIAL THREE UP ============ */
@@ -922,20 +976,36 @@ section > *{
   transition:transform .5s var(--ease-soft);
 }
 
+.editorial-feature::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(232,98,42,.35) 0%, rgba(244,162,68,.25) 50%, rgba(232,98,42,.3) 100%);
+  mix-blend-mode:multiply;
+  pointer-events:none;
+  z-index:1;
+  transition:opacity .4s ease;
+}
+
 .editorial-feature:hover{
   transform:translateY(-4px);
+}
+
+.editorial-feature:hover::before{
+  opacity:.4;
 }
 
 .editorial-feature img{
   width:100%;
   aspect-ratio:3/4;
   object-fit:cover;
-  filter:saturate(.92) contrast(1.05);
-  transition:filter .5s var(--ease-soft);
+  filter:sepia(.5) saturate(1.4) brightness(.9) contrast(1.15) hue-rotate(-10deg);
+  transition:filter .5s var(--ease-soft), transform .4s ease;
 }
 
 .editorial-feature:hover img{
-  filter:saturate(1) contrast(1);
+  filter:sepia(.2) saturate(1.5) brightness(1.1) hue-rotate(-10deg);
+  transform:scale(1.02);
 }
 
 /* ============ INVESTORS GRID ============ */
@@ -1366,7 +1436,10 @@ html.js .reveal.in{
     <div class="bloom amber" style="width:500px;height:500px;top:50%;left:-200px;"></div>
     
     <div class="section-label">FROM THE FOUNDER</div>
-    <h2 class="section-title">A Room That Never Existed</h2>
+    <div class="title-stack reveal">
+      <div class="title-script">A room that</div>
+      <div class="title-caps">NEVER EXISTED</div>
+    </div>
     
     <div class="founder-container">
       <div class="founder-photo">
@@ -1385,6 +1458,10 @@ html.js .reveal.in{
 
   <!-- OUTCOMES -->
   <section id="outcomes">
+    <div class="title-stack reveal" style="margin-bottom:clamp(40px,6vh,64px)">
+      <div class="title-script">By the</div>
+      <div class="title-caps">NUMBERS</div>
+    </div>
     <div class="outcomes-grid">
       <div class="outcome-box reveal" style="--d:0ms">
         <span class="outcome-number" data-count="700" data-suffix="+">700+</span>
@@ -1409,8 +1486,7 @@ html.js .reveal.in{
   <section id="day-agenda">
     <div class="bloom amber" style="width:600px;height:600px;top:-100px;right:-250px;"></div>
     <div class="agenda-container">
-      <h2 class="agenda-title reveal" style="--d:0ms">the day at a glance</h2>
-      <div class="flow-grid reveal" style="--d:120ms">
+      <div class="flow-grid reveal" style="--d:0ms">
         <div class="flow-left">
           <div class="script">The Flow</div>
         </div>
@@ -1422,7 +1498,6 @@ html.js .reveal.in{
             </div>
             <div class="flow-title-col">
               <div class="flow-title">DOORS OPEN</div>
-              <div class="flow-desc">WALK IN, SETTLE IN</div>
             </div>
           </div>
           <div class="flow-row" data-scroll-to="opening">
@@ -1432,7 +1507,6 @@ html.js .reveal.in{
             </div>
             <div class="flow-title-col">
               <div class="flow-title">OPENING ADDRESS</div>
-              <div class="flow-desc">WELCOME TO SUPERNOVA</div>
             </div>
           </div>
           <div class="flow-row" data-scroll-to="keynote-panel">
@@ -1442,7 +1516,6 @@ html.js .reveal.in{
             </div>
             <div class="flow-title-col">
               <div class="flow-title">KEYNOTE</div>
-              <div class="flow-desc">ONE STAGE, ONE STORY</div>
             </div>
           </div>
           <div class="flow-row" data-scroll-to="keynote-panel">
@@ -1452,7 +1525,6 @@ html.js .reveal.in{
             </div>
             <div class="flow-title-col">
               <div class="flow-title">THE PANEL</div>
-              <div class="flow-desc">WOMEN WHO BUILT + SCALED</div>
             </div>
           </div>
           <div class="flow-row" data-scroll-to="investor-segment">
@@ -1462,7 +1534,6 @@ html.js .reveal.in{
             </div>
             <div class="flow-title-col">
               <div class="flow-title">BREAKOUT ROOMS</div>
-              <div class="flow-desc">DOMAIN-WISE</div>
             </div>
           </div>
           <div class="flow-row" data-scroll-to="investor-segment">
@@ -1472,7 +1543,6 @@ html.js .reveal.in{
             </div>
             <div class="flow-title-col">
               <div class="flow-title">INVESTOR MATCHING</div>
-              <div class="flow-desc">ONE-ON-ONE</div>
             </div>
           </div>
           <div class="flow-row" data-scroll-to="afterparty">
@@ -1482,7 +1552,6 @@ html.js .reveal.in{
             </div>
             <div class="flow-title-col">
               <div class="flow-title">AFTER PARTY</div>
-              <div class="flow-desc">DJ / TILL MIDNIGHT</div>
             </div>
           </div>
         </div>
@@ -1494,7 +1563,10 @@ html.js .reveal.in{
   <section id="arrivals">
     <div class="bloom ember" style="width:600px;height:600px;top:-100px;left:-250px;"></div>
     <div class="section-inner">
-      <h2 class="section-heading reveal">the arrival</h2>
+      <div class="title-stack reveal">
+        <div class="title-script">The ones</div>
+        <div class="title-caps">WHO SHOWED UP</div>
+      </div>
       
       <div class="section-intro reveal" style="--d:120ms">
         <p class="body-copy">The doors opened at 4 PM. By 4:15, the energy in the room was already electric. Founders from across India, building everything from space tech to carbon capture, finding each other for the first time.</p>
@@ -1562,7 +1634,10 @@ html.js .reveal.in{
     <div class="bloom amber" style="width:600px;height:600px;top:-100px;right:-250px;"></div>
     
     <div class="section-inner">
-      <h2 class="section-heading reveal">opening by manasa</h2>
+      <div class="title-stack reveal">
+        <div class="title-script">Opening by</div>
+        <div class="title-caps">MANASA</div>
+      </div>
       
       <div class="section-intro reveal" style="--d:120ms">
         <p class="body-copy">The room that never existed was finally here. Manasa Kalaimalai, founder of Nova Residency, kicked off the day.</p>
@@ -1595,7 +1670,10 @@ html.js .reveal.in{
     <div class="bloom ember" style="width:600px;height:600px;bottom:-200px;left:-250px;"></div>
     
     <div class="section-inner">
-      <h2 class="section-heading reveal">keynote & panel</h2>
+      <div class="title-stack reveal">
+        <div class="title-script">Women</div>
+        <div class="title-caps">WHO WROTE THE PLAYBOOK</div>
+      </div>
       
       <div class="reveal" style="--d:120ms">
         <h3 class="subsection-heading" style="margin-top:0">Revathi Raghunath's Keynote</h3>
@@ -1620,7 +1698,10 @@ html.js .reveal.in{
     <div class="bloom amber" style="width:600px;height:600px;top:50%;right:-250px;"></div>
     
     <div class="section-inner">
-      <h2 class="section-heading reveal">investor conversations</h2>
+      <div class="title-stack reveal">
+        <div class="title-script">After sundown</div>
+        <div class="title-caps">THE MONEY ARRIVED</div>
+      </div>
       
       <div class="section-intro reveal" style="--d:120ms">
         <p class="body-copy">20+ investors came. Founders sat down with investors they otherwise could not reach for months, or ever. Some of these conversations will become term sheets. Others became long-term relationships. All of them mattered.</p>
@@ -1659,7 +1740,10 @@ html.js .reveal.in{
     <div class="bloom ember" style="width:600px;height:600px;bottom:-100px;right:-200px;"></div>
     
     <div class="section-inner">
-      <h2 class="section-heading reveal" style="text-align:center">the after party</h2>
+      <div class="title-stack reveal">
+        <div class="title-script">The ones</div>
+        <div class="title-caps">POURING TONIGHT</div>
+      </div>
       
       <div style="max-width:1100px;margin:0 auto clamp(60px,10vh,100px);text-align:center">
         <div class="reveal" style="--d:120ms">
@@ -1680,7 +1764,10 @@ html.js .reveal.in{
     <div class="bloom amber" style="width:500px;height:500px;top:30%;left:-150px;"></div>
     
     <div class="section-label">VOICES FROM THE NIGHT</div>
-    <h2 class="section-title">What They Said</h2>
+    <div class="title-stack reveal">
+      <div class="title-script">What they</div>
+      <div class="title-caps">TOOK HOME</div>
+    </div>
     
     <div class="testimonials-container">
       <div class="testimonial-bubble">
@@ -1705,7 +1792,10 @@ html.js .reveal.in{
     
     <div class="cta-content">
       <div class="section-label">NEXT COHORT</div>
-      <h2 class="section-title">Supernova is the Front Door</h2>
+      <div class="title-stack reveal">
+        <div class="title-script">Your turn</div>
+        <div class="title-caps">JOIN US</div>
+      </div>
       <p class="body-copy" style="margin-bottom:clamp(40px,6vh,64px)">We're building the community and platform that Indian women founders deserve. Applications open for the next Nova Residency cohort.</p>
       <p class="cta-tagline">Ready to build with us?</p>
       <a href="https://founderboard.io/api/share/program/supernova" class="cta-button">Apply for Nova Residency</a>
