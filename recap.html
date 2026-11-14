@@ -560,10 +560,21 @@ header.top .nav-link:hover{
   text-align:center;
 }
 
+.hero-recap{
+  font-family:var(--heading);
+  font-size:clamp(32px,4vw,52px);
+  font-weight:700;
+  color:var(--bone);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:clamp(16px,2vh,24px);
+  animation:fadeInUp 1s var(--ease-reveal) 0.3s both;
+}
+
 .hero-wordmark-wrap{
   position:relative;
   text-align:center;
-  margin-bottom:clamp(32px,5vh,56px);
+  margin-bottom:clamp(20px,3vh,32px);
 }
 
 .hero-edition{
@@ -572,12 +583,8 @@ header.top .nav-link:hover{
   line-height:1;
   color:var(--amber);
   text-shadow:0 0 24px rgba(244,162,68,.4), 0 0 48px rgba(232,98,42,.2);
-  position:absolute;
-  top:-20px;
-  right:10%;
-  transform:rotate(-5deg);
-  z-index:2;
-  opacity:.95;
+  margin-bottom:clamp(24px,4vh,40px);
+  animation:fadeInUp 1s var(--ease-reveal) 0.5s both;
 }
 
 .hero-wordmark{
@@ -594,20 +601,19 @@ header.top .nav-link:hover{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:clamp(24px,4vw,48px);
+  gap:clamp(12px,2vw,20px);
   font-family:var(--body);
-  font-size:clamp(11px,1.4vw,14px);
-  font-weight:600;
-  letter-spacing:.12em;
+  font-size:clamp(13px,1.6vw,16px);
+  font-weight:400;
+  letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--bone-80);
+  color:var(--bone-60);
+  animation:fadeInUp 1s var(--ease-reveal) 0.7s both;
 }
 
 .hero-meta-divider{
-  width:clamp(60px,10vw,120px);
-  height:1px;
-  background:linear-gradient(90deg, transparent, var(--ember), transparent);
-  opacity:.5;
+  color:var(--amber);
+  opacity:.6;
 }
 
 /* ============ SECTIONS ============ */
@@ -1116,33 +1122,27 @@ section > *{
 }
 
 /* ============ TESTIMONIALS ============ */
-.testimonials-container{
-  max-width:900px;
-  margin:clamp(60px,8vh,120px) auto;
-  display:flex;
-  flex-direction:column;
-  gap:clamp(48px,8vh,96px);
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:clamp(32px,4vw,48px);
+  max-width:1200px;
+  margin:clamp(60px,8vh,120px) auto 0;
 }
 
-.testimonial-bubble{
+.testimonial-box{
   position:relative;
-  padding:clamp(32px,5vw,56px);
-  border-radius:24px;
-  background:rgba(232,98,42,.06);
-  border:1px solid rgba(232,98,42,.2);
-  box-shadow:0 0 40px rgba(232,98,42,.15);
+  padding:clamp(32px,4vw,48px);
+  border-radius:12px;
+  background:rgba(232,98,42,.04);
+  border:1px solid rgba(244,162,68,.15);
+  box-shadow:0 0 32px rgba(232,98,42,.12);
+  transition:transform .3s ease,box-shadow .3s ease;
 }
 
-.testimonial-bubble:nth-child(even){
-  margin-left:auto;
-  margin-right:0;
-  max-width:85%;
-}
-
-.testimonial-bubble:nth-child(odd){
-  margin-left:0;
-  margin-right:auto;
-  max-width:85%;
+.testimonial-box:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 48px rgba(244,162,68,.2);
 }
 
 .testimonial-bubble:nth-child(even)::after{
@@ -1171,17 +1171,21 @@ section > *{
   border-bottom:12px solid transparent;
 }
 
-.testimonial-quote{
-  font-family:var(--accent);
-  font-size:clamp(18px,2.2vw,24px);
-  line-height:1.6;
+.testimonial-text{
+  font-family:var(--body);
+  font-size:clamp(15px,1.8vw,18px);
+  line-height:1.7;
   color:var(--bone);
-  font-style:italic;
+  margin-bottom:clamp(20px,3vh,28px);
 }
 
-.testimonial-quote::before{
-  content:'"';
-  color:var(--ember);
+.testimonial-credit{
+  font-family:var(--mono);
+  font-size:clamp(10px,1.2vw,12px);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--amber);
+  opacity:.8;
   font-size:1.5em;
   line-height:0;
   vertical-align:-.2em;
@@ -1388,12 +1392,6 @@ html.js .reveal.in{
     grid-auto-rows:16.66vh;
   }
   
-  .hero-edition{
-    top:-40px;
-    right:5%;
-    font-size:clamp(32px,8vw,48px);
-  }
-  
   .founder-container{
     grid-template-columns:1fr;
     gap:32px;
@@ -1430,6 +1428,10 @@ html.js .reveal.in{
   }
   
   .editorial-three-up{
+    grid-template-columns:1fr;
+  }
+  
+  .testimonials-grid{
     grid-template-columns:1fr;
   }
   
@@ -1506,14 +1508,15 @@ html.js .reveal.in{
     <div class="corner-labels br">WOMEN WHO BUILD</div>
     
     <div class="hero-content">
+      <div class="hero-recap">RECAP</div>
       <div class="hero-wordmark-wrap">
-        <div class="hero-edition script">edition 1</div>
         <h1 class="hero-wordmark">SUPERNOVA</h1>
       </div>
+      <div class="hero-edition">edition 1</div>
       <div class="hero-meta">
         <span>Bengaluru</span>
-        <div class="hero-meta-divider"></div>
-        <span>October 10, 2026</span>
+        <span class="hero-meta-divider">·</span>
+        <span>10.10.26</span>
       </div>
     </div>
   </section>
@@ -1868,18 +1871,35 @@ html.js .reveal.in{
       <div class="title-caps">TOOK HOME</div>
     </div>
     
-    <div class="testimonials-container">
-      <div class="testimonial-bubble">
-        <p class="testimonial-quote">Supernova was an event like no other.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-box reveal" style="--d:0ms">
+        <p class="testimonial-text">I just moved from New York to Bengaluru three months ago. Trying to plug into the startup scene has been rough. I couldn't find a single other female founder for the longest time. This event connected me to people in one night that I've been looking for since I got here. It would have taken me another six months to meet even half these people otherwise.</p>
+        <div class="testimonial-credit">FOUNDER / MOVED FROM NEW YORK</div>
       </div>
-      <div class="testimonial-bubble">
-        <p class="testimonial-quote">I made connections here I would never have found anywhere else.</p>
+      
+      <div class="testimonial-box reveal" style="--d:120ms">
+        <p class="testimonial-text">I spoke to investors tonight that I've been trying to get in front of for literally months. Some of them I didn't even know how to reach. Being in the same room, actually having real conversations instead of cold emails, that changes everything.</p>
+        <div class="testimonial-credit">FOUNDER / FUNDRAISING</div>
       </div>
-      <div class="testimonial-bubble">
-        <p class="testimonial-quote">Finally, a room where I didn't have to explain why being a woman founder is different.</p>
+      
+      <div class="testimonial-box reveal" style="--d:240ms">
+        <p class="testimonial-text">I've been to a lot of startup events. Most of them feel like everyone's just handing out business cards. This was different. The programming was tight, the founders were all seriously building, and the talent density was genuinely high. I met three people tonight I'd actually want to invest in.</p>
+        <div class="testimonial-credit">INVESTOR / EARLY STAGE</div>
       </div>
-      <div class="testimonial-bubble">
-        <p class="testimonial-quote">The conversations I had today usually take months to happen, if they happen at all.</p>
+      
+      <div class="testimonial-box reveal" style="--d:360ms">
+        <p class="testimonial-text">I think I just met my co-founder. We're meeting for coffee tomorrow. I've been looking for someone technical who gets consumer products and she's built exactly what I need to learn. We talked for like an hour straight.</p>
+        <div class="testimonial-credit">FOUNDER / LOOKING FOR CO-FOUNDER</div>
+      </div>
+      
+      <div class="testimonial-box reveal" style="--d:480ms">
+        <p class="testimonial-text">The panel hit different. Hearing Srishty talk about the early days of CoLLearn, the actual messy parts, not the polished story you see on LinkedIn. That's what I needed to hear. It made me feel less alone in what I'm building.</p>
+        <div class="testimonial-credit">FOUNDER / EDTECH</div>
+      </div>
+      
+      <div class="testimonial-box reveal" style="--d:600ms">
+        <p class="testimonial-text">I stayed until midnight. The whole room was women who actually build things. No one was doing the startup theater thing. Just real conversations about code, users, revenue. I haven't felt that kind of energy in Bengaluru before.</p>
+        <div class="testimonial-credit">FOUNDER / DEVELOPER TOOLS</div>
       </div>
     </div>
   </section>
