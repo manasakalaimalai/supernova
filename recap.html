@@ -26,31 +26,26 @@
   font-display:swap;
 }
 
-/* The Seasons - Headings (DEMO - letters only) */
+/* The Seasons - Serif headings (letters only, use Inter fallback for digits/punct) */
 @font-face{
   font-family:'The Seasons';
-  src:url('assets/fonts/Fontspring-DEMO-theseasons-lt.woff2') format('woff2'),
-      url('assets/fonts/Fontspring-DEMO-theseasons-lt.otf') format('opentype');
+  src:url('assets/fonts/Fontspring-DEMO-theseasons-lt.otf') format('opentype');
   font-weight:300;
   font-style:normal;
   font-display:swap;
-  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
   font-family:'The Seasons';
-  src:url('assets/fonts/Fontspring-DEMO-theseasons-reg.woff2') format('woff2'),
-      url('assets/fonts/Fontspring-DEMO-theseasons-reg.otf') format('opentype');
+  src:url('assets/fonts/Fontspring-DEMO-theseasons-reg.otf') format('opentype');
   font-weight:400;
   font-style:normal;
   font-display:swap;
-  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
   font-family:'The Seasons';
-  src:url('assets/fonts/Fontspring-DEMO-theseasons-bd.woff2') format('woff2'),
-      url('assets/fonts/Fontspring-DEMO-theseasons-bd.otf') format('opentype');
+  src:url('assets/fonts/Fontspring-DEMO-theseasons-bd.otf') format('opentype');
   font-weight:700;
   font-style:normal;
   font-display:swap;
@@ -81,11 +76,10 @@
   font-display:swap;
 }
 
-/* TT Commons Pro - Body text (DEMO - letters only) */
+/* TT Commons Pro - Body text (letters only, use Inter fallback for digits/punct) */
 @font-face{
   font-family:'TT Commons Pro';
-  src:url('assets/fonts/Fontspring-DEMO-tt_commons_pro_regular.woff2') format('woff2'),
-      url('assets/fonts/Fontspring-DEMO-tt_commons_pro_regular.otf') format('opentype');
+  src:url('assets/fonts/Fontspring-DEMO-tt_commons_pro_regular.otf') format('opentype');
   font-weight:400;
   font-style:normal;
   font-display:swap;
@@ -93,55 +87,24 @@
 
 @font-face{
   font-family:'TT Commons Pro';
-  src:url('assets/fonts/Fontspring-DEMO-tt_commons_pro_demibold.woff2') format('woff2'),
-      url('assets/fonts/Fontspring-DEMO-tt_commons_pro_demibold.otf') format('opentype');
+  src:url('assets/fonts/Fontspring-DEMO-tt_commons_pro_demibold.otf') format('opentype');
   font-weight:600;
   font-style:normal;
   font-display:swap;
-  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
   font-family:'TT Commons Pro';
-  src:url('assets/fonts/Fontspring-DEMO-tt_commons_pro_bold.woff2') format('woff2'),
-      url('assets/fonts/Fontspring-DEMO-tt_commons_pro_bold.otf') format('opentype');
+  src:url('assets/fonts/Fontspring-DEMO-tt_commons_pro_bold.otf') format('opentype');
   font-weight:700;
   font-style:normal;
   font-display:swap;
-  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
   font-family:'TT Commons Pro';
-  src:url('assets/fonts/Fontspring-DEMO-tt_commons_pro_black.woff2') format('woff2'),
-      url('assets/fonts/Fontspring-DEMO-tt_commons_pro_black.otf') format('opentype');
+  src:url('assets/fonts/Fontspring-DEMO-tt_commons_pro_black.otf') format('opentype');
   font-weight:900;
-  font-style:normal;
-  font-display:swap;
-  unicode-range:U+0041-005A,U+0061-007A;
-}
-
-/* Inter - Fallback for digits, punctuation, symbols */
-@font-face{
-  font-family:'TT Commons Pro';
-  src:url('assets/fonts/inter-latin-400-normal.woff2') format('woff2');
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
-
-@font-face{
-  font-family:'TT Commons Pro';
-  src:url('assets/fonts/inter-latin-600-normal.woff2') format('woff2');
-  font-weight:600;
-  font-style:normal;
-  font-display:swap;
-}
-
-@font-face{
-  font-family:'TT Commons Pro';
-  src:url('assets/fonts/inter-latin-700-normal.woff2') format('woff2');
-  font-weight:700;
   font-style:normal;
   font-display:swap;
 }
@@ -575,9 +538,9 @@ header.top .nav-link:hover{
 }
 
 .hero-recap{
-  font-family:'Melodrama',Georgia,serif;
+  font-family:'The Seasons','Inter',Georgia,serif;
   font-size:clamp(32px,4vw,52px);
-  font-weight:600;
+  font-weight:700;
   color:var(--bone);
   text-transform:uppercase;
   letter-spacing:.08em;
@@ -1186,7 +1149,7 @@ section > *{
 }
 
 .testimonial-text{
-  font-family:'TT Commons Pro',system-ui,sans-serif;
+  font-family:'TT Commons Pro','Inter',system-ui,sans-serif;
   font-size:clamp(15px,1.8vw,18px);
   font-weight:400;
   line-height:1.7;
