@@ -234,6 +234,31 @@ body::before{
   margin-bottom:clamp(24px,4vh,48px);
 }
 
+.title-stack{
+  text-align:center;
+  margin-bottom:clamp(32px,5vh,56px);
+}
+
+.title-script{
+  font-family:var(--script);
+  font-size:clamp(36px,6vw,72px);
+  color:var(--amber);
+  text-shadow:0 0 20px rgba(244,162,68,.3);
+  line-height:1.1;
+  margin-bottom:clamp(8px,1vh,12px);
+}
+
+.title-caps{
+  font-family:var(--condensed);
+  font-size:clamp(42px,7vw,96px);
+  font-weight:400;
+  color:var(--bone);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  line-height:.95;
+  text-shadow:0 0 24px rgba(242,237,228,.3), 0 0 48px rgba(244,162,68,.15);
+}
+
 .section-subtitle{
   font-family:var(--heading);
   font-size:var(--subtitle);
@@ -317,6 +342,29 @@ header.top .nav-link:hover{
   width:100vw;
   height:100vh;
   overflow:hidden;
+  background:radial-gradient(circle at 60% 40%, rgba(232,98,42,.25) 0%, rgba(244,162,68,.1) 30%, rgba(11,10,12,1) 70%);
+}
+
+@keyframes gentleGlow{
+  0%, 100%{ filter:brightness(1) drop-shadow(0 0 16px rgba(244,162,68,.2)); }
+  50%{ filter:brightness(1.05) drop-shadow(0 0 32px rgba(244,162,68,.4)); }
+}
+
+@keyframes slideInUp{
+  from{ opacity:0; transform:translateY(24px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.hero-wordmark{
+  animation:slideInUp 1s var(--ease-reveal) 0.3s both, gentleGlow 4s ease-in-out 1.5s infinite;
+}
+
+.hero-edition{
+  animation:slideInUp 1s var(--ease-reveal) 0.5s both;
+}
+
+.hero-meta{
+  animation:slideInUp 1s var(--ease-reveal) 0.7s both;
 }
 
 .hero-grid{
@@ -335,12 +383,22 @@ header.top .nav-link:hover{
   will-change:transform;
 }
 
+.hero-tile::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(232,98,42,.35) 0%, rgba(244,162,68,.25) 50%, rgba(232,98,42,.3) 100%);
+  mix-blend-mode:multiply;
+  pointer-events:none;
+  z-index:1;
+}
+
 .hero-tile img{
   width:100%;
   height:100%;
   object-fit:cover;
-  opacity:.4;
-  filter:grayscale(.4) brightness(.8) contrast(1.05);
+  opacity:.6;
+  filter:sepia(.5) saturate(1.4) brightness(.9) contrast(1.15) hue-rotate(-10deg);
   transition:opacity .5s var(--ease-soft),
              filter .5s var(--ease-soft),
              transform .5s var(--ease-soft);
@@ -350,7 +408,7 @@ header.top .nav-link:hover{
 .hero-tile:hover img,
 .hero-tile.active img{
   opacity:1;
-  filter:grayscale(0) brightness(1.1) contrast(1);
+  filter:sepia(.3) saturate(1.6) brightness(1.15) contrast(1.1) hue-rotate(-10deg);
   transform:scale(1.05);
 }
 
@@ -359,8 +417,8 @@ header.top .nav-link:hover{
 }
 
 .hero-grid:hover .hero-tile:not(:hover) img{
-  opacity:.25;
-  filter:grayscale(.6) brightness(.6) contrast(1.05);
+  opacity:.4;
+  filter:sepia(.6) saturate(1.2) brightness(.75) contrast(1.15) hue-rotate(-10deg);
 }
 
 .hero-overlay{
@@ -421,17 +479,24 @@ header.top .nav-link:hover{
   text-align:center;
 }
 
-.hero-edition{
-  font-family:var(--script);
-  font-size:clamp(56px,11vw,120px);
-  line-height:1;
-  color:var(--amber);
-  margin-bottom:clamp(24px,3vh,40px);
+.hero-wordmark-wrap{
+  position:relative;
+  text-align:center;
+  margin-bottom:clamp(32px,5vh,56px);
 }
 
-.hero-wordmark-wrap{
-  text-align:center;
-  margin-bottom:clamp(20px,3vh,36px);
+.hero-edition{
+  font-family:var(--script);
+  font-size:clamp(42px,7vw,78px);
+  line-height:1;
+  color:var(--amber);
+  text-shadow:0 0 24px rgba(244,162,68,.4), 0 0 48px rgba(232,98,42,.2);
+  position:absolute;
+  top:-20px;
+  right:10%;
+  transform:rotate(-5deg);
+  z-index:2;
+  opacity:.95;
 }
 
 .hero-wordmark{
@@ -440,24 +505,28 @@ header.top .nav-link:hover{
   color:var(--bone);
   letter-spacing:.06em;
   white-space:nowrap;
-  line-height:.9;
+  line-height:.85;
+  text-shadow:0 0 32px rgba(242,237,228,.3), 0 0 64px rgba(244,162,68,.15);
 }
 
-.hero-location{
-  font-family:var(--heading);
-  font-size:clamp(40px,7vw,90px);
-  font-weight:300;
-  color:var(--bone);
-  margin-bottom:clamp(12px,2vh,20px);
-  line-height:1.1;
+.hero-meta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(24px,4vw,48px);
+  font-family:var(--body);
+  font-size:clamp(11px,1.4vw,14px);
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--bone-80);
 }
 
-.hero-date{
-  font-family:var(--heading);
-  font-size:clamp(28px,4.5vw,54px);
-  font-weight:300;
-  color:var(--bone-60);
-  line-height:1.2;
+.hero-meta-divider{
+  width:clamp(60px,10vw,120px);
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--ember), transparent);
+  opacity:.5;
 }
 
 /* ============ SECTIONS ============ */
@@ -1280,12 +1349,15 @@ html.js .reveal.in{
     <div class="corner-labels br">WOMEN WHO BUILD</div>
     
     <div class="hero-content">
-      <div class="hero-edition script">edition 1</div>
       <div class="hero-wordmark-wrap">
+        <div class="hero-edition script">edition 1</div>
         <h1 class="hero-wordmark">SUPERNOVA</h1>
       </div>
-      <div class="hero-location">Bengaluru</div>
-      <div class="hero-date">October 10, 2026</div>
+      <div class="hero-meta">
+        <span>Bengaluru</span>
+        <div class="hero-meta-divider"></div>
+        <span>October 10, 2026</span>
+      </div>
     </div>
   </section>
 
