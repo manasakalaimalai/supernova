@@ -54,7 +54,6 @@
   font-weight:700;
   font-style:normal;
   font-display:swap;
-  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 /* Inter - Fallback for The Seasons digits/punctuation */
@@ -90,7 +89,6 @@
   font-weight:400;
   font-style:normal;
   font-display:swap;
-  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -186,7 +184,6 @@
   font-weight:600;
   font-style:normal;
   font-display:swap;
-  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 /* Inter - Fallback for Melodrama digits/punctuation */
@@ -578,9 +575,9 @@ header.top .nav-link:hover{
 }
 
 .hero-recap{
-  font-family:var(--heading);
+  font-family:'Melodrama',Georgia,serif;
   font-size:clamp(32px,4vw,52px);
-  font-weight:700;
+  font-weight:600;
   color:var(--bone);
   text-transform:uppercase;
   letter-spacing:.08em;
@@ -1191,21 +1188,24 @@ section > *{
 .testimonial-text{
   font-family:'TT Commons Pro',system-ui,sans-serif;
   font-size:clamp(15px,1.8vw,18px);
+  font-weight:400;
   line-height:1.7;
   color:var(--bone);
   margin-bottom:clamp(20px,3vh,28px);
   position:relative;
+  padding-top:clamp(32px,4vh,40px);
 }
 
 .testimonial-text::before{
   content:'"';
   position:absolute;
-  left:-20px;
+  left:clamp(16px,2vw,24px);
   top:-8px;
   font-family:var(--script);
-  font-size:clamp(36px,4vw,48px);
+  font-size:clamp(56px,7vw,72px);
   color:var(--amber);
-  opacity:.4;
+  opacity:.3;
+  line-height:1;
 }
 
 .testimonial-credit{
