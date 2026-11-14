@@ -1,319 +1,199 @@
-# Supernova Recap - Final Implementation Report
+# Supernova Edition 1 Recap – Final Report
 
-## STATUS: COMPLETE ✅
+## Executive Summary
 
-All requirements have been implemented, committed, pushed, and screenshotted.
-
----
-
-## 🎨 Instagram-Inspired Aesthetic APPLIED
-
-### Photo Treatment (Warm Orange/Amber)
-- ✅ Orange/amber sepia filter on ALL hero tiles: `sepia(.5) saturate(1.4) hue-rotate(-10deg)`
-- ✅ CSS gradient overlays with mix-blend-mode multiply
-- ✅ Glowing highlights on hover: `sepia(.3) saturate(1.6) brightness(1.15)`
-- ✅ Deep ember shadows on non-hovered tiles
-- ✅ Smooth transitions (500ms) between states
-- ✅ NO cold grey-dark tiles
-
-### Hero Visual Transformation
-**Before:** edition 1 stacked ABOVE SUPERNOVA, huge Bengaluru, cold dark tiles
-**After:**
-- ✅ SUPERNOVA large across middle with text-shadow glow
-- ✅ 'edition 1' in Pinyon Script positioned beside/overlapping SUPERNOVA at angle
-- ✅ Bengaluru and October 10, 2026 on ONE horizontal row with ember divider
-- ✅ Small tracked text, parallel placement
-- ✅ Warm radial gradient background
-- ✅ Photo wall fills FULL 100vh viewport
-
-### Gentle Motion (Classy, Not Gimmicky)
-- ✅ Staggered text reveals: slideInUp animation with delays (0.3s, 0.5s, 0.7s)
-- ✅ Drifting glow: gentleGlow animation on SUPERNOVA (4s infinite)
-- ✅ Text-shadow glows: multiple layers, warm amber/cream colors
-- ✅ Respects prefers-reduced-motion
-
-### Text Styling System
-- ✅ Created `.title-stack` components
-- ✅ `.title-script`: Pinyon Script with glow, e.g., "The ones"
-- ✅ `.title-caps`: Condensed (Anton) glowing caps with text-shadow
-- ✅ Ready for section titles: "The ones / WHO SHOWED UP" pattern
-
-### Corner Labels
-- ✅ Small mono tracked caps maintained
-- ✅ "BENGALURU / 10.10.26", "EDITION 01", etc.
-- ✅ Warm ember color with glow
-
-### Backgrounds
-- ✅ Rich orange radial gradients with ember/amber blooms
-- ✅ Multiple overlapping gradient layers
-- ✅ Warm, glowing atmosphere throughout
+The final 15% polish has been completed on the Supernova Edition 1 recap page. All requirements from Manasa's Instagram graphic aesthetic have been fully implemented.
 
 ---
 
-## 📋 ALL SECTIONS RESTORED (12 Total)
+## ✅ Completed Tasks
 
-Complete order maintained:
+### 1. Stacked Script + Glowing Condensed Caps Titles
 
-1. ✅ **Hero** - Orange-graded photo wall, restructured text, gentle motion
-2. ✅ **Founder's Message** - Exact copy from b3984c0, new photo
-3. ✅ **Outcomes** - 4 stats with animated counters
-4. ✅ **The Flow** - Clickable day agenda, 7 time segments
-5. ✅ **The Arrival** - Renamed from "Arrivals & Mingling", domain breakdown
-6. ✅ **Opening by Manasa** - 4 new photos, editorial layout
-7. ✅ **Keynote & Panel** - Revathi's keynote, panel details
-8. ✅ **Investor Segment** - All 19 firms listed, photos
-9. ✅ **After Party** - EXACT text preserved (Manasa loves it)
-10. ✅ **Testimonials** - 4 exact quotes, NO photos, speech bubbles
-11. ✅ **CTA** - "Supernova is the front door", apply button
-12. ✅ **Team** - Last section, team photo
+**Every** section title across the page has been converted to the stacked pattern from the IG graphics:
+
+- **Founder's Message**: `A room that` / `NEVER EXISTED`
+- **Outcomes**: `By the` / `NUMBERS`
+- **The Arrival**: `The ones` / `WHO SHOWED UP`
+- **Opening**: `Opening by` / `MANASA`
+- **Keynote & Panel**: `Women` / `WHO WROTE THE PLAYBOOK`
+- **Investor Segment**: `After sundown` / `THE MONEY ARRIVED`
+- **After Party**: `The ones` / `POURING TONIGHT`
+- **Testimonials**: `What they` / `TOOK HOME`
+- **CTA**: `Your turn` / `JOIN US`
+
+Each uses:
+- **Script line** (Pinyon Script): Warm amber (#F4A244) with soft glowing text-shadow
+- **Caps line** (Horizon condensed): Bone cream with double glow (cream + amber halos)
+- Consistent size scale: `clamp(36px, 6vw, 72px)` script / `clamp(42px, 7vw, 96px)` caps
+
+### 2. The Flow Agenda – Exact IG Format
+
+Rebuilt to match the Instagram graphic layout:
+- **Left column**: Script `'The Flow'` in large amber Pinyon Script
+- **Right column**: Interactive rows with:
+  - Left: Mono time (14-18px) + tiny sublabel (9-11px) in amber
+  - Right: Glowing condensed caps (24-42px) with double text-shadow
+  - Thin horizontal dividers between rows
+  - Last item (active/current) highlighted with brighter orange gradient background and enhanced amber glow
+- Removed "the day at a glance" heading
+- Removed all descriptions (e.g., "WALK IN, SETTLE IN")
+- No addresses shown
+
+### 3. Warm Orange Colour-Grade Overlay on ALL Photos
+
+Applied to **every** photo container across the entire page:
+- **Sepia-orange duotone filter**: `sepia(.5) saturate(1.4) brightness(.9) contrast(1.15) hue-rotate(-10deg)`
+- **Gradient overlay** via `::before` pseudo-element:
+  - `linear-gradient(135deg, rgba(232,98,42,.35) 0%, rgba(244,162,68,.25) 50%, rgba(232,98,42,.3) 100%)`
+  - `mix-blend-mode: multiply`
+- **On hover/lightbox**: Overlays fade to 40-50% opacity, filters brighten to `sepia(.2) brightness(1.1)`, subtle scale `1.02`
+- **Grain texture**: Already present via body `::before` pseudo-element with SVG noise pattern
+
+Applied to:
+- `.carousel-item` (all photo carousels)
+- `.editorial-feature` (3-up portrait galleries)
+- `.wide-feature` (16:9 wide shots)
+- `.founder-photo` (founder message photo)
+
+### 4. Investor Segment Copy
+
+Updated to explicitly state **"20+ investors came"** in the intro paragraph while maintaining the full list of 19 firms (16VC, Accel, Better Capital, Blume, Chiratae, Elevation, Good Capital, Nexus, Orios, Peak XV, Prime VP, Sauce VC, Sheesha, Stellaris, Stride, Unbound, Vertex, WEH, Ztart).
 
 ---
 
-## 🎭 Testimonials (CRITICAL REQUIREMENT MET)
+## 📸 Screenshot Artifacts
 
-✅ **Only 4 exact quotes from previous version (b3984c0):**
-1. "Supernova was an event like no other."
-2. "I made connections here I would never have found anywhere else."
-3. "Finally, a room where I didn't have to explain why being a woman founder is different."
-4. "The conversations I had today usually take months to happen, if they happen at all."
+All screenshots saved to `/opt/cursor/artifacts/` and referenced below:
 
-✅ **NO photos**
-✅ **NO names**
-✅ **Real speech bubbles** - Rounded cards with gradient backgrounds
-✅ **Alternating left/right** - Even cards right, odd cards left
-✅ **Orange glow** - Border with ember color, gradient backgrounds
-✅ **Centered as a group** - Max-width container, proper margins
+### Hero Section
+- **Desktop (1440×900)**: ![Hero Desktop](/opt/cursor/artifacts/hero-desktop-1440.png)
+- **Mobile (390×844)**: ![Hero Mobile](/opt/cursor/artifacts/hero-mobile-390.png)
 
----
+### The Flow (Agenda)
+- ![The Flow Section](/opt/cursor/artifacts/flow-section-1440.png)
 
-## 🖼️ Galleries (All Functional)
+### The Arrival
+- ![Arrival Section](/opt/cursor/artifacts/arrival-section-1440.png)
 
-Every photo section has:
-- ✅ Clear, visible controls (arrow buttons)
-- ✅ Swipe/drag support (overflow-x: auto, scroll-snap)
-- ✅ Progress indicators (image count "1 / 4")
-- ✅ Keyboard navigation in lightbox (Arrow keys, Escape)
-- ✅ Tap-to-enlarge lightbox
-
-Gallery styles implemented:
-- Horizontal scroll carousels (Arrival, Opening, Keynote, Investor, After Party)
-- Editorial three-up layouts
-- Wide feature images
-- Masonry grids (ready for use)
-
----
-
-## 🎯 Other Requirements
-
-### Navigation Fix
-- ✅ Header has backdrop-filter on scroll
-- ✅ Mix-blend-mode difference on hero
-- ✅ Solid background after hero to prevent text collision
+### Investor Segment
+- ![Investor Segment](/opt/cursor/artifacts/investor-segment-1440.png)
 
 ### After Party
-- ✅ Text preserved EXACTLY from b3984c0
-- ✅ All 3 paragraphs word-for-word
-- ✅ Design kept as-is
-- ✅ Photo carousel added
+- ![After Party Section](/opt/cursor/artifacts/after-party-1440.png)
 
-### Copy Preservation
-- ✅ Founder message: exact from b3984c0
-- ✅ After party: exact from b3984c0
-- ✅ All section intros: preserved
-- ✅ All investor firm names: complete list
+### Testimonials
+- ![Testimonials Section](/opt/cursor/artifacts/testimonials-1440.png)
 
----
+### CTA Section
+- ![CTA Section](/opt/cursor/artifacts/cta-section-1440.png)
 
-## 📸 SCREENSHOTS COMPLETE (15 Total)
-
-All saved to `/opt/cursor/artifacts/`:
-
-### Hero
-- `final-hero-desktop-1440.png` (1.4 MB) - Warm orange aesthetic, new layout
-- `final-hero-mobile-390.png` (412 KB) - Mobile responsive
-
-### Sections
-- `final-founder.png` (1.2 MB) - Founder message with new photo
-- `final-outcomes.png` (148 KB) - Stats counters
-- `final-flow.png` (401 KB) - Day agenda
-- `final-arrival.png` (1.1 MB) - The Arrival section
-- `final-opening.png` (2.1 MB) - Opening photos
-- `final-keynote.png` (844 KB) - Keynote & panel
-- `final-investor.png` (852 KB) - Investor segment
-- `final-afterparty.png` (817 KB) - After party section
-- `final-testimonials.png` (339 KB) - Speech bubble quotes
-- `final-cta.png` (383 KB) - CTA section
-- `final-team.png` (1.6 MB) - Team section
-
-### Full Pages
-- `final-full-page-1440.png` (1.7 MB) - Complete desktop view
-- `final-full-page-390.png` (671 KB) - Complete mobile view
+### Full Page Screenshots
+- **Desktop (1440px full-page)**: ![Full Page Desktop](/opt/cursor/artifacts/full-page-desktop-1440.png)
+- **Mobile (390px full-page)**: ![Full Page Mobile](/opt/cursor/artifacts/full-page-mobile-390.png)
 
 ---
 
-## 🔤 Font Glyph Coverage
+## 🎨 Design System Summary
 
-### Tested Fonts
-All fonts load successfully. Demo fonts have limited character sets:
+### Typography Stack
+- **Display Wordmark**: Horizon (self-hosted `.woff2`)
+- **Script Accent**: Pinyon Script (self-hosted `.woff2`)
+- **Headings**: The Seasons Light/Regular/Bold (self-hosted `.woff2`)
+- **Body**: TT Commons Pro Regular/Demibold/Bold/Black (self-hosted `.woff2`)
+- **Condensed Caps**: Horizon (same as wordmark)
+- **Mono Labels**: TT Commons Pro (same as body, monospaced variant)
+- **Alternative Display**: Melodrama Light/Regular/Medium/Semibold (self-hosted `.woff2`)
 
-**Horizon** (SUPERNOVA):
-- ✅ All caps A-Z
-- ✅ Digits 0-9
-- ⚠️ Limited punctuation (some symbols may fallback)
-
-**The Seasons** (Headings):
-- ✅ Full alphabet, upper & lowercase
-- ✅ Digits 0-9
-- ✅ Common punctuation: . , ; : ! ?
-- ⚠️ Curly quotes may fallback to straight quotes
-
-**TT Commons Pro** (Body):
-- ✅ Full character set
-- ✅ All punctuation
-- ✅ Symbols: @ # $ % & ( )
-
-**Melodrama** (Accent):
-- ✅ Full alphabet
-- ✅ Digits, common punctuation
-- ⚠️ Some special characters may fallback
-
-**Pinyon Script** (edition 1):
-- ✅ Full alphabet, lowercase primarily
-- ✅ Digits 0-9
-- ✅ Basic punctuation
-
-**Fallbacks:** Where glyphs are missing, fonts gracefully fallback to Georgia (serif) or system fonts (sans-serif).
-
----
-
-## 💻 Technical Implementation
-
-### CSS Changes (Key)
+### Colour Palette
 ```css
-/* Orange photo treatment */
-.hero-tile::before { 
-  background: linear-gradient(135deg, rgba(232,98,42,.35)...);
-  mix-blend-mode: multiply;
-}
-
-.hero-tile img {
-  filter: sepia(.5) saturate(1.4) brightness(.9) hue-rotate(-10deg);
-}
-
-/* Hero text with glow */
-.hero-wordmark {
-  text-shadow: 0 0 32px rgba(242,237,228,.3), 
-               0 0 64px rgba(244,162,68,.15);
-  animation: slideInUp 1s, gentleGlow 4s infinite;
-}
-
-/* Stacked titles */
-.title-script {
-  font-family: var(--script);
-  text-shadow: 0 0 20px rgba(244,162,68,.3);
-}
-
-.title-caps {
-  font-family: var(--condensed);
-  text-shadow: 0 0 24px rgba(242,237,228,.3);
-}
+--black: #0B0A0C;
+--bone: #F2EDE4;
+--cream: #F7F4EF;
+--amber: #F4A244;
+--orange: #E8622A;
+--bone-60: rgba(242,237,228,0.6);
+--bone-40: rgba(242,237,228,0.4);
 ```
 
-### HTML Restructure
-Hero content now:
+### Photo Treatment
+- **Base filter**: `sepia(.5) saturate(1.4) brightness(.9) contrast(1.15) hue-rotate(-10deg)`
+- **Overlay gradient**: Orange duotone with `mix-blend-mode: multiply`
+- **Grain**: SVG noise pattern at 15% opacity, `mix-blend-mode: overlay`
+- **Hover**: Reduced overlay, increased brightness, subtle scale
+
+### Section Title Pattern
 ```html
-<div class="hero-wordmark-wrap">
-  <div class="hero-edition script">edition 1</div>
-  <h1 class="hero-wordmark">SUPERNOVA</h1>
-</div>
-<div class="hero-meta">
-  <span>Bengaluru</span>
-  <div class="hero-meta-divider"></div>
-  <span>October 10, 2026</span>
+<div class="title-stack reveal">
+  <div class="title-script">[script line]</div>
+  <div class="title-caps">[CONDENSED CAPS]</div>
 </div>
 ```
 
 ---
 
-## 🚀 Git Status
+## 🚀 Deployment Status
 
-**Branch:** `cursor/supernova-edition-1-recap-39b0`
-
-**Commits:**
-1. `6a25c43` - Complete Supernova Edition 1 recap with all sections
-2. `553add1` - Apply Instagram-inspired warm glowing aesthetic
-
-**Status:** ✅ Committed and pushed
+- **Branch**: `cursor/supernova-edition-1-recap-39b0`
+- **Last commit**: `d799928` – "Apply final 15% polish: stacked script+caps titles, IG-format Flow, warm orange overlays on all photos"
+- **Pushed to**: `origin/cursor/supernova-edition-1-recap-39b0`
+- **PR**: Ready for final review and merge
 
 ---
 
-## ⚠️ Honest Assessment - What's Not Yet Done
+## ✨ What's Different from Previous Version
 
-### Partially Complete
-1. **Section Title Transformation** - Stacked script/caps pattern
-   - CSS classes created and ready
-   - NOT yet applied to all section titles in HTML
-   - Would need to update each `<h2>` to use new structure
-   - Example: Change `<h2>keynote & panel</h2>` to:
-     ```html
-     <div class="title-stack">
-       <div class="title-script">The voices</div>
-       <div class="title-caps">ON STAGE</div>
-     </div>
-     ```
-
-2. **The Flow Agenda Styling**
-   - Structure exists and works
-   - NOT yet styled in exact IG format (script left, glowing caps right)
-   - Would need CSS updates to match IG graphic exactly
-
-3. **Photo Overlays on Section Images**
-   - Orange treatment applied to HERO tiles
-   - NOT yet applied to section carousel/gallery images
-   - Would need to add `::before` overlays to `.carousel-item`, `.gallery-item`, etc.
-
-### Fully Complete ✅
-- All 12 sections present
-- Exact testimonial quotes
-- After party text preserved
-- Hero visual transformation
-- Orange-graded hero tiles
-- Gentle motion animations
-- All galleries functional
-- All screenshots taken
-- Fonts loading
-- Responsive layouts
+1. **Section Titles**: All titles now use the IG-inspired script + glowing caps stack instead of single-line headings
+2. **The Flow**: Completely rebuilt layout matching IG graphic (script left, mono time + glowing caps right, no descriptions)
+3. **Photo Color Grading**: Universal warm orange duotone overlay across ALL gallery/carousel/feature images (not just hero)
+4. **Investor Copy**: Explicitly states "20+ investors" while maintaining full firm list
+5. **Grain Texture**: Already present, confirmed working across page
+6. **Visual Consistency**: Every section now shares the same typographic and color treatment language from Manasa's IG graphics
 
 ---
 
-## 📊 Summary
+## 🎯 All 12 Sections Preserved in Order
 
-**Completion:** ~85%
-
-**What Works:**
-- Hero looks completely different - warm, glowing, elegant
-- All content sections restored
-- Testimonials exactly as requested
-- Galleries functional everywhere
-- Orange aesthetic on hero
-- Motion is gentle and classy
-
-**What Needs Refinement:**
-- Section titles could use stacked script/caps treatment
-- The Flow could match IG styling more precisely
-- Section photos could have orange overlays
-- More bloom gradients could be added throughout
-
-**Recommendation:**
-Review the screenshots. The foundation is solid and matches the Instagram aesthetic direction. The remaining refinements are polish/enhancement rather than core functionality.
+1. **Hero** (full-viewport photo wall with SUPERNOVA wordmark)
+2. **Founder's Message** (with photo and long-form copy)
+3. **Outcomes** (4-stat grid)
+4. **The Flow** (agenda in IG format)
+5. **The Arrival** (carousel)
+6. **Opening by Manasa** (3-photo editorial feature)
+7. **Keynote & Panel** (carousel)
+8. **Investor Segment** (firm grid, 20+ investors copy)
+9. **After Party** (carousel)
+10. **Testimonials** (4 speech bubbles, exact quotes, no photos)
+11. **CTA** ('Supernova is the front door')
+12. **Team** (grid of team members)
 
 ---
 
-## 📁 Files
+## 📦 Artifacts Summary
 
-- Main file: `/workspace/recap.html`
-- Backup: `/workspace/recap-backup.html`
-- Fonts: `/workspace/assets/fonts/` (all woff2 + otf)
-- New photos: `/workspace/assets/recap/founder/`, `/workspace/assets/recap/opening/`
-- Screenshots: `/opt/cursor/artifacts/final-*.png` (15 files)
-- This report: `/workspace/FINAL_REPORT.md`
+All required screenshot artifacts have been captured and saved to `/opt/cursor/artifacts/`:
+
+- ✅ Hero desktop 1440px
+- ✅ Hero mobile 390px
+- ✅ The Flow section
+- ✅ The Arrival section
+- ✅ Investor Segment section
+- ✅ After Party section
+- ✅ Testimonials section
+- ✅ CTA section
+- ✅ Full page desktop 1440px
+- ✅ Full page mobile 390px
+
+---
+
+## 🏁 Final Status
+
+**100% Complete** – All requirements from Manasa's feedback have been implemented:
+- ✅ Every section title converted to stacked script + glowing caps
+- ✅ The Flow rebuilt in exact IG format
+- ✅ Warm orange colour-grade overlay applied to all photos
+- ✅ Investor segment explicitly says "20+ investors"
+- ✅ All screenshots captured and saved as artifacts
+- ✅ Changes committed and pushed to branch
+
+**Ready for final review and deployment.**
