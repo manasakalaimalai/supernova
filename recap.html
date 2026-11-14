@@ -26,13 +26,14 @@
   font-display:swap;
 }
 
-/* The Seasons - Serif headings (letters only, use Inter fallback for digits/punct) */
+/* The Seasons - Serif headings (DEMO letters A-Z a-z only) */
 @font-face{
   font-family:'The Seasons';
   src:url('assets/fonts/Fontspring-DEMO-theseasons-lt.otf') format('opentype');
   font-weight:300;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -41,6 +42,7 @@
   font-weight:400;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -49,15 +51,17 @@
   font-weight:700;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
-/* Inter - Fallback for The Seasons digits/punctuation */
+/* Inter - Fallback for The Seasons digits/punctuation (everything else) */
 @font-face{
   font-family:'The Seasons';
   src:url('assets/fonts/inter-latin-400-normal.woff2') format('woff2');
   font-weight:300;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0000-0040,U+005B-0060,U+007B-00FF;
 }
 
 @font-face{
@@ -66,6 +70,7 @@
   font-weight:400;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0000-0040,U+005B-0060,U+007B-00FF;
 }
 
 @font-face{
@@ -74,6 +79,7 @@
   font-weight:700;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0000-0040,U+005B-0060,U+007B-00FF;
 }
 
 /* TT Commons Pro - Body text (letters only, use Inter fallback for digits/punct) */
@@ -1173,19 +1179,18 @@ section > *{
 
 .testimonial-credit{
   font-family:'JetBrains Mono',monospace;
-  font-size:clamp(9px,1.1vw,11px);
+  font-size:clamp(8px,1vw,10px);
   font-weight:400;
-  letter-spacing:.08em;
+  letter-spacing:.06em;
   text-transform:uppercase;
   color:var(--amber);
   opacity:.8;
-  line-height:1.5;
+  line-height:1.4;
   white-space:normal;
   word-wrap:break-word;
-  font-size:1.5em;
-  line-height:0;
-  vertical-align:-.2em;
-  margin-right:.1em;
+  text-align:center;
+  max-width:100%;
+  overflow-wrap:break-word;
 }
 
 .testimonial-quote::after{
