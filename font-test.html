@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:'Horizon';src:url('/assets/fonts/horizon-new.woff2') format('woff2');font-display:swap;}
+@font-face{font-family:'The Seasons';src:url('/assets/fonts/Fontspring-DEMO-theseasons-reg.woff2') format('woff2');font-weight:400;font-display:swap;}
+@font-face{font-family:'TT Commons Pro';src:url('/assets/fonts/Fontspring-DEMO-tt_commons_pro_regular.woff2') format('woff2');font-weight:400;font-display:swap;}
+@font-face{font-family:'Melodrama';src:url('/assets/fonts/Melodrama-Regular.woff2') format('woff2');font-weight:400;font-display:swap;}
+@font-face{font-family:'Pinyon Script';src:url('/assets/fonts/pinyon-script-latin-400-normal.woff2') format('woff2');font-display:swap;}
+body{background:#111;color:#eee;padding:40px;font-family:sans-serif}
+.test{margin:30px 0;padding:20px;background:#222;border-radius:8px}
+.test h3{margin:0 0 10px;color:#f4a244}
+.test-text{font-size:32px;line-height:1.5;margin:10px 0}
+</style>
+</head>
+<body>
+<h1>Font Glyph Coverage Test</h1>
+
+<div class="test">
+<h3>Horizon (SUPERNOVA wordmark)</h3>
+<div class="test-text" style="font-family:'Horizon'">
+SUPERNOVA 0123456789 .,;:!? '""" @#$%&() —–
+</div>
+</div>
+
+<div class="test">
+<h3>The Seasons (Headings)</h3>
+<div class="test-text" style="font-family:'The Seasons'">
+Bengaluru Edition 1 0123456789 .,;:!? '""" @#$%&() —–
+</div>
+</div>
+
+<div class="test">
+<h3>TT Commons Pro (Body text)</h3>
+<div class="test-text" style="font-family:'TT Commons Pro'">
+100 founders. 20+ investors. 700+ applications. .,;:!? '""" @#$%&() —–
+</div>
+</div>
+
+<div class="test">
+<h3>Melodrama (Accent)</h3>
+<div class="test-text" style="font-family:'Melodrama'">
+Ready to build with us? 0123456789 .,;:!? '""" @#$%&() —–
+</div>
+</div>
+
+<div class="test">
+<h3>Pinyon Script (edition 1)</h3>
+<div class="test-text" style="font-family:'Pinyon Script'">
+edition 1 0123456789 .,;:!? '""" @#$%&() —–
+</div>
+</div>
+
+<script>
+document.fonts.ready.then(() => {
+  console.log('All fonts loaded');
+  document.fonts.forEach(f => console.log(f.family, f.status));
+});
+</script>
+</body>
+</html>
