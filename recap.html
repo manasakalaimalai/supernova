@@ -26,7 +26,7 @@
   font-display:swap;
 }
 
-/* The Seasons - Headings */
+/* The Seasons - Headings (DEMO - letters only) */
 @font-face{
   font-family:'The Seasons';
   src:url('assets/fonts/Fontspring-DEMO-theseasons-lt.woff2') format('woff2'),
@@ -34,6 +34,7 @@
   font-weight:300;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -43,6 +44,7 @@
   font-weight:400;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -52,9 +54,35 @@
   font-weight:700;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
-/* TT Commons Pro - Body text */
+/* Inter - Fallback for The Seasons digits/punctuation */
+@font-face{
+  font-family:'The Seasons';
+  src:url('assets/fonts/inter-latin-400-normal.woff2') format('woff2');
+  font-weight:300;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'The Seasons';
+  src:url('assets/fonts/inter-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'The Seasons';
+  src:url('assets/fonts/inter-latin-700-normal.woff2') format('woff2');
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+
+/* TT Commons Pro - Body text (DEMO - letters only) */
 @font-face{
   font-family:'TT Commons Pro';
   src:url('assets/fonts/Fontspring-DEMO-tt_commons_pro_regular.woff2') format('woff2'),
@@ -62,6 +90,7 @@
   font-weight:400;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -71,6 +100,7 @@
   font-weight:600;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -80,6 +110,7 @@
   font-weight:700;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -89,9 +120,35 @@
   font-weight:900;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
-/* Melodrama - Accent text */
+/* Inter - Fallback for digits, punctuation, symbols */
+@font-face{
+  font-family:'TT Commons Pro';
+  src:url('assets/fonts/inter-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'TT Commons Pro';
+  src:url('assets/fonts/inter-latin-600-normal.woff2') format('woff2');
+  font-weight:600;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'TT Commons Pro';
+  src:url('assets/fonts/inter-latin-700-normal.woff2') format('woff2');
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+
+/* Melodrama - Accent text (DEMO - letters only) */
 @font-face{
   font-family:'Melodrama';
   src:url('assets/fonts/Melodrama-Light.woff2') format('woff2'),
@@ -99,6 +156,7 @@
   font-weight:300;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -108,6 +166,7 @@
   font-weight:400;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
@@ -117,12 +176,47 @@
   font-weight:500;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
 }
 
 @font-face{
   font-family:'Melodrama';
   src:url('assets/fonts/Melodrama-Semibold.woff2') format('woff2'),
       url('assets/fonts/Melodrama-Semibold.otf') format('opentype');
+  font-weight:600;
+  font-style:normal;
+  font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A;
+}
+
+/* Inter - Fallback for Melodrama digits/punctuation */
+@font-face{
+  font-family:'Melodrama';
+  src:url('assets/fonts/inter-latin-400-normal.woff2') format('woff2');
+  font-weight:300;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Melodrama';
+  src:url('assets/fonts/inter-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Melodrama';
+  src:url('assets/fonts/inter-latin-600-normal.woff2') format('woff2');
+  font-weight:500;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Melodrama';
+  src:url('assets/fonts/inter-latin-600-normal.woff2') format('woff2');
   font-weight:600;
   font-style:normal;
   font-display:swap;
@@ -137,6 +231,14 @@
   font-display:swap;
 }
 
+/* Anton - Bold condensed for big caps */
+@font-face{
+  font-family:'Anton';
+  src:url('assets/fonts/anton-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
 
 /* ============ RESET ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -281,12 +383,16 @@ header.top{
   align-items:center;
   justify-content:space-between;
   padding:0 clamp(16px,4vw,48px);
-  transition:background .4s ease,backdrop-filter .4s ease;
+  transition:transform .3s ease,background .4s ease,backdrop-filter .4s ease;
 }
 
 header.top.scrolled{
   background:rgba(11,10,12,.92);
   backdrop-filter:blur(10px);
+}
+
+header.top.hidden{
+  transform:translateY(-100%);
 }
 
 header.top .brand{
@@ -1558,10 +1664,16 @@ html.js .reveal.in{
       </div>
 
       <div>
-        <h3 class="subsection-heading reveal" style="--d:0ms">Who Was in the Room</h3>
+        <div class="title-stack reveal" style="--d:0ms;margin-bottom:clamp(24px,4vh,40px)">
+          <div class="title-script" style="font-size:clamp(28px,5vw,56px)">Who was</div>
+          <div class="title-caps" style="font-size:clamp(32px,6vw,72px)">IN THE ROOM</div>
+        </div>
         
         <div class="reveal" style="--d:120ms">
-          <h4 style="font-size:clamp(20px,3vw,32px);color:var(--bone);margin-bottom:clamp(24px,4vh,48px)">By Domain</h4>
+          <div class="title-stack" style="margin-bottom:clamp(24px,4vh,48px)">
+            <div class="title-script" style="font-size:clamp(24px,4vw,48px)">Sorted by</div>
+            <div class="title-caps" style="font-size:clamp(28px,5vw,64px)">DOMAIN</div>
+          </div>
         </div>
 
         <div class="domain-grid">
@@ -1657,7 +1769,10 @@ html.js .reveal.in{
       </div>
       
       <div class="reveal" style="--d:120ms">
-        <h3 class="subsection-heading" style="margin-top:0">Revathi Raghunath's Keynote</h3>
+        <div class="title-stack" style="margin-bottom:clamp(20px,3vh,32px);margin-top:0">
+          <div class="title-script" style="font-size:clamp(24px,4vw,48px)">One voice</div>
+          <div class="title-caps" style="font-size:clamp(28px,5vw,64px)">THE KEYNOTE</div>
+        </div>
         <p class="body-copy">Revathi Raghunath (CEO & Managing Partner, Outerfield; Co-Founder, Garage Labs Technologies) delivered the keynote. The room was rapt.</p>
       </div>
 
@@ -1667,7 +1782,10 @@ html.js .reveal.in{
 
       <div>
         <div class="reveal" style="--d:0ms">
-          <h3 class="subsection-heading">The Panel</h3>
+          <div class="title-stack" style="margin-bottom:clamp(20px,3vh,32px)">
+            <div class="title-script" style="font-size:clamp(24px,4vw,48px)">Four founders</div>
+            <div class="title-caps" style="font-size:clamp(28px,5vw,64px)">THE PANEL</div>
+          </div>
           <p class="body-copy">Angela Honegger (CEO & Consul General, Swissnex in India), Shalini Pal (Principal, NuVentures), PS Pranika (Founder, ShyShark), and Srishty Jain (Founder & CEO, CoLLearn) shared what it really takes to build in India as a woman.</p>
         </div>
       </div>
@@ -2181,11 +2299,20 @@ html.js .reveal.in{
   
   window.addEventListener('scroll', function(){
     var scroll = window.pageYOffset || document.documentElement.scrollTop;
+    
     if(scroll > 100){
       header.classList.add('scrolled');
     }else{
       header.classList.remove('scrolled');
     }
+    
+    // Hide on scroll down, show on scroll up
+    if(scroll > lastScroll && scroll > 200){
+      header.classList.add('hidden');
+    }else{
+      header.classList.remove('hidden');
+    }
+    
     lastScroll = scroll;
   });
   
