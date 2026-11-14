@@ -189,8 +189,8 @@ main section{position:relative;background:var(--black);padding:18dvh 4vw;overflo
 
 /* ============ CORNER LABELS ============ */
 .corner-labels{position:absolute;z-index:5;font-size:clamp(9px,1.2vw,11px);color:var(--ember);pointer-events:none}
-.corner-labels.tl{top:clamp(16px,3vh,28px);left:clamp(16px,3vw,32px)}
-.corner-labels.tr{top:clamp(16px,3vh,28px);right:clamp(16px,3vw,32px);text-align:right}
+.corner-labels.tl{top:calc(64px + clamp(12px,2vh,20px));left:clamp(16px,3vw,32px)}
+.corner-labels.tr{top:calc(64px + clamp(12px,2vh,20px));right:clamp(16px,3vw,32px);text-align:right}
 .corner-labels.bl{bottom:clamp(16px,3vh,28px);left:clamp(16px,3vw,32px)}
 .corner-labels.br{bottom:clamp(16px,3vh,28px);right:clamp(16px,3vw,32px);text-align:right}
 .corner-labels div{margin:4px 0}
@@ -436,6 +436,8 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
   .lightbox-nav-btn.next{right:-10px}
   
   .corner-labels{font-size:9px}
+  .corner-labels.tl{top:calc(52px + clamp(8px,1.5vh,16px))}
+  .corner-labels.tr{top:calc(52px + clamp(8px,1.5vh,16px))}
 }
 
 /* ============ REDUCED MOTION ============ */
