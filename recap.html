@@ -240,6 +240,23 @@
   font-display:swap;
 }
 
+/* JetBrains Mono - Full glyph coverage monospace */
+@font-face{
+  font-family:'JetBrains Mono';
+  src:url('assets/fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'JetBrains Mono';
+  src:url('assets/fonts/jetbrains-mono-latin-700-normal.woff2') format('woff2');
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+
 /* ============ RESET ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -1172,20 +1189,36 @@ section > *{
 }
 
 .testimonial-text{
-  font-family:var(--body);
+  font-family:'TT Commons Pro',system-ui,sans-serif;
   font-size:clamp(15px,1.8vw,18px);
   line-height:1.7;
   color:var(--bone);
   margin-bottom:clamp(20px,3vh,28px);
+  position:relative;
+}
+
+.testimonial-text::before{
+  content:'"';
+  position:absolute;
+  left:-20px;
+  top:-8px;
+  font-family:var(--script);
+  font-size:clamp(36px,4vw,48px);
+  color:var(--amber);
+  opacity:.4;
 }
 
 .testimonial-credit{
-  font-family:var(--mono);
-  font-size:clamp(10px,1.2vw,12px);
-  letter-spacing:.12em;
+  font-family:'JetBrains Mono',monospace;
+  font-size:clamp(9px,1.1vw,11px);
+  font-weight:400;
+  letter-spacing:.08em;
   text-transform:uppercase;
   color:var(--amber);
   opacity:.8;
+  line-height:1.5;
+  white-space:normal;
+  word-wrap:break-word;
   font-size:1.5em;
   line-height:0;
   vertical-align:-.2em;
@@ -1873,7 +1906,7 @@ html.js .reveal.in{
     
     <div class="testimonials-grid">
       <div class="testimonial-box reveal" style="--d:0ms">
-        <p class="testimonial-text">I just moved from New York to Bengaluru three months ago. Trying to plug into the startup scene has been rough. I couldn't find a single other female founder for the longest time. This event connected me to people in one night that I've been looking for since I got here. It would have taken me another six months to meet even half these people otherwise.</p>
+        <p class="testimonial-text">I just moved from New York to Bengaluru three months ago. Trying to plug into the startup scene has been rough. I couldn't find a single other female founder for the longest time. Supernova connected me to people in one night that I've been looking for since I got here. It would have taken me another six months to meet even half these people otherwise.</p>
         <div class="testimonial-credit">FOUNDER / MOVED FROM NEW YORK</div>
       </div>
       
@@ -1893,7 +1926,7 @@ html.js .reveal.in{
       </div>
       
       <div class="testimonial-box reveal" style="--d:480ms">
-        <p class="testimonial-text">The panel hit different. Hearing Srishty talk about the early days of CoLLearn, the actual messy parts, not the polished story you see on LinkedIn. That's what I needed to hear. It made me feel less alone in what I'm building.</p>
+        <p class="testimonial-text">The panel hit different. Hearing founders talk about the actual messy early days, not the polished LinkedIn version. The pivots, the moments they almost quit, the stuff that doesn't make it into the deck. That's what I needed to hear. Made me feel less alone.</p>
         <div class="testimonial-credit">FOUNDER / EDTECH</div>
       </div>
       
