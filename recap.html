@@ -674,6 +674,8 @@ section > *{
   border-radius:8px;
   overflow:hidden;
   position:relative;
+  width:clamp(280px,30vw,400px);
+  aspect-ratio:1/1;
 }
 
 .founder-photo::before{
@@ -688,8 +690,10 @@ section > *{
 
 .founder-photo img{
   width:100%;
-  height:auto;
+  height:100%;
   display:block;
+  object-fit:cover;
+  object-position:center 20%;
   filter:sepia(.5) saturate(1.4) brightness(.9) contrast(1.15) hue-rotate(-10deg);
 }
 
@@ -936,6 +940,29 @@ section > *{
 }
 
 /* ============ CAROUSEL ============ */
+.photo-wall{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(10px,1.2vw,16px);
+  margin:clamp(40px,6vh,80px) 0;
+}
+
+.photo-wall img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:4px;
+  cursor:pointer;
+  transition:transform .3s var(--ease-reveal),filter .3s var(--ease-reveal);
+  aspect-ratio:4/3;
+}
+
+.photo-wall img:hover{
+  transform:scale(1.02);
+  filter:brightness(1.1);
+}
+
 .carousel-wrap{
   position:relative;
   margin:clamp(40px,6vh,80px) 0;
@@ -1062,6 +1089,35 @@ section > *{
 }
 
 /* ============ EDITORIAL THREE UP ============ */
+.opening-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:clamp(12px,1.5vw,20px);
+  margin-bottom:clamp(40px,6vh,80px);
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.opening-photo{
+  position:relative;
+  overflow:hidden;
+  border-radius:4px;
+  cursor:pointer;
+  transition:transform .3s var(--ease-reveal);
+}
+
+.opening-photo:hover{
+  transform:scale(1.02);
+}
+
+.opening-photo img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
 .editorial-three-up{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -1460,6 +1516,16 @@ html.js .reveal.in{
     justify-content:center;
   }
   
+  .photo-wall{
+    grid-template-columns:repeat(2,1fr);
+    gap:clamp(8px,2vw,12px);
+  }
+  
+  .opening-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:clamp(8px,2vw,12px);
+  }
+  
   .editorial-three-up{
     grid-template-columns:1fr;
   }
@@ -1758,38 +1824,25 @@ html.js .reveal.in{
     </div>
   </section>
 
-  <!-- OPENING BY MANASA -->
+  <!-- OPENING SPEECH -->
   <section id="opening" class="reveal">
     <div class="bloom amber" style="width:600px;height:600px;top:-100px;right:-250px;"></div>
     
     <div class="section-inner">
       <div class="title-stack reveal">
-        <div class="title-script">Opening by</div>
-        <div class="title-caps">MANASA</div>
-      </div>
-      
-      <div class="section-intro reveal" style="--d:120ms">
-        <p class="body-copy">The room that never existed was finally here. Manasa Kalaimalai, founder of Nova Residency, kicked off the day.</p>
+        <div class="title-caps">OPENING SPEECH</div>
       </div>
 
-      <div class="editorial-three-up reveal" style="--d:240ms" data-lightbox-group="opening-featured">
-        <div class="editorial-feature" data-lightbox="/assets/recap/opening/6.jpg">
-          <img src="assets/recap/opening/6.jpg" alt="" loading="lazy">
+      <div class="opening-grid reveal" style="--d:240ms">
+        <div class="opening-photo" data-lightbox="/assets/recap/opening/IMG_5460.JPG">
+          <img src="assets/recap/opening/IMG_5460.JPG" alt="" loading="lazy">
         </div>
-        <div class="editorial-feature" data-lightbox="/assets/recap/opening/7.jpg">
-          <img src="assets/recap/opening/7.jpg" alt="" loading="lazy">
+        <div class="opening-photo" data-lightbox="/assets/recap/opening/IMG_5477.JPG">
+          <img src="assets/recap/opening/IMG_5477.JPG" alt="" loading="lazy">
         </div>
-        <div class="editorial-feature" data-lightbox="/assets/recap/opening/8.jpg">
-          <img src="assets/recap/opening/8.jpg" alt="" loading="lazy">
+        <div class="opening-photo" data-lightbox="/assets/recap/opening/IMG_5480.JPG">
+          <img src="assets/recap/opening/IMG_5480.JPG" alt="" loading="lazy">
         </div>
-      </div>
-
-      <div class="wide-feature reveal" style="--d:360ms" data-lightbox="/assets/recap/opening/9.jpg">
-        <img src="assets/recap/opening/9.jpg" alt="The room of 100 women founders" loading="lazy">
-      </div>
-
-      <div class="carousel-wrap reveal" style="--d:480ms" data-carousel="opening">
-        <div class="carousel-track"></div>
       </div>
     </div>
   </section>
@@ -1864,9 +1917,7 @@ html.js .reveal.in{
         <div class="investor-name">Z47</div>
       </div>
 
-      <div class="carousel-wrap reveal" style="--d:360ms" data-carousel="investor">
-        <div class="carousel-track"></div>
-      </div>
+      <div class="photo-wall reveal" style="--d:360ms" id="investor-wall"></div>
     </div>
   </section>
 
@@ -1888,9 +1939,7 @@ html.js .reveal.in{
         </div>
       </div>
 
-      <div class="carousel-wrap reveal" style="--d:240ms" data-carousel="afterparty">
-        <div class="carousel-track"></div>
-      </div>
+      <div class="photo-wall reveal" style="--d:240ms" id="afterparty-wall"></div>
     </div>
   </section>
 
@@ -2158,6 +2207,24 @@ html.js .reveal.in{
       initCarousel(wrap, photos[type]);
     }
   });
+  
+  // Initialize photo walls
+  function initPhotoWall(wallId, photoSet){
+    var wall = document.getElementById(wallId);
+    if(!wall) return;
+    
+    photoSet.forEach(function(src){
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.dataset.lightbox = src;
+      wall.appendChild(img);
+    });
+  }
+  
+  initPhotoWall('investor-wall', photos.investor);
+  initPhotoWall('afterparty-wall', photos.afterparty);
   
   // LIGHTBOX
   var lightbox = document.getElementById('lightbox');
