@@ -1,0 +1,1410 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B0A0C">
+<title>Supernova Edition 1 — October 10, 2026</title>
+<meta name="description" content="100 founders. 20+ investment firms. 200 at the after party. One day in Bangalore.">
+<meta property="og:title" content="Supernova Edition 1 — October 10, 2026">
+<meta property="og:description" content="100 founders. 20+ investors. 200 at the after party. One unforgettable day.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.supernovaa.io/recap">
+<meta property="og:image" content="https://www.supernovaa.io/assets/og-image.jpg">
+<link rel="canonical" href="https://www.supernovaa.io/recap">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;850&family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&family=Anton&display=swap" rel="stylesheet">
+<style>
+/* ============ SELF-HOSTED FONTS ============ */
+@font-face{
+  font-family:'Horizon';
+  src:url('/assets/fonts/horizon.otf.woff2') format('woff2'),
+      url('/assets/fonts/horizon.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Playfair Display';
+  src:url('/assets/fonts/playfair-display-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Playfair Display';
+  src:url('/assets/fonts/playfair-display-latin-400-italic.woff2') format('woff2');
+  font-weight:400;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Playfair Display';
+  src:url('/assets/fonts/playfair-display-latin-700-normal.woff2') format('woff2');
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Pinyon Script';
+  src:url('/assets/fonts/pinyon-script-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+/* ============ RESET ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{background:#0B0A0C;color:#F2EDE4;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* ============ TOKENS ============ */
+:root{
+  --black:#0B0A0C;
+  --coal:#131013;
+  --ember:#E8622A;
+  --redor:#C43D18;
+  --amber:#F4A244;
+  --bone:#F2EDE4;
+  --bone-60:rgba(242,237,228,.6);
+  --bone-30:rgba(242,237,228,.3);
+  --ease-reveal:cubic-bezier(.16,1,.3,1);
+  --ease-soft:cubic-bezier(.25,.8,.28,1);
+  --fd:'Archivo',sans-serif;
+  --fh:'Horizon',Arial,sans-serif;
+  --fs:'Instrument Serif',Georgia,serif;
+  --fm:'Space Mono',monospace;
+  --script:'Pinyon Script',cursive;
+  --condensed:'Anton',sans-serif;
+}
+
+body{font-family:var(--fd);overflow-x:hidden}
+
+/* ============ TYPE PRIMITIVES ============ */
+.mono{font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:13px;color:var(--bone-60)}
+.display{font-family:var(--fd);font-weight:850;text-transform:lowercase;letter-spacing:-.02em;line-height:1.02}
+.horizon{font-family:var(--fh);text-transform:uppercase;letter-spacing:.08em;line-height:.95}
+.script{font-family:var(--script);font-style:italic;font-weight:400;color:var(--amber)}
+.condensed{font-family:var(--condensed);text-transform:uppercase;letter-spacing:.02em;line-height:.95}
+.body-copy{font-family:var(--fd);font-weight:400;font-size:17px;line-height:1.65;color:var(--bone);max-width:62ch}
+
+/* ============ GRAIN ============ */
+.grain{
+  position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:300px 300px;animation:grain-jitter .9s steps(1) infinite;
+}
+@keyframes grain-jitter{0%,32%{background-position:0 0}33%,65%{background-position:-140px 90px}66%,100%{background-position:90px -140px}}
+
+/* ============ BLOOM ============ */
+.bloom{
+  position:absolute;inset:0;pointer-events:none;filter:blur(2px);z-index:0;
+  --bx:var(--bx0,50%);--by:var(--by0,50%);
+  background-image:
+    radial-gradient(closest-side at var(--bx) var(--by),
+      rgba(244,162,68,.85) 0%, rgba(232,98,42,.55) 18%,
+      rgba(196,61,24,.28) 42%, rgba(196,61,24,.10) 62%, transparent 78%),
+    radial-gradient(farthest-side at var(--bx) var(--by),
+      rgba(232,98,42,.16) 0%, rgba(11,10,12,0) 70%),
+    repeating-linear-gradient(180deg,rgba(244,162,68,.05) 0 2px, transparent 2px 9px);
+  -webkit-mask-image:radial-gradient(closest-side at var(--bx) var(--by), #000 0 60%, transparent 78%);
+  mask-image:radial-gradient(closest-side at var(--bx) var(--by), #000 0 60%, transparent 78%);
+  animation:bloom-drift 14s ease-in-out infinite alternate;
+}
+@keyframes bloom-drift{0%{--bx:calc(var(--bx0,50%) - 2%);--by:calc(var(--by0,50%) - 2%)}100%{--bx:calc(var(--bx0,50%) + 2%);--by:calc(var(--by0,50%) + 2%)}}
+
+.bloom-edge{
+  mask-image:none;-webkit-mask-image:none;
+  background-image:
+    radial-gradient(120% 95% at var(--bx,50%) var(--by,100%),
+      rgba(244,162,68,.7) 0%, rgba(232,98,42,.42) 26%,
+      rgba(196,61,24,.22) 50%, rgba(196,61,24,.08) 68%, transparent 82%),
+    repeating-linear-gradient(180deg,rgba(244,162,68,.05) 0 2px, transparent 2px 9px);
+}
+
+/* ============ SCROLL REVEAL - Robust fallback ============ */
+/* When JS is disabled or hasn't loaded yet, content is visible by default */
+.reveal{opacity:1;transform:none;filter:none}
+/* Only hide when JS has initialized */
+html.js .reveal{
+  opacity:0;transform:translateY(26px);filter:blur(14px);
+  transition:opacity 1.05s var(--ease-reveal),transform 1.05s var(--ease-reveal),filter 1.05s var(--ease-reveal);
+  transition-delay:var(--d,0ms);
+}
+html.js .reveal.in{opacity:1;transform:translateY(0);filter:blur(0)}
+
+/* ============ HEADER ============ */
+header.top{position:fixed;top:0;left:0;right:0;z-index:40;height:64px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 4vw;
+  mix-blend-mode:difference;border-bottom:1px solid transparent;transition:border-color .4s ease}
+header.top.scrolled{border-bottom-color:var(--bone-30)}
+header.top .brand{font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:14px;font-weight:700}
+header.top .nav-link{font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:14px;
+  text-decoration:none;transition:opacity .3s ease}
+header.top .nav-link:hover{opacity:1 !important}
+
+/* ============ SECTION BASE ============ */
+main section{position:relative;background:var(--black);padding:18dvh 4vw;overflow:hidden}
+
+/* ============ HERO - EVENT RECAP VERSION ============ */
+#hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;padding:0;position:relative}
+.hero-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:20vh;gap:0;z-index:0}
+.hero-tile{position:relative;overflow:hidden;cursor:pointer}
+.hero-tile img{width:100%;height:100%;object-fit:cover;
+  transition:opacity .6s var(--ease-soft),transform .6s var(--ease-soft),filter .6s var(--ease-soft);
+  opacity:.5;filter:grayscale(.3) contrast(1.05) brightness(.85)}
+.hero-tile:hover,.hero-tile.active{z-index:4}
+.hero-tile:hover img,.hero-tile.active img{opacity:1;filter:grayscale(0) contrast(1) brightness(1);transform:scale(1.06)}
+.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(circle at 50% 55%,rgba(11,10,12,.15) 0%,rgba(11,10,12,.45) 50%,rgba(11,10,12,.75) 100%)}
+.hero-content{position:relative;z-index:3;text-align:center;max-width:1200px;padding:0 4vw}
+.hero-recap-label{font-size:clamp(14px,2vw,20px);margin-bottom:clamp(16px,3vh,28px);
+  color:var(--bone-60);letter-spacing:.16em}
+.hero-wordmark-wrap{text-align:center;margin-bottom:clamp(18px,3vh,32px)}
+.hero-wordmark{display:inline-block;color:var(--bone);letter-spacing:.06em;white-space:nowrap}
+.hero-edition{font-size:clamp(48px,10vw,110px);margin-bottom:clamp(24px,4vh,40px)}
+.hero-location{font-family:'Playfair Display',Georgia,serif;font-size:clamp(36px,6vw,84px);color:var(--bone);margin-bottom:clamp(12px,2vh,18px);
+  font-weight:400;letter-spacing:-.01em}
+.hero-date{font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,3.5vw,48px);color:var(--bone-60);margin-bottom:clamp(32px,5vh,60px);
+  font-weight:400}
+.hero-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(24px,4vw,48px);
+  padding:clamp(20px,3vh,32px);background:rgba(11,10,12,.6);backdrop-filter:blur(8px);
+  border:1px solid var(--bone-30);border-radius:4px}
+.hero-stat{display:flex;flex-direction:column;align-items:center;gap:8px}
+.hero-stat-number{font-family:var(--fd);font-weight:850;font-size:clamp(28px,5vw,56px);
+  color:var(--amber);letter-spacing:-.02em}
+.hero-stat-label{font-family:var(--fm);font-size:clamp(9px,1.2vw,12px);color:var(--bone-60);
+  text-transform:uppercase;letter-spacing:.14em}
+
+/* ============ CORNER LABELS ============ */
+.corner-labels{position:absolute;z-index:5;font-size:clamp(9px,1.2vw,11px);color:var(--ember);pointer-events:none}
+.corner-labels.tl{top:calc(64px + clamp(12px,2vh,20px));left:clamp(16px,3vw,32px)}
+.corner-labels.tr{top:calc(64px + clamp(12px,2vh,20px));right:clamp(16px,3vw,32px);text-align:right}
+.corner-labels.bl{bottom:clamp(16px,3vh,28px);left:clamp(16px,3vw,32px)}
+.corner-labels.br{bottom:clamp(16px,3vh,28px);right:clamp(16px,3vw,32px);text-align:right}
+.corner-labels div{margin:4px 0}
+
+/* ============ FOUNDER MESSAGE ============ */
+#founder-message{padding:clamp(100px,16vh,200px) 4vw}
+#founder-message .bloom{--bx0:30%;--by0:50%}
+.founder-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(40px,8vw,100px);
+  align-items:center;max-width:1600px;margin:0 auto;position:relative;z-index:1}
+.founder-text h2{font-size:clamp(28px,4.5vw,56px);color:var(--bone);margin-bottom:clamp(20px,3vh,36px)}
+.founder-message-body{font-size:clamp(16px,2vw,20px);line-height:1.75;color:var(--bone);margin-bottom:clamp(24px,4vh,40px)}
+.founder-message-body p{margin-bottom:1.5em}
+.founder-message-body p:last-child{margin-bottom:0}
+.founder-attribution{font-weight:600;font-size:clamp(14px,1.8vw,17px);color:var(--amber);margin-top:clamp(28px,4vh,48px)}
+.founder-photo-wrap{position:relative;border-radius:4px;overflow:hidden;
+  box-shadow:0 20px 80px rgba(232,98,42,.15)}
+.founder-photo-wrap img{width:100%;aspect-ratio:3/4;object-fit:cover}
+
+/* ============ OUTCOMES ============ */
+#outcomes{padding:clamp(70px,12vh,140px) 4vw;border-top:1px solid var(--bone-30);border-bottom:1px solid var(--bone-30)}
+.outcomes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:1600px;margin:0 auto}
+.outcome-box{text-align:center;padding:clamp(32px,5vh,60px) clamp(20px,3vw,40px);border-right:1px solid var(--bone-30)}
+.outcome-box:last-child{border-right:0}
+.outcome-number{display:block;font-family:var(--fd);font-weight:850;
+  font-size:clamp(52px,10vw,110px);color:var(--amber);line-height:.95;letter-spacing:-.02em}
+.outcome-label{display:block;margin-top:clamp(16px,2vh,24px);font-family:var(--fm);
+  font-size:clamp(11px,1.4vw,14px);text-transform:uppercase;letter-spacing:.14em;color:var(--bone-60)}
+
+/* ============ THE FLOW (DAY AGENDA) ============ */
+#day-agenda{padding:clamp(120px,18vh,200px) 4vw}
+#day-agenda .bloom{--bx0:70%;--by0:30%}
+.agenda-container{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+.agenda-title{font-size:clamp(56px,10vw,120px);margin-bottom:clamp(48px,8vh,80px);text-align:left}
+.flow-grid{display:grid;grid-template-columns:1fr 2fr;gap:clamp(40px,6vw,80px)}
+.flow-left{display:flex;align-items:flex-start;padding-top:clamp(8px,1vh,16px)}
+.flow-left .script{font-size:clamp(48px,8vw,88px);line-height:1.1;color:var(--amber)}
+.flow-right{}
+.flow-row{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,40px);
+  padding:clamp(16px,2.5vh,24px) 0;border-bottom:1px solid var(--bone-30);cursor:pointer;
+  transition:background .3s var(--ease-soft)}
+.flow-row:hover{background:rgba(244,162,68,.04)}
+.flow-row:last-child{border-bottom:none;background:rgba(232,98,42,.08)}
+.flow-time-col{display:flex;flex-direction:column;gap:8px}
+.flow-time{font-family:var(--fd);font-weight:700;font-size:clamp(16px,2.2vw,22px);color:var(--bone)}
+.flow-sub{font-size:clamp(9px,1.2vw,11px);color:var(--bone-60)}
+.flow-title-col{display:flex;flex-direction:column;gap:6px;justify-content:center}
+.flow-title{font-family:var(--condensed);font-size:clamp(20px,3vw,36px);color:var(--bone);
+  text-shadow:0 2px 16px rgba(244,162,68,.3);letter-spacing:.04em}
+.flow-desc{font-size:clamp(10px,1.3vw,13px);color:var(--bone-60)}
+
+/* ============ SECTION INNER ============ */
+.section-inner{max-width:1600px;margin:0 auto;position:relative;z-index:1}
+.section-heading{font-size:clamp(36px,6vw,88px);color:var(--bone);margin-bottom:clamp(24px,4vh,48px)}
+.section-intro{margin-bottom:clamp(40px,6vh,80px)}
+
+/* ============ ARRIVALS & MINGLING ============ */
+#arrivals-mingling{padding:18dvh 4vw}
+#arrivals-mingling .bloom{--bx0:20%;--by0:40%}
+
+/* ============ CAROUSEL ============ */
+.carousel-wrap{position:relative;margin:clamp(40px,6vh,80px) 0;overflow:hidden}
+.carousel-track{display:flex;gap:clamp(16px,2vw,24px);cursor:grab;user-select:none;padding:4px 0}
+.carousel-track.dragging{cursor:grabbing}
+.carousel-item{flex:0 0 clamp(280px,40vw,400px);position:relative;border-radius:4px;overflow:hidden;
+  cursor:pointer;box-shadow:0 8px 32px rgba(11,10,12,.4);transition:transform .4s var(--ease-soft)}
+.carousel-item:hover{transform:translateY(-4px)}
+.carousel-item img{width:100%;aspect-ratio:4/3;object-fit:cover;
+  filter:saturate(.92) contrast(1.05);transition:filter .4s var(--ease-soft)}
+.carousel-item:hover img{filter:saturate(1) contrast(1)}
+
+/* ============ WIDE FEATURE ============ */
+.wide-feature{margin:clamp(60px,10vh,120px) 0;border-radius:4px;overflow:hidden;cursor:pointer;
+  box-shadow:0 16px 64px rgba(11,10,12,.5);transition:transform .5s var(--ease-soft)}
+.wide-feature:hover{transform:translateY(-6px)}
+.wide-feature img{width:100%;aspect-ratio:16/9;object-fit:cover;
+  filter:saturate(.92) contrast(1.05);transition:filter .5s var(--ease-soft)}
+.wide-feature:hover img{filter:saturate(1) contrast(1)}
+
+/* ============ EDITORIAL THREE UP ============ */
+.editorial-three-up{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,32px);
+  margin-bottom:clamp(40px,6vh,80px)}
+.editorial-feature{position:relative;overflow:hidden;border-radius:4px;cursor:pointer;
+  box-shadow:0 12px 48px rgba(11,10,12,.5);transition:transform .5s var(--ease-soft)}
+.editorial-feature:hover{transform:translateY(-4px)}
+.editorial-feature img{width:100%;aspect-ratio:3/4;object-fit:cover;
+  filter:saturate(.92) contrast(1.05);transition:filter .5s var(--ease-soft)}
+.editorial-feature:hover img{filter:saturate(1) contrast(1)}
+
+/* ============ DOMAIN/FOUNDER CARDS ============ */
+.subsection-heading{font-size:clamp(24px,3.5vw,40px);color:var(--amber);
+  margin:clamp(80px,14vh,140px) 0 clamp(32px,5vh,60px)}
+.domain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:clamp(16px,2vw,24px);margin:clamp(40px,6vh,80px) 0}
+.domain-card{background:rgba(244,162,68,.04);border:1px solid rgba(244,162,68,.2);
+  padding:clamp(20px,3vw,32px);border-radius:4px;transition:all .3s var(--ease-soft)}
+.domain-card:hover{background:rgba(244,162,68,.08);border-color:var(--amber)}
+.domain-name{font-weight:600;font-size:clamp(15px,2vw,18px);color:var(--bone);margin-bottom:10px;line-height:1.35}
+.domain-count{font-family:var(--fd);font-weight:850;font-size:clamp(32px,5vw,52px);
+  color:var(--amber);letter-spacing:-.02em}
+.founder-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:clamp(24px,3vw,40px)}
+.founder-card{background:rgba(244,162,68,.03);border:1px solid rgba(244,162,68,.15);
+  padding:clamp(24px,3vw,36px);border-radius:4px;transition:all .3s var(--ease-soft)}
+.founder-card:hover{background:rgba(244,162,68,.06);border-color:var(--amber);transform:translateY(-4px)}
+.founder-card-name{font-weight:700;font-size:clamp(17px,2.2vw,21px);color:var(--bone);margin-bottom:6px}
+.founder-card-company{font-weight:600;font-size:clamp(15px,2vw,18px);color:var(--ember);margin-bottom:14px}
+.founder-card-build{font-size:clamp(14px,1.8vw,17px);line-height:1.6;color:var(--bone-60)}
+
+/* ============ OPENING ============ */
+#opening{padding:18dvh 4vw}
+#opening .bloom{--bx0:75%;--by0:45%}
+
+/* ============ KEYNOTE & PANEL ============ */
+#keynote-panel{padding:18dvh 4vw}
+#keynote-panel .bloom{--bx0:80%;--by0:50%}
+.keynote-title{font-size:clamp(24px,4vw,48px);color:var(--amber);margin-bottom:clamp(24px,4vh,40px)}
+.panel-section{margin-top:clamp(80px,14vh,140px)}
+.theme-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:clamp(20px,3vw,32px);margin:clamp(40px,6vh,80px) 0}
+.theme-card{background:rgba(244,162,68,.06);border-left:3px solid var(--amber);
+  padding:clamp(20px,3vw,32px);border-radius:2px}
+.theme-card h5{font-weight:700;font-size:clamp(16px,2vw,20px);color:var(--amber);margin-bottom:12px}
+.theme-card p{font-size:clamp(14px,1.8vw,17px);line-height:1.65;color:var(--bone-60)}
+
+/* ============ INVESTOR SEGMENT ============ */
+#investor-segment{padding:18dvh 4vw}
+#investor-segment .bloom{--bx0:40%;--by0:60%}
+.investors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:clamp(24px,4vw,48px);margin:clamp(60px,10vh,100px) 0}
+.investor-name{text-align:center;font-weight:700;font-size:clamp(15px,2vw,19px);color:var(--bone-60);
+  padding:clamp(16px,2vw,24px);background:rgba(244,162,68,.03);border:1px solid rgba(244,162,68,.15);
+  border-radius:4px;transition:all .3s var(--ease-soft)}
+.investor-name:hover{color:var(--amber);border-color:var(--amber);background:rgba(244,162,68,.06)}
+
+/* ============ AFTER PARTY ============ */
+#afterparty{padding:18dvh 4vw}
+#afterparty .bloom{--bx0:60%;--by0:70%}
+.afterparty-intro{max-width:1100px;margin:0 auto clamp(60px,10vh,100px);text-align:center}
+.afterparty-intro .body-copy{font-size:clamp(17px,2.2vw,22px);line-height:1.8;margin:0 auto 1.8em;max-width:64ch}
+
+/* ============ TESTIMONIALS ============ */
+#testimonials{padding:18dvh 4vw}
+#testimonials .bloom{--bx0:30%;--by0:40%}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:clamp(32px,5vw,60px);max-width:1600px;margin:0 auto;position:relative;z-index:1}
+.testimonial-card{background:rgba(244,162,68,.03);border:1px solid rgba(244,162,68,.15);
+  border-radius:4px;overflow:hidden;transition:all .3s var(--ease-soft)}
+.testimonial-card:hover{background:rgba(244,162,68,.05);border-color:var(--amber)}
+.testimonial-photo{width:100%;aspect-ratio:4/3;object-fit:cover;filter:saturate(.92) contrast(1.05)}
+.testimonial-quote{padding:clamp(24px,3vw,36px);font-family:var(--fs);font-style:italic;
+  font-size:clamp(16px,2vw,20px);line-height:1.7;color:var(--bone)}
+
+/* ============ TEAM ============ */
+#team{padding:18dvh 4vw}
+#team .bloom{--bx0:50%;--by0:50%}
+.team-label{font-size:clamp(24px,4vw,48px);color:var(--amber);margin-bottom:clamp(40px,6vh,80px);
+  text-align:center;position:relative;z-index:1}
+.team-photo{width:100%;max-width:1400px;margin:0 auto;border-radius:4px;
+  box-shadow:0 24px 80px rgba(232,98,42,.2);position:relative;z-index:1}
+
+/* ============ VISION ============ */
+#vision{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:0 4vw;
+  background:radial-gradient(120% 90% at 50% 100%, var(--redor) 0%, #7e2610 34%, var(--black) 78%);
+  position:relative;overflow:hidden}
+#vision .bloom-edge{--bx:50%;--by:100%}
+#vision::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:repeating-linear-gradient(180deg, rgba(244,162,68,.04) 0 2px, transparent 2px 9px)}
+.vision-inner{position:relative;z-index:2;text-align:center;max-width:900px}
+.vision-heading{font-size:clamp(36px,7vw,88px);color:var(--bone);margin-bottom:clamp(32px,5vh,60px)}
+.vision-copy{font-size:clamp(17px,2.2vw,22px);line-height:1.75;color:var(--bone);
+  margin-bottom:clamp(48px,8vh,80px)}
+.cta{display:inline-block;font-family:var(--fd);font-weight:700;font-size:clamp(15px,2vw,20px);
+  color:var(--bone);text-decoration:none;padding:clamp(18px,2.5vh,24px) clamp(36px,5vw,60px);
+  border-radius:2px;background-image:linear-gradient(120deg,var(--ember),var(--redor));
+  background-size:160% 100%;background-position:0% 0;
+  transition:background-position .5s var(--ease-soft),box-shadow .5s var(--ease-soft)}
+.cta:hover{background-position:100% 0;box-shadow:0 0 42px rgba(232,98,42,.35)}
+
+/* ============ FOOTER ============ */
+footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 4vw}
+.footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;
+  font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:13px;color:var(--bone-60)}
+.footer-row .brand-strong{color:var(--bone);font-weight:700}
+.footer-row a{text-decoration:none;transition:color .3s ease}
+.footer-row a:hover{color:var(--ember);text-decoration:underline}
+.footer-left{display:flex;gap:.6em;flex-wrap:wrap}
+
+/* ============ LIGHTBOX ============ */
+.lightbox{position:fixed;inset:0;z-index:1000;background:rgba(11,10,12,.95);
+  display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox.active{display:flex}
+.lightbox-content{position:relative;max-width:90vw;max-height:90vh}
+.lightbox-img{max-width:100%;max-height:90vh;object-fit:contain;border-radius:4px}
+.lightbox-close{position:absolute;top:-40px;right:0;width:32px;height:32px;
+  color:var(--bone);font-size:28px;cursor:pointer;transition:color .3s}
+.lightbox-close:hover{color:var(--amber)}
+.lightbox-nav-btn{position:absolute;top:50%;transform:translateY(-50%);
+  width:48px;height:48px;background:rgba(19,16,19,.9);border:1px solid var(--amber);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:var(--amber);font-size:24px;
+  cursor:pointer;transition:all .3s var(--ease-soft)}
+.lightbox-nav-btn:hover{background:var(--ember);transform:translateY(-50%) scale(1.1)}
+.lightbox-nav-btn.prev{left:-60px}
+.lightbox-nav-btn.next{right:-60px}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:900px), (orientation:portrait){
+  main section{padding:14dvh 6vw}
+  
+  header.top{height:52px;mix-blend-mode:normal;background:rgba(11,10,12,.92);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(242,237,228,.12);gap:12px}
+  header.top .brand,header.top .nav-link{font-size:clamp(9px,2.6vw,11px);
+    letter-spacing:.1em;white-space:nowrap}
+  
+  .hero-grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:16.66vh}
+  .hero-wordmark{letter-spacing:.04em}
+  .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,3vw,16px);padding:clamp(16px,3vh,24px)}
+  .hero-stat{align-items:flex-start;text-align:left}
+  .hero-stat-number{font-size:clamp(24px,6vw,42px)}
+  .hero-stat-label{font-size:clamp(8px,1.8vw,10px)}
+  
+  .founder-grid{grid-template-columns:1fr;gap:40px}
+  .founder-photo-wrap{max-width:400px;margin:0 auto}
+  
+  .outcomes-grid{grid-template-columns:1fr}
+  .outcome-box{border-right:0;border-bottom:1px solid var(--bone-30)}
+  .outcome-box:last-child{border-bottom:0}
+  
+  .flow-grid{grid-template-columns:1fr;gap:clamp(32px,6vh,48px)}
+  .flow-left{justify-content:center}
+  .flow-row{grid-template-columns:auto 1fr;gap:16px;padding:16px 0}
+  .flow-title{font-size:clamp(16px,4vw,24px)}
+  
+  .editorial-three-up{grid-template-columns:1fr}
+  .domain-grid{grid-template-columns:1fr}
+  .founder-cards{grid-template-columns:1fr}
+  .theme-cards{grid-template-columns:1fr}
+  .investors-grid{grid-template-columns:repeat(2,1fr)}
+  .testimonial-grid{grid-template-columns:1fr}
+  
+  .lightbox-nav-btn{width:40px;height:40px;font-size:20px}
+  .lightbox-nav-btn.prev{left:-10px}
+  .lightbox-nav-btn.next{right:-10px}
+  
+  .corner-labels{font-size:9px}
+  .corner-labels.tl{top:calc(52px + clamp(8px,1.5vh,16px))}
+  .corner-labels.tr{top:calc(52px + clamp(8px,1.5vh,16px))}
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .grain{animation:none;background-position:0 0}
+  .bloom{animation:none}
+  html.js .reveal{transition:opacity .28s linear !important;transform:none !important;filter:none !important}
+}
+</style>
+<script>
+// Mark that JS has loaded so reveals can work
+document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
+</script>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <span class="brand">NOVA RESIDENCY</span>
+  <a class="nav-link" href="/" style="opacity:.85">HOME</a>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-overlay"></div>
+    <div class="corner-labels tl mono"><div>SUPERNOVA / 10.10.26</div></div>
+    <div class="corner-labels tr mono"><div>NOVA RESIDENCY</div></div>
+    <div class="corner-labels bl mono"><div>THE HUB</div><div>SAFINA PLAZA</div><div>INFANTRY RD</div></div>
+    <div class="corner-labels br mono"><div>SAT / 10.10.26</div><div>4 PM ONWARDS</div></div>
+    <div class="hero-content">
+      <div class="hero-recap-label mono">WHAT HAPPENED AT SUPERNOVA</div>
+      <div class="hero-wordmark-wrap">
+        <h1 class="hero-wordmark horizon">SUPERNOVA</h1>
+      </div>
+      <div class="hero-edition script">edition 1</div>
+      <div class="hero-location">Bengaluru</div>
+      <div class="hero-date">October 10, 2026</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="700" data-suffix="+">700+</span>
+          <span class="hero-stat-label">APPLICATIONS</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="100">100</span>
+          <span class="hero-stat-label">FOUNDERS</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="20" data-suffix="+">20+</span>
+          <span class="hero-stat-label">INVESTORS</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="200">200</span>
+          <span class="hero-stat-label">AT AFTER PARTY</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER MESSAGE ============ -->
+  <section id="founder-message">
+    <div class="bloom"></div>
+    <div class="founder-grid">
+      <div class="founder-text">
+        <h2 class="display reveal">a room that never existed</h2>
+        <div class="founder-message-body reveal" style="--d:120ms">
+          <p>Take the hundred most ambitious female builders in India and put them in one room. Sounds simple, right? But that room has never existed. Not once.</p>
+          <p>Until October 10th, 2026.</p>
+          <p>We created Supernova because women founders face a version of entrepreneurship that the ecosystem barely acknowledges. Getting in front of the right investors can take months, if it happens at all. Finding the co-founder who gets it, the operator who's solved your exact problem, the peer who's three steps ahead? That's often left to chance.</p>
+          <p>Supernova is the front door to Nova Residency, India's first residency for women founders. We're backing AI-native women in their 20s, giving them a month to build together, ship together, and reach Demo Day with something real. But before the residency, there's Supernova: one day, 100 founders, 20+ investors, and the conversations that usually take six months or never happen.</p>
+          <p>This is just the beginning. See you at Edition 2.</p>
+        </div>
+        <div class="founder-attribution reveal" style="--d:240ms">Manasa Kalaimalai, Founder & CEO, Nova Residency</div>
+      </div>
+      <div class="founder-photo-wrap reveal" style="--d:360ms">
+        <img src="/assets/recap/founder-message.jpg" alt="Manasa Kalaimalai" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OUTCOMES ============ -->
+  <section id="outcomes">
+    <div class="outcomes-grid">
+      <div class="outcome-box reveal" style="--d:0ms">
+        <span class="outcome-number" data-count="700" data-suffix="+">700+</span>
+        <span class="outcome-label">APPLICATIONS</span>
+      </div>
+      <div class="outcome-box reveal" style="--d:100ms">
+        <span class="outcome-number" data-count="100">100</span>
+        <span class="outcome-label">FOUNDERS IN THE ROOM</span>
+      </div>
+      <div class="outcome-box reveal" style="--d:200ms">
+        <span class="outcome-number" data-count="20" data-suffix="+">20+</span>
+        <span class="outcome-label">INVESTORS</span>
+      </div>
+      <div class="outcome-box reveal" style="--d:300ms">
+        <span class="outcome-number" data-count="200">200</span>
+        <span class="outcome-label">AT THE AFTER PARTY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE FLOW (DAY AGENDA) ============ -->
+  <section id="day-agenda">
+    <div class="bloom"></div>
+    <div class="agenda-container">
+      <h2 class="agenda-title display reveal" style="--d:0ms">the day at a glance</h2>
+      <div class="flow-grid reveal" style="--d:120ms">
+        <div class="flow-left">
+          <div class="script">The Flow</div>
+        </div>
+        <div class="flow-right">
+          <div class="flow-row" data-scroll-to="arrivals-mingling">
+            <div class="flow-time-col">
+              <div class="flow-time">4:00 PM</div>
+              <div class="flow-sub mono">ARRIVE</div>
+            </div>
+            <div class="flow-title-col">
+              <div class="flow-title condensed">DOORS OPEN</div>
+              <div class="flow-desc mono">WALK IN, SETTLE IN</div>
+            </div>
+          </div>
+          <div class="flow-row" data-scroll-to="opening">
+            <div class="flow-time-col">
+              <div class="flow-time">5:00 PM</div>
+              <div class="flow-sub mono">IGNITE</div>
+            </div>
+            <div class="flow-title-col">
+              <div class="flow-title condensed">OPENING ADDRESS</div>
+              <div class="flow-desc mono">WELCOME TO SUPERNOVA</div>
+            </div>
+          </div>
+          <div class="flow-row" data-scroll-to="keynote-panel">
+            <div class="flow-time-col">
+              <div class="flow-time">5:30 PM</div>
+              <div class="flow-sub mono">SPARK</div>
+            </div>
+            <div class="flow-title-col">
+              <div class="flow-title condensed">KEYNOTE</div>
+              <div class="flow-desc mono">ONE STAGE, ONE STORY</div>
+            </div>
+          </div>
+          <div class="flow-row" data-scroll-to="keynote-panel">
+            <div class="flow-time-col">
+              <div class="flow-time">6:00 PM</div>
+              <div class="flow-sub mono">ORBIT</div>
+            </div>
+            <div class="flow-title-col">
+              <div class="flow-title condensed">THE PANEL</div>
+              <div class="flow-desc mono">WOMEN WHO BUILT + SCALED</div>
+            </div>
+          </div>
+          <div class="flow-row" data-scroll-to="investor-segment">
+            <div class="flow-time-col">
+              <div class="flow-time">7:00 PM</div>
+              <div class="flow-sub mono">CLUSTER</div>
+            </div>
+            <div class="flow-title-col">
+              <div class="flow-title condensed">BREAKOUT ROOMS</div>
+              <div class="flow-desc mono">DOMAIN-WISE</div>
+            </div>
+          </div>
+          <div class="flow-row" data-scroll-to="investor-segment">
+            <div class="flow-time-col">
+              <div class="flow-time">8:00 PM</div>
+              <div class="flow-sub mono">CONNECT</div>
+            </div>
+            <div class="flow-title-col">
+              <div class="flow-title condensed">INVESTOR MATCHING</div>
+              <div class="flow-desc mono">ONE-ON-ONE</div>
+            </div>
+          </div>
+          <div class="flow-row" data-scroll-to="afterparty">
+            <div class="flow-time-col">
+              <div class="flow-time">9:00 PM</div>
+              <div class="flow-sub mono">THE AFTERS</div>
+            </div>
+            <div class="flow-title-col">
+              <div class="flow-title condensed">AFTER PARTY</div>
+              <div class="flow-desc mono">DJ / TILL MIDNIGHT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARRIVALS & MINGLING ============ -->
+  <section id="arrivals-mingling">
+    <div class="bloom"></div>
+    <div class="section-inner">
+      <h2 class="section-heading display reveal">arrivals & mingling</h2>
+      
+      <div class="section-intro reveal" style="--d:120ms">
+        <p class="body-copy">The doors opened at 4 PM. By 4:15, the energy in the room was already electric. Founders from across India, building everything from space tech to carbon capture, finding each other for the first time.</p>
+      </div>
+
+      <div class="carousel-wrap reveal" style="--d:240ms" data-carousel="arrivals">
+        <div class="carousel-track"></div>
+      </div>
+
+      <div>
+        <h3 class="subsection-heading reveal" style="--d:0ms">Who Was in the Room</h3>
+        
+        <div class="reveal" style="--d:120ms">
+          <h4 style="font-size:clamp(20px,3vw,32px);color:var(--bone);margin-bottom:clamp(24px,4vh,48px)">By Domain</h4>
+        </div>
+
+        <div class="domain-grid">
+          <div class="domain-card reveal" style="--d:0ms">
+            <div class="domain-name">AI, Agents & Dev Tools</div>
+            <div class="domain-count">21</div>
+          </div>
+          <div class="domain-card reveal" style="--d:60ms">
+            <div class="domain-name">Marketing, Media, Branding & Creators</div>
+            <div class="domain-count">20</div>
+          </div>
+          <div class="domain-card reveal" style="--d:120ms">
+            <div class="domain-name">Consumer Apps, Social, Travel & Events</div>
+            <div class="domain-count">18</div>
+          </div>
+          <div class="domain-card reveal" style="--d:180ms">
+            <div class="domain-name">Women's Health, Wellness & Fitness</div>
+            <div class="domain-count">13</div>
+          </div>
+          <div class="domain-card reveal" style="--d:240ms">
+            <div class="domain-name">D2C Fashion, Lifestyle & Retail</div>
+            <div class="domain-count">12</div>
+          </div>
+          <div class="domain-card reveal" style="--d:300ms">
+            <div class="domain-name">Climate, Deep Tech & Hardware</div>
+            <div class="domain-count">12</div>
+          </div>
+          <div class="domain-card reveal" style="--d:360ms">
+            <div class="domain-name">Fintech, Finance & Investors</div>
+            <div class="domain-count">9</div>
+          </div>
+          <div class="domain-card reveal" style="--d:420ms">
+            <div class="domain-name">Healthtech & Biotech</div>
+            <div class="domain-count">9</div>
+          </div>
+          <div class="domain-card reveal" style="--d:480ms">
+            <div class="domain-name">Food & Beverage</div>
+            <div class="domain-count">9</div>
+          </div>
+          <div class="domain-card reveal" style="--d:540ms">
+            <div class="domain-name">B2B SaaS & Enterprise</div>
+            <div class="domain-count">7</div>
+          </div>
+        </div>
+
+        <h3 class="subsection-heading reveal" style="--d:0ms">Building the Future</h3>
+        
+        <div class="founder-cards">
+          <div class="founder-card reveal" style="--d:0ms">
+            <div class="founder-card-name">Vidhi Jain</div>
+            <div class="founder-card-company">Indian Institute of Science</div>
+            <div class="founder-card-build">Veyra – planetary-surface detection (space tech + AI), IISc.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:60ms">
+            <div class="founder-card-name">Kavyashree Manjunath</div>
+            <div class="founder-card-company">Apratima Biosolutions</div>
+            <div class="founder-card-build">Apratima – engineered enzymes to depolymerise PET plastic.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:120ms">
+            <div class="founder-card-name">Suruchi Rao</div>
+            <div class="founder-card-company">Ossus Biorenewables</div>
+            <div class="founder-card-build">Ossus Biorenewables – hydrogen from industrial wastewater.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:180ms">
+            <div class="founder-card-name">Sahiti Amirapu</div>
+            <div class="founder-card-company">EcoSphere</div>
+            <div class="founder-card-build">EcoSphere – AI + algae photobioreactors for carbon capture.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:240ms">
+            <div class="founder-card-name">Aditi S K</div>
+            <div class="founder-card-company">CelesticLabs</div>
+            <div class="founder-card-build">CelesticLabs – defence autonomous systems (OJAS).</div>
+          </div>
+          <div class="founder-card reveal" style="--d:300ms">
+            <div class="founder-card-name">Akanksha Priyadarshini</div>
+            <div class="founder-card-company">Aurassure Private Limited</div>
+            <div class="founder-card-build">Aurassure – climate-security sensing & hazard prediction.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:360ms">
+            <div class="founder-card-name">Sravani Chandramukhi</div>
+            <div class="founder-card-company">General Robotics</div>
+            <div class="founder-card-build">General Robotics – automated sortation robotics for supply chain.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:420ms">
+            <div class="founder-card-name">Diya Pancholi</div>
+            <div class="founder-card-company">Entrepreneurs First</div>
+            <div class="founder-card-build">Early-stage pancreatic cancer diagnostics via biomarkers (EF).</div>
+          </div>
+          <div class="founder-card reveal" style="--d:480ms">
+            <div class="founder-card-name">Dr. Ashwini Rajasekaran</div>
+            <div class="founder-card-company">BioSignatures Tech</div>
+            <div class="founder-card-build">BioSignatures Tech – biomarker platform for maternal health.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:540ms">
+            <div class="founder-card-name">Jashika Sri Krishnaswamy</div>
+            <div class="founder-card-company">Nightswatch</div>
+            <div class="founder-card-build">Nightswatch – AI control plane/governance for LLM calls.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:600ms">
+            <div class="founder-card-name">Kriti Bhadada</div>
+            <div class="founder-card-company">QBee AI</div>
+            <div class="founder-card-build">QBee AI – AI learning app for students (8,000+ users).</div>
+          </div>
+          <div class="founder-card reveal" style="--d:660ms">
+            <div class="founder-card-name">Simona Mohan</div>
+            <div class="founder-card-company">Raho</div>
+            <div class="founder-card-build">Raho – hospitality/stays (~100 rooms, Forbes 30U30).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPENING ============ -->
+  <section id="opening">
+    <div class="bloom"></div>
+    <div class="section-inner">
+      <h2 class="section-heading display reveal">opening by manasa</h2>
+      
+      <div class="section-intro reveal" style="--d:120ms">
+        <p class="body-copy">The room that never existed was finally here. Manasa Kalaimalai, founder of Nova Residency, kicked off the day.</p>
+      </div>
+
+      <div class="editorial-three-up reveal" style="--d:240ms" data-lightbox-group="opening-featured">
+        <div class="editorial-feature" data-lightbox="/assets/recap/opening/6.jpg">
+          <img src="/assets/recap/opening/6.jpg" alt="" loading="lazy">
+        </div>
+        <div class="editorial-feature" data-lightbox="/assets/recap/opening/7.jpg">
+          <img src="/assets/recap/opening/7.jpg" alt="" loading="lazy">
+        </div>
+        <div class="editorial-feature" data-lightbox="/assets/recap/opening/8.jpg">
+          <img src="/assets/recap/opening/8.jpg" alt="" loading="lazy">
+        </div>
+      </div>
+
+      <div class="wide-feature reveal" style="--d:360ms" data-lightbox="/assets/recap/opening/9.jpg">
+        <img src="/assets/recap/opening/9.jpg" alt="The room of 100 women founders" loading="lazy">
+      </div>
+
+      <div class="carousel-wrap reveal" style="--d:480ms" data-carousel="opening">
+        <div class="carousel-track"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KEYNOTE & PANEL ============ -->
+  <section id="keynote-panel">
+    <div class="bloom"></div>
+    <div class="section-inner">
+      <h2 class="section-heading display reveal">keynote & panel</h2>
+      
+      <div class="reveal" style="--d:120ms">
+        <h3 class="keynote-title">Revathi Raghunath's Keynote</h3>
+        <p class="body-copy">Revathi Raghunath (CEO & Managing Partner, Outerfield; Co-Founder, Garage Labs Technologies) delivered the keynote. The room was rapt.</p>
+      </div>
+
+      <div class="panel-section">
+        <div class="reveal" style="--d:0ms">
+          <h3 class="keynote-title">The Panel</h3>
+          <p class="body-copy">Angela Honegger (CEO & Consul General, Swissnex in India), Shalini Pal (Principal, NuVentures), PS Pranika (Founder, ShyShark), and Srishty Jain (Founder & CEO, CoLLearn) shared what it really takes to build in India as a woman.</p>
+        </div>
+
+        <div class="theme-cards reveal" style="--d:120ms">
+          <div class="theme-card">
+            <h5>Personal Journeys</h5>
+            <p>Their stories of navigating entrepreneurship as women, from first steps to scaling companies, and the pivotal moments that defined their paths.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Facing the Real Problems</h5>
+            <p>The challenges they encountered, from funding gaps to unconscious bias, and how they pushed through when the odds were stacked against them.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Building in an AI-Native World</h5>
+            <p>What it means to build today, when AI is no longer a feature but the foundation, and how founders can stay ahead of the curve.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Landing Your First Customers</h5>
+            <p>Practical insights on finding product-market fit, getting those crucial early customers, and building momentum from zero.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Staying Resilient</h5>
+            <p>How to stay resilient in a male-dominated startup ecosystem, not let it hold you back, and build the confidence to take up space.</p>
+          </div>
+          <div class="theme-card">
+            <h5>Empowering the Next Generation</h5>
+            <p>Their advice for the women builders in the room, and what they wish someone had told them when they were starting out.</p>
+          </div>
+        </div>
+
+        <div class="carousel-wrap reveal" style="--d:240ms" data-carousel="keynote">
+          <div class="carousel-track"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INVESTOR SEGMENT ============ -->
+  <section id="investor-segment">
+    <div class="bloom"></div>
+    <div class="section-inner">
+      <h2 class="section-heading display reveal">investor conversations</h2>
+      
+      <div class="section-intro reveal" style="--d:120ms">
+        <p class="body-copy">20+ investors came. Founders sat down with investors they otherwise could not reach for months, or ever. Some of these conversations will become term sheets. Others became long-term relationships. All of them mattered.</p>
+      </div>
+
+      <div class="investors-grid reveal" style="--d:240ms">
+        <div class="investor-name">16VC</div>
+        <div class="investor-name">Accel</div>
+        <div class="investor-name">Bajaj Finserv</div>
+        <div class="investor-name">Bessemer Venture Partners</div>
+        <div class="investor-name">Bharat Innovation Fund</div>
+        <div class="investor-name">Blume Ventures</div>
+        <div class="investor-name">Campus Fund</div>
+        <div class="investor-name">Capital A</div>
+        <div class="investor-name">Chiratae Ventures</div>
+        <div class="investor-name">Elevation Capital</div>
+        <div class="investor-name">Entrepreneur First</div>
+        <div class="investor-name">Kae Capital</div>
+        <div class="investor-name">Peak XV</div>
+        <div class="investor-name">Prime Venture Partners</div>
+        <div class="investor-name">SenseAI Ventures</div>
+        <div class="investor-name">South Park Commons</div>
+        <div class="investor-name">Speciale Invest</div>
+        <div class="investor-name">Together Fund</div>
+        <div class="investor-name">Z47</div>
+      </div>
+
+      <div class="carousel-wrap reveal" style="--d:360ms" data-carousel="investor">
+        <div class="carousel-track"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AFTER PARTY ============ -->
+  <section id="afterparty">
+    <div class="bloom"></div>
+    <div class="section-inner">
+      <h2 class="section-heading display reveal" style="text-align:center">the after party</h2>
+      
+      <div class="afterparty-intro">
+        <div class="reveal" style="--d:120ms">
+          <p class="body-copy">200 people stayed for the after party: the 100 founders plus 100 more from the ecosystem. The investors who came stayed, and they genuinely got along with everybody. The conversations continued, deeper now, outside the structure of the day.</p>
+          <p class="body-copy">Friendships formed. Co-founders met. Operators who'd solved the same problem three years ago shared what worked. Follow-up meetings were scheduled. WhatsApp groups spun up. The momentum from the day carried into the night.</p>
+          <p class="body-copy">Supernova Edition 1 was more than an event. It was proof that the room we needed has always been possible. We just had to build it. See you at Edition 2.</p>
+        </div>
+      </div>
+
+      <div class="carousel-wrap reveal" style="--d:240ms" data-carousel="afterparty">
+        <div class="carousel-track"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="testimonials">
+    <div class="bloom"></div>
+    <div class="section-inner">
+      <h2 class="section-heading display reveal" style="text-align:center">voices from the day</h2>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal" style="--d:0ms">
+          <img class="testimonial-photo" src="/assets/recap/arrivals-mingling/1.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">Supernova was an event like no other.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:100ms">
+          <img class="testimonial-photo" src="/assets/recap/arrivals-mingling/2.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">I made connections here I would never have found anywhere else.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:200ms">
+          <img class="testimonial-photo" src="/assets/recap/arrivals-mingling/3.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">Finally, a room where I didn't have to explain why being a woman founder is different.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:300ms">
+          <img class="testimonial-photo" src="/assets/recap/arrivals-mingling/4.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">The conversations I had today usually take months to happen, if they happen at all.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:400ms">
+          <img class="testimonial-photo" src="/assets/recap/arrivals-mingling/5.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">This was the first time I felt like I was exactly where I needed to be.</div>
+        </div>
+        <div class="testimonial-card reveal" style="--d:500ms">
+          <img class="testimonial-photo" src="/assets/recap/arrivals-mingling/6.jpg" alt="" loading="lazy">
+          <div class="testimonial-quote">I met my co-founder today. We start building next week.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section id="team">
+    <div class="bloom"></div>
+    <div class="section-inner">
+      <h2 class="team-label reveal">The Team Behind Supernova</h2>
+      <img class="team-photo reveal" style="--d:120ms" src="/assets/recap/team.jpg" alt="The Nova Residency team" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ============ VISION ============ -->
+  <section id="vision">
+    <div class="bloom bloom-edge"></div>
+    <div class="vision-inner">
+      <h2 class="vision-heading display reveal" style="--d:0ms">supernova is the front door</h2>
+      <p class="vision-copy reveal" style="--d:120ms">Supernova is the front door to Nova Residency, India's first residency for women founders: a one-month residency backing AI-native women founders in their 20s, building to Demo Day.</p>
+      <a class="cta reveal" style="--d:240ms" href="https://founderboard.io/api/share/program/supernova" target="_blank" rel="noopener">apply for the next cohort →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-row">
+    <div class="footer-left">
+      <span class="brand-strong">NOVA RESIDENCY</span>
+      <span>·</span>
+      <a href="https://instagram.com" target="_blank" rel="noopener">INSTAGRAM</a>
+      <span>·</span>
+      <a href="https://x.com" target="_blank" rel="noopener">X</a>
+      <span>·</span>
+      <a href="mailto:hello@novatheresidency.com">HELLO@NOVATHERESIDENCY.COM</a>
+    </div>
+    <div>BANGALORE, 2026</div>
+  </div>
+</footer>
+
+<div class="lightbox">
+  <div class="lightbox-content">
+    <div class="lightbox-close" aria-label="Close">×</div>
+    <button class="lightbox-nav-btn prev" aria-label="Previous">‹</button>
+    <img class="lightbox-img" src="" alt="">
+    <button class="lightbox-nav-btn next" aria-label="Next">›</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Mix photos from different sections for diverse hero wall
+  var heroMix = [
+    // From keynote/speakers
+    '/assets/recap/keynote-panel/1.jpg','/assets/recap/keynote-panel/3.jpg','/assets/recap/keynote-panel/7.jpg',
+    // From day arrivals
+    '/assets/recap/arrivals-mingling/1.jpg','/assets/recap/arrivals-mingling/4.jpg','/assets/recap/arrivals-mingling/8.jpg',
+    // From investors
+    '/assets/recap/investor-conversations/2.jpg','/assets/recap/investor-conversations/10.jpg','/assets/recap/investor-conversations/15.jpg',
+    // From afterparty
+    '/assets/recap/afterparty/5.jpg','/assets/recap/afterparty/12.jpg','/assets/recap/afterparty/20.jpg',
+    // More variety
+    '/assets/recap/keynote-panel/12.jpg','/assets/recap/arrivals-mingling/10.jpg','/assets/recap/investor-conversations/20.jpg',
+    '/assets/recap/afterparty/28.jpg','/assets/recap/keynote-panel/16.jpg','/assets/recap/investor-conversations/24.jpg',
+    '/assets/recap/afterparty/32.jpg','/assets/recap/arrivals-mingling/2.jpg','/assets/recap/keynote-panel/18.jpg',
+    '/assets/recap/investor-conversations/5.jpg','/assets/recap/afterparty/8.jpg','/assets/recap/keynote-panel/20.jpg'
+  ];
+
+  // Photo data per section
+  var photos = {
+    arrivals: Array.from({length:12},(_, i)=>'/assets/recap/arrivals-mingling/'+(i+1)+'.jpg'),
+    opening: ['13','14','15','18'].map(function(n){return '/assets/recap/opening/'+n+'.jpg'}),
+    keynote: Array.from({length:21},(_, i)=>'/assets/recap/keynote-panel/'+(i+1)+'.jpg'),
+    investor: Array.from({length:26},(_, i)=>'/assets/recap/investor-conversations/'+(i+1)+'.jpg'),
+    afterparty: Array.from({length:36},(_, i)=>'/assets/recap/afterparty/'+(i+1)+'.jpg')
+  };
+
+  // HERO GRID
+  var heroGrid = document.querySelector('.hero-grid');
+  heroMix.forEach(function(src){
+    var tile = document.createElement('div');
+    tile.className = 'hero-tile';
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+    img.loading = 'eager';
+    tile.appendChild(img);
+    heroGrid.appendChild(tile);
+  });
+
+  // Hero auto-cycle
+  var tiles = document.querySelectorAll('.hero-tile');
+  var currentIdx = 0;
+  var cycleInterval = null;
+  
+  function activateTile(idx){
+    tiles.forEach(function(t){ t.classList.remove('active'); });
+    if(tiles[idx]) tiles[idx].classList.add('active');
+  }
+  
+  function startCycle(){
+    if(reduceMotion) return;
+    cycleInterval = setInterval(function(){
+      activateTile(currentIdx);
+      currentIdx = (currentIdx + 1) % tiles.length;
+    }, 2500);
+  }
+  
+  function stopCycle(){
+    if(cycleInterval){
+      clearInterval(cycleInterval);
+      cycleInterval = null;
+    }
+  }
+
+  tiles.forEach(function(tile,idx){
+    tile.addEventListener('click',function(){
+      stopCycle();
+      activateTile(idx);
+      currentIdx = idx;
+    });
+  });
+
+  if(matchMedia('(hover: hover)').matches){
+    tiles.forEach(function(tile,idx){
+      tile.addEventListener('mouseenter',function(){
+        stopCycle();
+        activateTile(idx);
+      });
+    });
+    
+    heroGrid.addEventListener('mouseleave',function(){
+      tiles.forEach(function(t){ t.classList.remove('active'); });
+      startCycle();
+    });
+  }
+
+  if('IntersectionObserver' in window){
+    var heroIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting) startCycle();
+        else stopCycle();
+      });
+    },{threshold:0.2});
+    heroIO.observe(document.getElementById('hero'));
+  }else{
+    startCycle();
+  }
+
+  // CAROUSELS
+  function initCarousel(wrap, photoSet){
+    var track = wrap.querySelector('.carousel-track');
+    
+    photoSet.forEach(function(src){
+      var item = document.createElement('div');
+      item.className = 'carousel-item';
+      item.dataset.lightbox = src;
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = '';
+      img.loading = 'lazy';
+      item.appendChild(img);
+      track.appendChild(item);
+    });
+
+    var isDragging = false;
+    var startX = 0;
+    var scrollLeft = 0;
+    var velocity = 0;
+    var lastX = 0;
+    var lastTime = 0;
+
+    function startDrag(e){
+      isDragging = true;
+      track.classList.add('dragging');
+      startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+      scrollLeft = track.scrollLeft;
+      velocity = 0;
+      lastX = startX;
+      lastTime = Date.now();
+    }
+
+    function drag(e){
+      if(!isDragging) return;
+      e.preventDefault();
+      var x = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+      var walk = (x - startX) * 2;
+      track.scrollLeft = scrollLeft - walk;
+      
+      var now = Date.now();
+      var dt = now - lastTime;
+      if(dt > 0){
+        velocity = (x - lastX) / dt;
+      }
+      lastX = x;
+      lastTime = now;
+    }
+
+    function endDrag(){
+      if(!isDragging) return;
+      isDragging = false;
+      track.classList.remove('dragging');
+      
+      if(Math.abs(velocity) > 0.5 && !reduceMotion){
+        var momentum = velocity * 100;
+        track.scrollBy({
+          left: -momentum,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    track.addEventListener('mousedown', startDrag);
+    track.addEventListener('mousemove', drag);
+    track.addEventListener('mouseup', endDrag);
+    track.addEventListener('mouseleave', endDrag);
+    
+    track.addEventListener('touchstart', startDrag, {passive:true});
+    track.addEventListener('touchmove', drag);
+    track.addEventListener('touchend', endDrag);
+  }
+
+  document.querySelectorAll('[data-carousel]').forEach(function(wrap){
+    var type = wrap.dataset.carousel;
+    if(photos[type]){
+      initCarousel(wrap, photos[type]);
+    }
+  });
+
+  // LIGHTBOX
+  var lightbox = document.querySelector('.lightbox');
+  var lightboxImg = lightbox.querySelector('.lightbox-img');
+  var lightboxClose = lightbox.querySelector('.lightbox-close');
+  var lightboxPrev = lightbox.querySelector('.lightbox-nav-btn.prev');
+  var lightboxNext = lightbox.querySelector('.lightbox-nav-btn.next');
+  var currentLightboxSet = [];
+  var currentLightboxIdx = 0;
+
+  function openLightbox(src, setPhotos){
+    currentLightboxSet = setPhotos || [src];
+    currentLightboxIdx = currentLightboxSet.indexOf(src);
+    if(currentLightboxIdx < 0) currentLightboxIdx = 0;
+    lightboxImg.src = currentLightboxSet[currentLightboxIdx];
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function showLightboxPrev(){
+    currentLightboxIdx = (currentLightboxIdx - 1 + currentLightboxSet.length) % currentLightboxSet.length;
+    lightboxImg.src = currentLightboxSet[currentLightboxIdx];
+  }
+
+  function showLightboxNext(){
+    currentLightboxIdx = (currentLightboxIdx + 1) % currentLightboxSet.length;
+    lightboxImg.src = currentLightboxSet[currentLightboxIdx];
+  }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', showLightboxPrev);
+  lightboxNext.addEventListener('click', showLightboxNext);
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(!lightbox.classList.contains('active')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') showLightboxPrev();
+    if(e.key === 'ArrowRight') showLightboxNext();
+  });
+
+  var lbStartX = 0;
+  lightboxImg.addEventListener('touchstart', function(e){
+    lbStartX = e.touches[0].pageX;
+  });
+  lightboxImg.addEventListener('touchend', function(e){
+    var endX = e.changedTouches[0].pageX;
+    var diff = endX - lbStartX;
+    if(Math.abs(diff) > 50){
+      if(diff > 0) showLightboxPrev();
+      else showLightboxNext();
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    var target = e.target.closest('[data-lightbox]');
+    if(target){
+      e.preventDefault();
+      var src = target.dataset.lightbox;
+      var group = target.closest('[data-lightbox-group]');
+      var carouselWrap = target.closest('[data-carousel]');
+      
+      var setPhotos = [src];
+      if(group){
+        var groupItems = group.querySelectorAll('[data-lightbox]');
+        setPhotos = Array.from(groupItems).map(function(el){ return el.dataset.lightbox; });
+      } else if(carouselWrap){
+        var type = carouselWrap.dataset.carousel;
+        if(photos[type]){
+          setPhotos = photos[type];
+        }
+      }
+      
+      openLightbox(src, setPhotos);
+    }
+  });
+
+  // SCROLL REVEAL - Robust with fallback
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var revealIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          revealIO.unobserve(entry.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -10% 0px'});
+    revealEls.forEach(function(el){ revealIO.observe(el); });
+  }else{
+    // Fallback: reveal all immediately
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Fallback timeout: if IO hasn't fired after page load, reveal everything
+  setTimeout(function(){
+    revealEls.forEach(function(el){
+      if(!el.classList.contains('in')){
+        el.classList.add('in');
+      }
+    });
+  }, 3000);
+
+  // OUTCOMES COUNTER
+  var outcomesSection = document.getElementById('outcomes');
+  var statNumbers = document.querySelectorAll('.outcome-number');
+  var countJobs = [];
+  var started = false;
+
+  function startCounters(){
+    if(started || reduceMotion){
+      statNumbers.forEach(function(el){
+        var target = parseInt(el.getAttribute('data-count'),10)||0;
+        var suffix = el.getAttribute('data-suffix')||'';
+        el.textContent = target + suffix;
+      });
+      return;
+    }
+    started = true;
+    var now0 = performance.now();
+    statNumbers.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'),10)||0;
+      var suffix = el.getAttribute('data-suffix')||'';
+      countJobs.push({el:el,target:target,suffix:suffix,start:now0,dur:1800});
+    });
+  }
+
+  if(outcomesSection && 'IntersectionObserver' in window){
+    var statsIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          startCounters();
+          statsIO.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.4});
+    statsIO.observe(outcomesSection);
+  }else{
+    startCounters();
+  }
+
+  // FLOW ROW CLICK TO SCROLL
+  document.querySelectorAll('.flow-row[data-scroll-to]').forEach(function(row){
+    row.addEventListener('click',function(){
+      var targetId = row.getAttribute('data-scroll-to');
+      var target = document.getElementById(targetId);
+      if(target){
+        target.scrollIntoView({behavior:'smooth'});
+      }
+    });
+  });
+
+  // HEADER SCROLL STATE
+  var header = document.querySelector('header.top');
+  var headerSentinel = document.createElement('div');
+  headerSentinel.style.cssText = 'position:absolute;top:90vh;left:0;width:1px;height:1px;';
+  document.getElementById('hero').appendChild(headerSentinel);
+  
+  if('IntersectionObserver' in window && header){
+    var headerIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        header.classList.toggle('scrolled', entry.boundingClientRect.top < 0);
+      });
+    },{threshold:0});
+    headerIO.observe(headerSentinel);
+  }
+
+  // ANIMATION LOOP
+  function tick(now){
+    if(countJobs.length){
+      countJobs = countJobs.filter(function(job){
+        var t = Math.min(1,(now - job.start)/job.dur);
+        var eased = 1 - Math.pow(1 - t,3);
+        var val = Math.round(job.target * eased);
+        job.el.textContent = val + job.suffix;
+        return t < 1;
+      });
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // FIT-TEXT FOR SUPERNOVA WORDMARK
+  function fitWordmark(){
+    var wordmark = document.querySelector('.hero-wordmark.horizon');
+    if(!wordmark) return;
+    
+    // Account for letter-spacing and ensure fit within viewport
+    var maxWidth = window.innerWidth * 0.87;
+    var minSize = 20;
+    var maxSize = 250;
+    
+    // Binary search for optimal size
+    var low = minSize;
+    var high = maxSize;
+    
+    while(high - low > 0.5){
+      var fontSize = (low + high) / 2;
+      wordmark.style.fontSize = fontSize + 'px';
+      
+      // Measure the span's actual width
+      var rect = wordmark.getBoundingClientRect();
+      var currentWidth = rect.width;
+      
+      if(currentWidth <= maxWidth){
+        low = fontSize;
+      }else{
+        high = fontSize;
+      }
+    }
+    
+    wordmark.style.fontSize = low + 'px';
+  }
+  
+  // Run fit-text after Horizon font loads
+  if(document.fonts && document.fonts.load){
+    document.fonts.load('1em Horizon').then(function(){
+      fitWordmark();
+    }).catch(function(){
+      // Fallback if font load fails
+      setTimeout(fitWordmark, 200);
+    });
+  }else{
+    setTimeout(fitWordmark, 200);
+  }
+  
+  // Re-run on resize
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(fitWordmark, 150);
+  });
+})();
+</script>
+</body>
+</html>

@@ -128,7 +128,8 @@ header.top{
 }
 header.top.scrolled{border-bottom-color:var(--bone-30)}
 header.top .brand{font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:14px;font-weight:700}
-header.top .apply-link{font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:14px;text-decoration:none}
+header.top .apply-link{font-family:var(--fm);text-transform:uppercase;letter-spacing:.14em;font-size:14px;text-decoration:none;transition:opacity .3s ease}
+header.top .apply-link:hover{opacity:1 !important}
 
 /* ============ SECTION BASE ============ */
 main section{position:relative;background:var(--black);padding:18dvh 4vw}
@@ -349,6 +350,9 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
     letter-spacing:.1em;
     white-space:nowrap;
   }
+  header.top > div{
+    gap:1em;
+  }
 
   /* ---- hero: centered, and scaled to the viewport ----
      also vertically centred rather than bottom-anchored: at phone aspect
@@ -421,7 +425,10 @@ footer{background:var(--black);border-top:1px solid var(--bone-30);padding:36px 
 
 <header class="top">
   <span class="brand">NOVA RESIDENCY</span>
-  <a class="apply-link" href="https://founderboard.io/api/share/program/supernova" target="_blank" rel="noopener">APPLY →</a>
+  <div style="display:flex;gap:2em;align-items:center">
+    <a class="apply-link" href="/recap" style="opacity:.85">RECAP →</a>
+    <a class="apply-link" href="https://founderboard.io/api/share/program/supernova" target="_blank" rel="noopener">APPLY →</a>
+  </div>
 </header>
 
 <main>
