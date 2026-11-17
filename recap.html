@@ -28,7 +28,7 @@
   font-display:swap;
 }
 
-/* The Seasons: hero accent only (letters). Inter fills punctuation if ever needed. */
+/* The Seasons: hero 'the event recap' only (letters). */
 @font-face{
   font-family:'The Seasons';
   src:url('assets/fonts/Fontspring-DEMO-theseasons-reg.otf') format('opentype');
@@ -44,6 +44,15 @@
   font-style:normal;
   font-display:swap;
   unicode-range:U+0000-0040,U+005B-0060,U+007B-00FF,U+2000-206F;
+}
+
+/* Pinyon Script: hero 'edition 1' only (fixed brand cursive). */
+@font-face{
+  font-family:'Pinyon Script';
+  src:url('assets/fonts/pinyon-script-latin-400-normal.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -67,9 +76,15 @@ a{color:inherit;text-decoration:none}
   --bone-30:rgba(242,237,228,.3);
   --ease-reveal:cubic-bezier(.16,1,.3,1);
   --ease-soft:cubic-bezier(.25,.8,.28,1);
+  /* Type system (4 roles only):
+     Horizon = wordmark + big titles
+     The Seasons = 'the event recap' only
+     Pinyon Script = 'edition 1' only
+     Archivo = body / UI */
   --fh:'Horizon',sans-serif;
   --fd:'Archivo',sans-serif;
   --fs:'The Seasons',Georgia,serif;
+  --script:'Pinyon Script',cursive;
 }
 @property --bx{syntax:'<percentage>';inherits:true;initial-value:50%}
 @property --by{syntax:'<percentage>';inherits:true;initial-value:50%}
@@ -231,8 +246,16 @@ main section{
   font-size:clamp(48px,14vw,160px);white-space:nowrap;
   display:block;width:max-content;max-width:none;
 }
+.hero-edition{
+  font-family:var(--script);font-weight:400;
+  font-size:clamp(48px,8vw,88px);line-height:1;
+  color:var(--amber);
+  text-shadow:0 0 24px rgba(244,162,68,.4), 0 0 48px rgba(232,98,42,.2);
+  margin-top:clamp(12px,2vh,20px);
+  margin-bottom:clamp(20px,3vh,36px);
+}
 .hero-meta{
-  margin-top:22px;padding-top:18px;border-top:1px solid var(--bone-30);
+  margin-top:0;padding-top:18px;border-top:1px solid var(--bone-30);
   display:flex;flex-wrap:wrap;gap:10px 18px;
   font-family:var(--fd);font-weight:600;font-size:12px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--bone-60);
@@ -415,9 +438,8 @@ footer a:hover{color:var(--ember)}
       <div class="hero-wordmark-wrap">
         <h1 class="hero-wordmark" id="wordmark">SUPERNOVA</h1>
       </div>
+      <div class="hero-edition">edition 1</div>
       <div class="hero-meta">
-        <span>Edition 1</span>
-        <span class="sep">·</span>
         <span>Bengaluru</span>
         <span class="sep">·</span>
         <span>10.10.26</span>
