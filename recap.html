@@ -340,7 +340,14 @@ body::before{
 
 .title-stack{
   text-align:center;
+  margin-top:clamp(4rem,8vh,8rem);
   margin-bottom:clamp(32px,5vh,56px);
+}
+
+.section-label + .title-stack,
+section > .title-stack:first-child,
+.section-inner > .title-stack:first-child{
+  margin-top:0;
 }
 
 .title-script{
@@ -928,9 +935,58 @@ section > *{
 
 .domain-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(2,1fr);
   gap:clamp(16px,2vw,24px);
   margin:clamp(40px,6vh,80px) 0;
+}
+
+.founder-cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:clamp(20px,2.5vw,32px);
+  margin:clamp(40px,6vh,80px) 0;
+  text-align:left;
+}
+
+.founder-card{
+  background:rgba(244,162,68,.03);
+  border:1px solid rgba(244,162,68,.15);
+  padding:clamp(20px,3vw,32px);
+  border-radius:4px;
+  transition:all .3s var(--ease-soft);
+}
+
+.founder-card:hover{
+  background:rgba(244,162,68,.06);
+  border-color:var(--amber);
+}
+
+.founder-card-name{
+  font-weight:700;
+  font-size:clamp(16px,2vw,20px);
+  color:var(--bone);
+  margin-bottom:6px;
+}
+
+.founder-card-company{
+  font-weight:600;
+  font-size:clamp(14px,1.8vw,17px);
+  color:var(--ember);
+  margin-bottom:12px;
+}
+
+.founder-card-build{
+  font-size:clamp(14px,1.7vw,16px);
+  line-height:1.6;
+  color:var(--bone-60);
+}
+
+.panel-block{
+  margin-top:clamp(6rem,12vh,10rem);
+}
+
+.panel-block > .title-stack{
+  margin-top:0;
 }
 
 .domain-card{
@@ -1578,7 +1634,20 @@ html.js .reveal.in{
   }
   
   .domain-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:clamp(12px,3vw,16px);
+  }
+
+  .founder-cards{
     grid-template-columns:1fr;
+  }
+
+  .title-stack{
+    margin-top:clamp(4rem,7vh,5rem);
+  }
+
+  .panel-block{
+    margin-top:clamp(4.5rem,10vh,7rem);
   }
   
   .investors-grid{
@@ -1604,6 +1673,12 @@ html.js .reveal.in{
   
   .lightbox-nav-btn.next{
     right:-10px;
+  }
+}
+
+@media (max-width:340px){
+  .domain-grid{
+    grid-template-columns:1fr;
   }
 }
 
@@ -1678,11 +1753,10 @@ html.js .reveal.in{
         <img src="assets/recap/founder/founder-message.jpg" alt="Manasa Kalaimalai" loading="lazy">
       </div>
       <div class="founder-text">
-        <p class="body-copy">Take the hundred most ambitious female builders in India and put them in one room. Sounds simple, right? But that room has never existed. Not once.</p>
-        <p class="body-copy">Until October 10th, 2026.</p>
-        <p class="body-copy">We created Supernova because women founders face a version of entrepreneurship that the ecosystem barely acknowledges. Getting in front of the right investors can take months, if it happens at all. Finding the co-founder who gets it, the operator who's solved your exact problem, the peer who's three steps ahead? That's often left to chance.</p>
-        <p class="body-copy">Supernova is the front door to Nova Residency, India's first residency for women founders. We're backing AI-native women in their 20s, giving them a month to build together, ship together, and reach Demo Day with something real. But before the residency, there's Supernova: one day, 100 founders, 20+ investors, and the conversations that usually take six months or never happen.</p>
-        <p class="body-copy">This is just the beginning. See you at Edition 2.</p>
+        <p class="body-copy">A room like this had never been built before. Not for small talk. Not just for fun. It was built so female founders could find each other, stay in touch, and get further than they would alone.</p>
+        <p class="body-copy">Until October 10th, 2026, that room did not exist in India. Getting in front of the right investors could take months. Finding a co-founder who gets it, or an operator who has already solved your exact problem, was mostly luck.</p>
+        <p class="body-copy">Supernova is the front door to Nova Residency, India's first residency for women founders. We back AI-native women in their 20s for a month of building together, shipping together, and arriving at Demo Day with something real. Before the residency comes Supernova: one day, 100 founders, 20+ investors, and the conversations that usually take half a year.</p>
+        <p class="body-copy">This is only Edition 1. Edition 2 is coming soon.</p>
         <div class="founder-signature">Manasa Kalaimalai, Founder & CEO, Nova Residency</div>
       </div>
     </div>
@@ -1801,7 +1875,7 @@ html.js .reveal.in{
       </div>
       
       <div class="section-intro reveal" style="--d:120ms">
-        <p class="body-copy">The doors opened at 4 PM. By 4:15, the energy in the room was already electric. Founders from across India, building everything from space tech to carbon capture, finding each other for the first time.</p>
+        <p class="body-copy">Doors opened at 4 PM. Within minutes the room filled with founders from across India: space tech, carbon capture, consumer apps, health, and more. For many, it was the first time they had stood in a room built specifically for them.</p>
       </div>
 
       <div class="photo-wall" id="arrivals-wall"></div>
@@ -1810,6 +1884,65 @@ html.js .reveal.in{
         <div class="title-stack reveal" style="--d:0ms;margin-bottom:clamp(24px,4vh,40px)">
           <div class="title-script" style="font-size:clamp(28px,5vw,56px)">Who was</div>
           <div class="title-caps" style="font-size:clamp(32px,6vw,72px)">IN THE ROOM</div>
+        </div>
+
+        <div class="title-stack reveal" style="margin-bottom:clamp(24px,4vh,48px)">
+          <div class="title-script" style="font-size:clamp(24px,4vw,48px)">Top 10</div>
+          <div class="title-caps" style="font-size:clamp(28px,5vw,64px)">FOUNDERS</div>
+        </div>
+        <p class="body-copy reveal" style="--d:80ms;margin-bottom:clamp(28px,4vh,40px)">A snapshot of the builders in the room, drawn from the founders we highlighted after Edition 1.</p>
+
+        <div class="founder-cards">
+          <div class="founder-card reveal" style="--d:0ms">
+            <div class="founder-card-name">Vidhi Jain</div>
+            <div class="founder-card-company">Veyra / IISc</div>
+            <div class="founder-card-build">Planetary-surface detection across space tech and AI.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:40ms">
+            <div class="founder-card-name">Kavyashree Manjunath</div>
+            <div class="founder-card-company">Apratima Biosolutions</div>
+            <div class="founder-card-build">Engineered enzymes that depolymerise PET plastic.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:80ms">
+            <div class="founder-card-name">Suruchi Rao</div>
+            <div class="founder-card-company">Ossus Biorenewables</div>
+            <div class="founder-card-build">Hydrogen made from industrial wastewater.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:120ms">
+            <div class="founder-card-name">Sahiti Amirapu</div>
+            <div class="founder-card-company">EcoSphere</div>
+            <div class="founder-card-build">AI and algae photobioreactors for carbon capture.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:160ms">
+            <div class="founder-card-name">Aditi S K</div>
+            <div class="founder-card-company">CelesticLabs</div>
+            <div class="founder-card-build">Defence autonomous systems, including OJAS.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:200ms">
+            <div class="founder-card-name">Akanksha Priyadarshini</div>
+            <div class="founder-card-company">Aurassure</div>
+            <div class="founder-card-build">Climate-security sensing and hazard prediction.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:240ms">
+            <div class="founder-card-name">Sravani Chandramukhi</div>
+            <div class="founder-card-company">General Robotics</div>
+            <div class="founder-card-build">Automated sortation robotics for supply chains.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:280ms">
+            <div class="founder-card-name">Diya Pancholi</div>
+            <div class="founder-card-company">Entrepreneurs First</div>
+            <div class="founder-card-build">Early-stage pancreatic cancer diagnostics via biomarkers.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:320ms">
+            <div class="founder-card-name">Dr. Ashwini Rajasekaran</div>
+            <div class="founder-card-company">BioSignatures Tech</div>
+            <div class="founder-card-build">A biomarker platform for maternal health.</div>
+          </div>
+          <div class="founder-card reveal" style="--d:360ms">
+            <div class="founder-card-name">Jashika Sri Krishnaswamy</div>
+            <div class="founder-card-company">Nightswatch</div>
+            <div class="founder-card-build">An AI control plane and governance layer for LLM calls.</div>
+          </div>
         </div>
         
         <div class="reveal" style="--d:120ms">
@@ -1875,7 +2008,7 @@ html.js .reveal.in{
       </div>
 
       <div class="section-intro reveal" style="--d:120ms">
-        <p class="body-copy">Manasa, the founder, opened Supernova by setting the context for the day: why this room needed to exist, and what it could become. She addressed the room, welcomed every founder in it, and set the energy for everything that followed.</p>
+        <p class="body-copy">Manasa opened the day by naming why the room had to exist, and what it could unlock for the women standing in it. She welcomed every founder, set the tone, and made clear that this was not a night of small talk. It was a space built for female founders to connect with one another.</p>
       </div>
 
       <div class="opening-grid">
@@ -1895,7 +2028,7 @@ html.js .reveal.in{
     </div>
   </section>
 
-  <!-- KEYNOTE & PANEL -->
+  <!-- KEYNOTE -->
   <section id="keynote-panel" class="reveal">
     <div class="bloom ember" style="width:600px;height:600px;bottom:-200px;left:-250px;"></div>
     
@@ -1910,18 +2043,18 @@ html.js .reveal.in{
           <div class="title-script" style="font-size:clamp(24px,4vw,48px)">One voice</div>
           <div class="title-caps" style="font-size:clamp(28px,5vw,64px)">THE KEYNOTE</div>
         </div>
-        <p class="body-copy">Revathi Raghunath (CEO & Managing Partner, Outerfield; Co-Founder, Garage Labs Technologies) delivered the keynote. The room was rapt.</p>
+        <p class="body-copy">Revathi Raghunath, CEO and Managing Partner at Outerfield and Co-Founder of Garage Labs Technologies, took the keynote. She spoke to a full room about building with clarity when the path is still unclear, and about the kind of leadership that keeps a company moving when the easy answers run out.</p>
       </div>
 
-      <div class="reveal" style="--d:180ms">
+      <div class="photo-wall" id="keynote-wall"></div>
+
+      <div class="panel-block reveal" id="panel" style="--d:180ms">
         <div class="title-stack" style="margin-bottom:clamp(20px,3vh,32px)">
           <div class="title-script" style="font-size:clamp(24px,4vw,48px)">Four founders</div>
           <div class="title-caps" style="font-size:clamp(28px,5vw,64px)">THE PANEL</div>
         </div>
-        <p class="body-copy">Angela Honegger (CEO & Consul General, Swissnex in India), Shalini Pal (Principal, NuVentures), PS Pranika (Founder, ShyShark), and Srishty Jain (Founder & CEO, CoLLearn) shared what it really takes to build in India as a woman.</p>
+        <p class="body-copy">Angela Honegger (CEO and Consul General, Swissnex in India), Shalini Pal (Principal, NuVentures), PS Pranika (Founder, ShyShark), and Srishty Jain (Founder and CEO, CoLLearn) sat down together. They talked about what it takes to build in India as a woman: the messy early days, the pivots, the moments they almost quit, and the parts of the story that never make it into a polished deck.</p>
       </div>
-
-      <div class="photo-wall" id="keynote-wall"></div>
     </div>
   </section>
 
@@ -1936,7 +2069,7 @@ html.js .reveal.in{
       </div>
       
       <div class="section-intro reveal" style="--d:120ms">
-        <p class="body-copy">20+ investors came. Founders sat down with investors they otherwise could not reach for months, or ever. Some of these conversations will become term sheets. Others became long-term relationships. All of them mattered.</p>
+        <p class="body-copy">More than twenty investors showed up. Founders sat with people they had been trying to reach for months, sometimes for years. Some of those conversations will turn into term sheets. Others into relationships that last. All of them mattered that night.</p>
       </div>
 
       <div class="investors-grid reveal" style="--d:240ms">
@@ -1977,9 +2110,9 @@ html.js .reveal.in{
       
       <div style="max-width:1100px;margin:0 auto clamp(60px,10vh,100px);text-align:center">
         <div class="reveal" style="--d:120ms">
-          <p class="body-copy" style="font-size:clamp(17px,2.2vw,22px);line-height:1.8;margin:0 auto 1.8em;max-width:64ch">200 people stayed for the after party: the 100 founders plus 100 more from the ecosystem. The investors who came stayed, and they genuinely got along with everybody. The conversations continued, deeper now, outside the structure of the day.</p>
-          <p class="body-copy" style="font-size:clamp(17px,2.2vw,22px);line-height:1.8;margin:0 auto 1.8em;max-width:64ch">Friendships formed. Co-founders met. Operators who'd solved the same problem three years ago shared what worked. Follow-up meetings were scheduled. WhatsApp groups spun up. The momentum from the day carried into the night.</p>
-          <p class="body-copy" style="font-size:clamp(17px,2.2vw,22px);line-height:1.8;margin:0 auto 1.8em;max-width:64ch">Supernova Edition 1 was more than an event. It was proof that the room we needed has always been possible. We just had to build it. See you at Edition 2.</p>
+          <p class="body-copy" style="font-size:clamp(17px,2.2vw,22px);line-height:1.8;margin:0 auto 1.8em;max-width:64ch">Two hundred people stayed for the afterparty: the hundred founders, plus a hundred more from the ecosystem. The investors who came stayed for the entire afterparty. Nobody peeled off early. The room kept going.</p>
+          <p class="body-copy" style="font-size:clamp(17px,2.2vw,22px);line-height:1.8;margin:0 auto 1.8em;max-width:64ch">The people you met that night are people you will stay in touch with. Co-founders found each other. Operators who had already lived through your exact problem told you what worked. Follow-ups got booked. WhatsApp groups spun up. The party went on till 1 AM, and everyone had a great time.</p>
+          <p class="body-copy" style="font-size:clamp(17px,2.2vw,22px);line-height:1.8;margin:0 auto 1.8em;max-width:64ch">Edition 1 proved the room was possible. Edition 2 is coming soon.</p>
         </div>
       </div>
 
@@ -2041,7 +2174,7 @@ html.js .reveal.in{
         <div class="title-script">Your turn</div>
         <div class="title-caps">JOIN US</div>
       </div>
-      <p class="body-copy" style="margin-bottom:clamp(40px,6vh,64px)">We're building the community and platform that Indian women founders deserve. Applications open for the next Nova Residency cohort.</p>
+      <p class="body-copy" style="margin-bottom:clamp(40px,6vh,64px)">Across Nova, more than 5,000 women founders are already part of the community. Applications are open for the next Nova Residency cohort. Edition 2 is coming soon.</p>
       <p class="cta-tagline">Ready to build with us?</p>
       <a href="https://founderboard.io/api/share/program/supernova" class="cta-button">Apply for Nova Residency</a>
     </div>
