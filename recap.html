@@ -205,11 +205,18 @@ main section{
   background:linear-gradient(180deg,transparent 55%,rgba(11,10,12,.45));
 }
 .media-hero{aspect-ratio:16/9;width:100%}
+/* Static image grids only (no carousel / slider / horizontal scroll). */
 .media-row{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin-top:36px;
+  width:100%;
+  max-width:100%;
+  overflow:hidden;
 }
-.media-row.two{grid-template-columns:repeat(2,1fr)}
-.media-row .media{aspect-ratio:4/3}
+.media-row.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.media-row .media{aspect-ratio:4/3;min-width:0;width:100%}
 
 /* ===== HERO ===== */
 #hero{
@@ -397,15 +404,12 @@ footer a:hover{color:var(--ember)}
   .stat:nth-child(3),.stat:nth-child(4){border-top:1px solid var(--bone-30)}
   .stat:nth-child(2n){border-left:1px solid var(--bone-30)}
   .stat:nth-child(2n+1){border-left:0}
-  .media-row{grid-template-columns:1fr 1fr;gap:10px}
   .testimonials-grid{grid-template-columns:1fr}
   .founder-cards{grid-template-columns:1fr}
   main section{padding:clamp(4rem,10vh,6rem) 5vw}
 }
 @media (max-width:420px){
-  .media-row{grid-template-columns:repeat(3,1fr);gap:8px}
-  .media-row.two{grid-template-columns:repeat(2,1fr)}
-  .media-row .media{aspect-ratio:3/4}
+  .media-row{gap:8px}
   .hero-meta{font-size:11px;gap:8px 12px}
 }
 @media (max-width:340px){
