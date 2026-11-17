@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0B0A0C">
 <title>Supernova Edition 1 — October 10, 2026</title>
 <meta name="description" content="A night for women who build. Edition 1 in Bengaluru.">
@@ -257,12 +257,26 @@
 
 /* ============ RESET ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+  max-width:100%;
+  width:100%;
+}
 html,body{background:#0B0A0C;color:#F2EDE4;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{
+  overflow-x:hidden;
+  max-width:100%;
+  width:100%;
+  position:relative;
+}
 img,video{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 ul,ol{list-style:none}
+section,.section-inner,.photo-wall,.opening-grid,.founder-container,.hero-content,.hero-wordmark-wrap{
+  max-width:100%;
+}
 
 /* ============ TOKENS ============ */
 :root{
@@ -300,8 +314,6 @@ ul,ol{list-style:none}
 body{
   font-family:var(--body);
   font-weight:400;
-  overflow-x:hidden;
-  position:relative;
 }
 
 /* Grain texture overlay */
@@ -435,7 +447,8 @@ header.top .nav-link:hover{
 /* ============ HERO ============ */
 #hero{
   position:relative;
-  width:100vw;
+  width:100%;
+  max-width:100%;
   height:100vh;
   overflow:hidden;
   background:radial-gradient(circle at 60% 40%, rgba(232,98,42,.25) 0%, rgba(244,162,68,.1) 30%, rgba(11,10,12,1) 70%);
@@ -609,6 +622,8 @@ header.top .nav-link:hover{
   letter-spacing:.06em;
   white-space:nowrap;
   line-height:.85;
+  font-size:clamp(28px,14vw,160px);
+  max-width:92vw;
   text-shadow:0 0 32px rgba(242,237,228,.3), 0 0 64px rgba(244,162,68,.15);
 }
 
@@ -636,6 +651,8 @@ main section{
   position:relative;
   padding:clamp(80px,12vh,160px) clamp(24px,4vw,48px);
   text-align:center;
+  overflow-x:hidden;
+  max-width:100%;
 }
 
 .bloom{
@@ -645,6 +662,7 @@ main section{
   opacity:.3;
   pointer-events:none;
   z-index:0;
+  max-width:none;
 }
 
 .bloom.amber{
@@ -675,7 +693,9 @@ section > *{
   overflow:hidden;
   position:relative;
   width:clamp(280px,30vw,400px);
+  max-width:100%;
   aspect-ratio:1/1;
+  margin:0 auto;
 }
 
 .founder-photo::before{
@@ -1485,10 +1505,25 @@ html.js .reveal.in{
     grid-template-columns:repeat(3,1fr);
     grid-auto-rows:16.66vh;
   }
+
+  .hero-wordmark{
+    font-size:clamp(28px,13vw,56px);
+    max-width:90vw;
+    letter-spacing:.04em;
+  }
+
+  .hero-edition{
+    font-size:clamp(40px,11vw,64px);
+  }
   
   .founder-container{
     grid-template-columns:1fr;
     gap:32px;
+    justify-items:center;
+  }
+
+  .founder-photo{
+    margin:0 auto;
   }
   
   .founder-text{
@@ -1766,9 +1801,7 @@ html.js .reveal.in{
         <p class="body-copy">The doors opened at 4 PM. By 4:15, the energy in the room was already electric. Founders from across India, building everything from space tech to carbon capture, finding each other for the first time.</p>
       </div>
 
-      <div class="carousel-wrap reveal" style="--d:240ms" data-carousel="arrivals">
-        <div class="carousel-track"></div>
-      </div>
+      <div class="photo-wall" id="arrivals-wall"></div>
 
       <div>
         <div class="title-stack reveal" style="--d:0ms;margin-bottom:clamp(24px,4vh,40px)">
@@ -1838,6 +1871,10 @@ html.js .reveal.in{
         <div class="title-caps">OPENING SPEECH</div>
       </div>
 
+      <div class="section-intro reveal" style="--d:120ms">
+        <p class="body-copy">Manasa, the founder, opened Supernova by setting the context for the day: why this room needed to exist, and what it could become. She addressed the room, welcomed every founder in it, and set the energy for everything that followed.</p>
+      </div>
+
       <div class="opening-grid">
         <div class="opening-photo" data-lightbox="assets/recap/opening/IMG_5460.JPG">
           <img src="assets/recap/opening/IMG_5460.JPG" alt="" loading="eager">
@@ -1848,8 +1885,8 @@ html.js .reveal.in{
         <div class="opening-photo" data-lightbox="assets/recap/opening/IMG_5480.JPG">
           <img src="assets/recap/opening/IMG_5480.JPG" alt="" loading="eager">
         </div>
-        <div class="opening-photo" data-lightbox="assets/recap/founder/founder-message.jpg">
-          <img src="assets/recap/founder/founder-message.jpg" alt="" loading="eager">
+        <div class="opening-photo" data-lightbox="assets/recap/opening/opening-crowd.jpg">
+          <img src="assets/recap/opening/opening-crowd.jpg" alt="" loading="eager">
         </div>
       </div>
     </div>
@@ -1873,19 +1910,15 @@ html.js .reveal.in{
         <p class="body-copy">Revathi Raghunath (CEO & Managing Partner, Outerfield; Co-Founder, Garage Labs Technologies) delivered the keynote. The room was rapt.</p>
       </div>
 
-      <div class="carousel-wrap reveal" style="--d:240ms" data-carousel="keynote">
-        <div class="carousel-track"></div>
+      <div class="reveal" style="--d:180ms">
+        <div class="title-stack" style="margin-bottom:clamp(20px,3vh,32px)">
+          <div class="title-script" style="font-size:clamp(24px,4vw,48px)">Four founders</div>
+          <div class="title-caps" style="font-size:clamp(28px,5vw,64px)">THE PANEL</div>
+        </div>
+        <p class="body-copy">Angela Honegger (CEO & Consul General, Swissnex in India), Shalini Pal (Principal, NuVentures), PS Pranika (Founder, ShyShark), and Srishty Jain (Founder & CEO, CoLLearn) shared what it really takes to build in India as a woman.</p>
       </div>
 
-      <div>
-        <div class="reveal" style="--d:0ms">
-          <div class="title-stack" style="margin-bottom:clamp(20px,3vh,32px)">
-            <div class="title-script" style="font-size:clamp(24px,4vw,48px)">Four founders</div>
-            <div class="title-caps" style="font-size:clamp(28px,5vw,64px)">THE PANEL</div>
-          </div>
-          <p class="body-copy">Angela Honegger (CEO & Consul General, Swissnex in India), Shalini Pal (Principal, NuVentures), PS Pranika (Founder, ShyShark), and Srishty Jain (Founder & CEO, CoLLearn) shared what it really takes to build in India as a woman.</p>
-        </div>
-      </div>
+      <div class="photo-wall" id="keynote-wall"></div>
     </div>
   </section>
 
@@ -2209,14 +2242,7 @@ html.js .reveal.in{
     track.addEventListener('touchend', endDrag);
   }
 
-  document.querySelectorAll('[data-carousel]').forEach(function(wrap){
-    var type = wrap.dataset.carousel;
-    if(photos[type]){
-      initCarousel(wrap, photos[type]);
-    }
-  });
-  
-  // Initialize photo walls as plain CSS grids (no per-image reveal)
+  // Initialize photo walls as plain CSS grids (no per-image reveal, no carousels)
   function initPhotoWall(wallId, photoSet){
     var wall = document.getElementById(wallId);
     if(!wall) return;
@@ -2234,6 +2260,8 @@ html.js .reveal.in{
     });
   }
   
+  initPhotoWall('arrivals-wall', photos.arrivals);
+  initPhotoWall('keynote-wall', photos.keynote);
   initPhotoWall('investor-wall', photos.investor);
   initPhotoWall('afterparty-wall', photos.afterparty);
   
@@ -2302,18 +2330,12 @@ html.js .reveal.in{
     if(target){
       e.preventDefault();
       var src = target.dataset.lightbox;
-      var group = target.closest('[data-lightbox-group]');
-      var carouselWrap = target.closest('[data-carousel]');
+      var group = target.closest('[data-lightbox-group], .photo-wall, .opening-grid');
       
       var setPhotos = [src];
       if(group){
         var groupItems = group.querySelectorAll('[data-lightbox]');
         setPhotos = Array.from(groupItems).map(function(el){ return el.dataset.lightbox; });
-      } else if(carouselWrap){
-        var type = carouselWrap.dataset.carousel;
-        if(photos[type]){
-          setPhotos = photos[type];
-        }
       }
       
       openLightbox(src, setPhotos);
@@ -2325,8 +2347,8 @@ html.js .reveal.in{
     var wordmark = document.querySelector('.hero-wordmark');
     if(!wordmark) return;
     
-    var maxWidth = window.innerWidth * 0.87;
-    var low = 20, high = 250;
+    var maxWidth = Math.min(window.innerWidth * 0.92, document.documentElement.clientWidth * 0.92);
+    var low = 18, high = Math.min(250, window.innerWidth * 0.22);
     
     while(high - low > 0.5){
       var fontSize = (low + high) / 2;
